@@ -14,7 +14,7 @@
    - `worker.js` の中身を全部貼り付けて Deploy
 3. **変数を入れる**（Worker → Settings → Variables and Secrets）
    - `GITHUB_REPO`（Text）: `ユーザー名/jirolog-reports`（報告用の非公開リポジトリ）
-   - `ALLOWED_ORIGINS`（Text）: サイトの URL（例: `https://ユーザー名.github.io`）
+   - `ALLOWED_ORIGINS`（Text）: サイトの URL（例: `https://jirolog.pages.dev`）
    - `GITHUB_TOKEN`（**Secret**）: 手順1のトークン
 4. **サイトにつなぐ**
    Worker の URL（例: `https://jirolog-report.xxxx.workers.dev`）を `data/site.json` の `report_endpoint` に入れて作り直すと、報告フォームに「送信する」ボタンが出る。

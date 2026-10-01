@@ -21,6 +21,6 @@
    4. 直すときは日本語と英訳（`data/en.json`）の両方を直し、`sources` に確認した情報源と日付、`checked` に今日の日付を入れる。閉店したら消さずに `status: "closed"` と `closed`・`closed_type`・`successor_id`・`closed_note` を入れ、`data/news.json` にも載せる。
    5. 確かめられない・情報源が食い違う・判断に迷うものは直さない。`gh issue edit <番号> --add-label needs-review` を付け、確かめた内容と理由をコメントして開いたままにする。
 3. 直したものがあれば `python3 scripts/validate.py` と `python3 scripts/build.py` が通ることを確かめる。通らなければその変更を取り消す。
-4. 変更をコミットする。メッセージは `報告を反映: <店> <項目>` の形（報告の文面や Issue 番号は書かない）で、1つの報告につき1コミット。`main` に push すると GitHub Actions がサイトを作り直して公開する。
+4. 変更をコミットする。メッセージは `報告を反映: <店> <項目>` の形（報告の文面や Issue 番号は書かない）で、1つの報告につき1コミット。`main` に push すると Cloudflare Pages がサイトを作り直して公開する。
 5. 直した Issue には、何をどう直したかと確認した情報源をコメントして閉じる（`gh issue close <番号> --comment "..."`）。
 6. 最後に、処理した件数・直した件数・保留にした件数を短くまとめる。

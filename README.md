@@ -12,14 +12,18 @@ python3 scripts/build.py                  # data/ と content/ から dist/ を�
 python3 -m http.server 8000 -d dist       # http://localhost:8000 で確認
 ```
 
-`dist/` の中身をそのまま GitHub Pages・Cloudflare Pages・Netlify などに置けば公開できます。`.github/workflows/pages.yml` は GitHub Pages 用で、push のたびと毎朝 6:00（日本時間）に新着を取り込んで作り直します。公開 URL が決まったら `data/site.json` の `base_url` に入れると、canonical・hreflang・`sitemap.xml` が出力されます。
+公開先は Cloudflare Pages（https://jirolog.pages.dev/）。GitHub の `main` に push するたびに Cloudflare が次のビルドコマンドで作り直して公開する。毎朝 6:00（日本時間）にも `.github/workflows/daily-rebuild.yml` が Deploy hook を叩いて作り直す（新着の取り込みと期間限定メニューの自動非表示のため）。
+
+```sh
+python3 scripts/fetch_holidays.py; python3 scripts/fetch_feeds.py; python3 scripts/build.py   # 出力先: dist
+```
 
 ## 自動で変わるもの・変わらないもの
 
 | 内容 | 更新のしかた |
 |---|---|
 | いま営業中・今日の営業 | 見る人のブラウザが日本時間で毎回計算する（自動） |
-| 各店ページの「ラーメンシーンの記事」「直系二郎大好きマンの最新情報」への新着の追加 | `scripts/fetch_feeds.py` が公式フィードから取り込み、タイトルの店名で各店に振り分ける（GitHub Actions で毎朝自動） |
+| 各店ページの「ラーメンシーンの記事」「直系二郎大好きマンの最新情報」への新着の追加 | `scripts/fetch_feeds.py` が公式フィードから取り込み、タイトルの店名で各店に振り分ける（毎朝の自動ビルドで） |
 | 営業時間・価格・ルール・ニュース・系譜・閉店店舗 | `data/` の JSON を直して作り直す（手動） |
 
 各店の公式 X の臨時休業告知は、自動取得が規約上できないため、店舗ページから公式 X へリンクしています。

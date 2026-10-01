@@ -4,7 +4,7 @@
 // 設定（Cloudflare のダッシュボード → Workers → この Worker → Settings → Variables）
 //   GITHUB_REPO      報告用の非公開リポジトリ。例: yourname/jirolog-reports
 //   GITHUB_TOKEN     その1リポジトリの Issues: Read and write だけを許可した fine-grained token（Secret として登録）
-//   ALLOWED_ORIGINS  例: https://yourname.github.io  （カンマ区切りで複数可）
+//   ALLOWED_ORIGINS  例: https://jirolog.pages.dev  （カンマ区切りで複数可）
 
 const KINDS = {
   typo: "誤植・表記の誤り", hours: "営業時間・定休日", menu: "メニュー・価格", status: "閉店・移転・休業・再開",

@@ -1,0 +1,24 @@
+name: Daily rebuild (Cloudflare Pages)
+
+# サイトは Cloudflare Pages が GitHub の main を見て自動で作り直す（push のたび）。
+# 新着記事・動画の取り込みと期間限定メニューの自動非表示のため、毎朝も作り直させる。
+# リポジトリの Settings → Secrets and variables → Actions に
+# CF_PAGES_DEPLOY_HOOK（Cloudflare Pages の Deploy hook の URL）を入れておく。
+
+on:
+  schedule:
+    - cron: "0 21 * * *" # 毎朝 6:00 JST
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Cloudflare Pages deploy hook
+        env:
+          HOOK: ${{ secrets.CF_PAGES_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$HOOK" ]; then echo "CF_PAGES_DEPLOY_HOOK が未設定"; exit 1; fi
+          curl -fsS -X POST "$HOOK" > /dev/null && echo "rebuild requested"
