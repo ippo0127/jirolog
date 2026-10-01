@@ -17,6 +17,6 @@
     "入院",
     "体調"
   ],
-  "report_endpoint": "",
+  "report_endpoint": "https://jirolog-report.jirolog.workers.dev",
   "report_repo": "ippo0127/jirolog-reports"
 }

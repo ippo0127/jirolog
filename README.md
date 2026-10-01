@@ -47,7 +47,7 @@ python3 -m http.server 8000 -d dist       # http://localhost:8000 で確認
 情報源: （URL・日付。分かれば）
 ```
 
-いまは送り先が決まっていないので、報告フォームは「報告文をコピー」だけが使える。フォームの送り先（Formspree などの受付 URL）を `data/site.json` の `report_endpoint` に入れると「送信する」ボタンが出て、そのまま届くようになる。
+報告フォームの「送信する」で、中継（`report-worker/`、Cloudflare Workers。送り先は `data/site.json` の `report_endpoint`）を通って非公開リポジトリ `ippo0127/jirolog-reports` の Issue になる。この Mac の定期タスク「【毎朝】二郎ログ 誤りの報告を処理」が毎朝 `docs/process-reports.md` の手順で処理し、確かめられたものだけを反映して公開する。
 
 ### 報告を受けて直すときのルール
 
