@@ -279,6 +279,11 @@ LEAFLET_JS = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
 SRI = {LEAFLET_JS: "sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="}
 
 
+def pretty(path):
+    """Cloudflare Pages の URL の形（index.html と .html を付けない）。"""
+    return re.sub(r"\.html$", "", re.sub(r"(^|/)index\.html$", r"\1", path))
+
+
 class Page:
     """1ページ分の書き出し先と、そこからの相対パス。"""
 
@@ -304,9 +309,9 @@ def layout(site, pg, *, title, body, page="", description="", scripts=(), head_e
     head_links = ""
     if site.get("base_url"):
         base = site["base_url"].rstrip("/") + "/"
-        head_links = (f'<link rel="canonical" href="{e(base + pg.out)}">'
-                      f'<link rel="alternate" hreflang="ja" href="{e(base + pg.path)}">'
-                      f'<link rel="alternate" hreflang="en" href="{e(base + "en/" + pg.path)}">')
+        head_links = (f'<link rel="canonical" href="{e(base + pretty(pg.out))}">'
+                      f'<link rel="alternate" hreflang="ja" href="{e(base + pretty(pg.path))}">'
+                      f'<link rel="alternate" hreflang="en" href="{e(base + pretty("en/" + pg.path))}">')
     other_lang = (f'<a class="lang-switch" href="{e(pg.other)}" hreflang="en" lang="en">EN</a>' if LANG == "ja"
                   else f'<a class="lang-switch" href="{e(pg.other)}" hreflang="ja" lang="ja">日本語</a>')
     return f"""<!doctype html>
@@ -1346,7 +1351,7 @@ def main():
 
     if site.get("base_url"):
         b = site["base_url"].rstrip("/")
-        urls = "".join(f"<url><loc>{e(b + '/' + path)}</loc></url>" for path in written)
+        urls = "".join(f"<url><loc>{e(b + '/' + pretty(path))}</loc></url>" for path in written)
         (DIST / "sitemap.xml").write_text(
             f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>\n', encoding="utf-8")
         (DIST / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {b}/sitemap.xml\n", encoding="utf-8")
