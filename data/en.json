@@ -1,0 +1,2854 @@
+{
+ "stores": {
+  "koiwa": {
+   "name": "Ramen Jiro Koiwa",
+   "short": "Koiwa",
+   "nickname": "Koiwa",
+   "city": "Edogawa, Tokyo",
+   "address": "3-31-13 Nishi-Koiwa, Edogawa-ku, Tokyo",
+   "access": [
+    "3 min walk from Koiwa Station (JR Sobu Line), North Exit, on Kuramaebashi-dori"
+   ],
+   "closed_text": "Sundays, Mondays and public holidays",
+   "hours_notes": [
+    "Closes when the noodles run out; closing is announced on X",
+    "Saturdays are takeout only (reservation required, sold through the official LINE account)",
+    "The 15:00 closing time in the table is approximate"
+   ],
+   "rules": [
+    "No ticket machine: order out loud after you sit down and pay in cash up front",
+    "If you only have ¥5,000 or ¥10,000 bills, ask for change before you sit down",
+    "No entry if you have been drinking",
+    "No noodle-firmness requests, and no mashi, mashi-mashi (extra toppings) or double",
+    "Only one person may wait inside"
+   ],
+   "features": [
+    "Non-emulsified (hi-nyuka) soup with plenty of liquid fat on top",
+    "Soft noodles and rolled pork",
+    "The owner always cooks",
+    "Open weekday lunchtimes only"
+   ],
+   "menu": {
+    "小ラーメン": "Small ramen",
+    "生卵": "Raw egg",
+    "ウーロン茶": "Oolong tea"
+   }
+  },
+  "hibarigaoka": {
+   "name": "Ramen Jiro Hibarigaoka Ekimae",
+   "short": "Hibarigaoka Ekimae",
+   "nickname": "Hibari",
+   "city": "Nishitokyo, Tokyo",
+   "address": "Hibarigaoka Plaza 1F, 3-27-24 Yatocho, Nishitokyo-shi, Tokyo",
+   "access": [
+    "3–5 min walk from Hibarigaoka Station (Seibu Ikebukuro Line), South Exit"
+   ],
+   "closed_text": "Sundays (public holidays vary)",
+   "hours_notes": [
+    "Wednesdays: lunch only",
+    "Closes when the noodles run out",
+    "Holiday openings and special days (non-emulsified soup days, takeout-kit-only days, etc.) are announced on the official X account"
+   ],
+   "rules": [
+    "Buy your meal ticket after you go inside, not before",
+    "No firm-noodle requests",
+    "No mashi-mashi (double-extra toppings)",
+    "For toppings paid in cash, such as the seasoned egg, put the coins on your ticket (bring small change)",
+    "Queue in order, starting from the waiting chairs in front of the shop"
+   ],
+   "features": [
+    "Rich emulsified (nyuka) soup — creamy and cloudy",
+    "Vegetables piled high like a tower",
+    "A popular shop that always has a line"
+   ],
+   "menu": {
+    "小ラーメン（豚2枚）": "Small ramen (2 slices of pork)",
+    "大ラーメン（豚2枚）": "Large ramen (2 slices of pork)",
+    "小ラーメン豚入り（豚4枚）": "Small ramen with extra pork (4 slices)",
+    "味つけタマゴ（現金）": "Seasoned egg (pay in cash)"
+   }
+  },
+  "tachikawa": {
+   "name": "Ramen Jiro Tachikawa",
+   "short": "Tachikawa",
+   "nickname": "Tachikawa",
+   "city": "Tachikawa, Tokyo",
+   "address": "2-10-1 Shibasakicho, Tachikawa-shi, Tokyo",
+   "access": [
+    "5–7 min walk from Tachikawa Station (JR), South Exit",
+    "Near Tachikawa-Minami Station (Tama Monorail)"
+   ],
+   "closed_text": "Tuesdays (public holidays vary)",
+   "hours_notes": [
+    "The official X account often announces \"no selling out before closing time\": if you are in line by closing time, you will be served",
+    "Evening hours were extended to 17:00–21:30 in September 2025",
+    "In some months the shop also opens on a Tuesday (its regular day off)",
+    "Opening days and limited-time specials are announced on the official X account",
+    "In October 2026 the shop plans to open on 29 of 31 days (including some Tuesdays, its usual day off). Check the official X account for days off"
+   ],
+   "rules": [
+    "Line up in single file along the building",
+    "Do not block the entrance to the parking lot next door",
+    "At the waiting chairs inside, wait until staff tell you to sit",
+    "Drinks from the vending machine in front of the shop may be brought in",
+    "Karame (extra seasoning) cannot be asked for in your call; add the soy tare on the counter yourself (as the notice inside says)"
+   ],
+   "features": [
+    "Mild soup leaning emulsified (nyuka)",
+    "The owner trained at the Ichinoe shop",
+    "Many variations and specials: shiru-nashi (soupless), tsuke-aji (dipping-style seasoning), the spicy \"Aka\" and more",
+    "Reopened under a new owner on 2023-01-29 (the previous Tachikawa shop had been closed since June 2020)",
+    "Pata-ro, a limited-time, limited-quantity special since September 2026: chicken oil, nori seaweed and spinach give it an iekei-style touch. Add a shiru-nashi (soupless) ticket for \"Maze Pata-ro\". Check the official X account for the days it is served"
+   ],
+   "menu": {
+    "ラーメン（麺280g・豚2枚）": "Ramen (280 g noodles, 2 slices of pork)",
+    "少なめ（麺200g・豚1枚）": "Less noodles (200 g noodles, 1 slice of pork)",
+    "大ラーメン": "Large ramen",
+    "汁なし変更（追加券）": "Change to Shiru-nashi (soupless) — add-on ticket",
+    "相伝（つけ味）変更（追加券）": "Change to Soden (tsuke-aji, dipping-style seasoning) — add-on ticket",
+    "ぶた増し（+2枚）": "Extra pork (+2 slices)",
+    "生たまご": "Raw egg",
+    "味付煮玉子": "Seasoned boiled egg",
+    "ぱた郎に変更（2026年9月〜の期間・数量限定。海苔・ほうれん草・自家製鶏油入り）": "Change to Pata-ro (limited time and quantity, since September 2026; adds nori seaweed, spinach and house-made chicken oil)",
+    "ネギ": "Green onions"
+   }
+  },
+  "senjuohashi": {
+   "name": "Ramen Jiro Senju-Ohashi Ekimae",
+   "short": "Senju-Ohashi Ekimae",
+   "nickname": "Senju-Ohashi",
+   "city": "Adachi, Tokyo",
+   "address": "10-8 Senju-Hashidocho, Adachi-ku, Tokyo",
+   "access": [
+    "Right outside the ticket gate of Senju-Ohashi Station (Keisei Main Line), under 1 min walk"
+   ],
+   "closed_text": "Thursdays and Sundays (public holidays vary)",
+   "hours_notes": [
+    "15:30 is last order",
+    "No dine-in on Saturdays. Takeout is sold from around 15:00–15:30 (X followers only, until sold out)",
+    "Summer breaks and other closures are announced on X"
+   ],
+   "rules": [
+    "Even if there is a line, buy your meal ticket from the machine first, then join the line",
+    "Groups of 2 or more: wait at the entrance until you are shown in",
+    "No firm-noodle requests",
+    "Inside, photos of your ramen only"
+   ],
+   "features": [
+    "Non-emulsified (hi-nyuka) soup with strong soy sauce",
+    "Very soft \"dero\" noodles",
+    "Rayu (chili oil) can be added in your topping call almost all year round",
+    "Saturdays: takeout only"
+   ],
+   "menu": {
+    "小ラーメン": "Small ramen",
+    "小豚ラーメン": "Small ramen + extra pork",
+    "大ラーメン": "Large ramen",
+    "大豚ラーメン": "Large ramen + extra pork",
+    "学生限定 大豚": "Students only: large ramen + extra pork",
+    "生たまご": "Raw egg"
+   }
+  },
+  "nishidai": {
+   "name": "Ramen Jiro Nishidai Ekimae",
+   "short": "Nishidai Ekimae",
+   "nickname": "Nishidai",
+   "city": "Itabashi, Tokyo",
+   "address": "Metroad Nishidai 1F, 3-9-7 Hasune, Itabashi-ku, Tokyo",
+   "access": [
+    "1 min walk from Nishidai Station (Toei Mita Line), East Exit, under the elevated tracks"
+   ],
+   "closed_text": "Sundays",
+   "hours_notes": [
+    "Hours changed as announced on the official X account on 2025-11-16: longer Saturday hours and lunch opening on public holidays",
+    "Closes when ingredients run out (announced on X; the sign light going off means it has closed)",
+    "Sometimes opens a little before the stated time"
+   ],
+   "rules": [
+    "Say your noodle amount out loud when the owner asks (showing your ticket is not enough)",
+    "Follow the owner's directions on where to wait, inside and outside",
+    "No firm-noodle requests",
+    "Wipe the counter after eating",
+    "No unnecessary chatting while eating",
+    "Do not post online the URL of the line live stream shown inside the shop",
+    "One person cannot order two bowls at once (as answered on the official X account)"
+   ],
+   "features": [
+    "Lightly emulsified to non-emulsified soup with a strong pork flavor",
+    "Mostly lean pork",
+    "Generous noodles (about 350 g for a small)",
+    "Many toppings: SK (spicy), aburi (seared pork), kuzushi (crumbled pork) and more"
+   ],
+   "menu": {
+    "ラーメン 小": "Small ramen",
+    "ラーメン 少なめ": "Ramen, less noodles",
+    "ラーメン 半分": "Ramen, half noodles",
+    "ミニラーメン": "Mini ramen",
+    "汁なし（追加）": "Shiru-nashi (soupless) add-on",
+    "炙り（追加・現金）": "Aburi (seared pork) add-on, pay in cash",
+    "崩し（追加）": "Kuzushi (crumbled pork) add-on",
+    "ショウガ（半分）": "Ginger (half portion)",
+    "白ネギ／青ネギ": "White or green onions"
+   }
+  },
+  "hitotsubashi": {
+   "name": "Ramen Jiro Hitotsubashi-Gakuen",
+   "short": "Hitotsubashi-Gakuen",
+   "nickname": "Hitotsubashi-Gakuen",
+   "city": "Kodaira, Tokyo",
+   "address": "2-13-4 Gakuen-Nishimachi, Kodaira-shi, Tokyo",
+   "access": [
+    "2–3 min walk from Hitotsubashi-Gakuen Station (Seibu Tamako Line), South Exit"
+   ],
+   "closed_text": "Thursdays (holiday openings are announced when they happen)",
+   "hours_notes": [
+    "When open on a public holiday: 11:00–16:00 (announced on the official X account)",
+    "The monthly schedule is posted on the official X account, along with unscheduled closures and early closings",
+    "May open early when the line is long"
+   ],
+   "rules": [
+    "Up to 3 people may wait inside; from the 4th person on, line up outside along the wall",
+    "Inside, buy your meal ticket and wait next to the water dispenser until staff seat you",
+    "Ask for firm noodles, half noodles, etc. when you show your ticket"
+   ],
+   "features": [
+    "Lightly emulsified soup",
+    "Generous noodles (about 350 g for a small)",
+    "The owner trained at the Jimbocho shop",
+    "Opened 2022-08-11"
+   ],
+   "menu": {
+    "小ラーメン（豚1枚）": "Small ramen (1 slice of pork)",
+    "大ラーメン（豚1枚）": "Large ramen (1 slice of pork)",
+    "生卵": "Raw egg"
+   }
+  },
+  "kawasaki": {
+   "name": "Ramen Jiro Keikyu Kawasaki",
+   "short": "Keikyu Kawasaki",
+   "nickname": "Kawasaki",
+   "city": "Kawasaki, Kanagawa",
+   "address": "2-10-1 Honcho, Kawasaki-ku, Kawasaki-shi, Kanagawa",
+   "access": [
+    "6–8 min walk from Keikyu Kawasaki Station (Keikyu Main Line / Daishi Line)",
+    "10–12 min walk from Kawasaki Station (JR)"
+   ],
+   "closed_text": "Sundays and public holidays",
+   "hours_notes": [
+    "Lunch often opens around 11:15–11:20",
+    "Longer breaks around Golden Week (early May), summer and New Year (announced in the shop's email newsletter)"
+   ],
+   "rules": [
+    "Do not buy a meal ticket until staff call you (buy it once you are shown inside)",
+    "Staff ask your ramen size while you are in line",
+    "No firm-noodle requests"
+   ],
+   "features": [
+    "Light, lightly emulsified soup",
+    "Thinner, softer noodles",
+    "Modest portions by Jiro standards, easy to finish",
+    "Relatively short lines and a calm atmosphere"
+   ],
+   "menu": {
+    "小ラーメン": "Small ramen",
+    "小ブタ": "Small ramen + extra pork",
+    "小ダブル": "Small ramen + double pork",
+    "大ラーメン": "Large ramen",
+    "大ブタ": "Large ramen + extra pork",
+    "大ダブル": "Large ramen + double pork"
+   }
+  },
+  "sagamiono": {
+   "name": "Ramen Jiro Sagami-Ono",
+   "short": "Sagami-Ono",
+   "nickname": "Sumoji",
+   "city": "Sagamihara, Kanagawa",
+   "address": "MK Plaza II #103, 6-14-9 Sagami-Ono, Minami-ku, Sagamihara-shi, Kanagawa",
+   "access": [
+    "6–8 min walk from Sagami-Ono Station (Odakyu Odawara / Enoshima lines), North Exit, via the Ginza-dori shopping street",
+    "No car parking (bicycle parking available)"
+   ],
+   "closed_text": "Mondays (also irregular closures on public holidays, in bad weather, etc.)",
+   "hours_notes": [
+    "Served if you arrive and join the line by closing time",
+    "The weekly schedule and unscheduled closures are announced on the official X and Facebook accounts (some weeks closed on Sunday or lunch only)",
+    "May close on days with a typhoon landfall or a heavy snow forecast",
+    "Has opened 10:00–15:00 on public holidays"
+   ],
+   "rules": [
+    "No smoking anywhere on the premises, including in line",
+    "No saving places in line for others, and no cutting in",
+    "Children who cannot eat on their own are not allowed in; one bowl per person",
+    "The ticket machine takes ¥1,000 bills and coins only (no change given for larger bills)",
+    "No requests for mashi, mashi-mashi (extra toppings), firm noodles, no fat, etc. Your topping call can be ninniku (garlic), yasai (bean sprouts and cabbage), abura (back fat), karame (stronger seasoning) or sonomama (as is)",
+    "Do not bring your own seasonings; drinks only if bought from the shop's vending machine",
+    "No videos, and no photos with people in them",
+    "Sit where staff direct you and do not change seats",
+    "If you want to order two bowls at once, ask the owner first (it may not be possible when busy)"
+   ],
+   "features": [
+    "Mild, slightly sweet emulsified (nyuka) soup",
+    "The owner is a former sumo wrestler (hence the nickname \"Sumoji\")",
+    "Choose your noodle amount by percentage on the ticket",
+    "Plenty of specials and paid toppings",
+    "Has an official website"
+   ],
+   "menu": {
+    "ラーメン100%（小）": "Ramen 100% (small)",
+    "ラーメンより少なめ70%": "Less noodles 70%",
+    "少なめより少なめ50%": "Even less noodles 50%",
+    "大盛り150%": "Large 150%",
+    "つけめん変更（追加券）": "Change to Tsukemen (dipping noodles) — add-on ticket",
+    "賄い（まぜ麺）変更（追加券）": "Change to Makanai (mazemen, mixed noodles) — add-on ticket",
+    "ブタ増し": "Extra pork",
+    "ひやコロ変更（麺を冷水で締める・2026年夏の期間限定、10月4日まで）": "Hiyakoro option (noodles chilled in cold water; summer 2026 special, until 4 October)"
+   }
+  },
+  "kannai": {
+   "name": "Ramen Jiro Yokohama Kannai",
+   "short": "Yokohama Kannai",
+   "nickname": "Kannai",
+   "city": "Yokohama, Kanagawa",
+   "address": "6-94 Chojamachi, Naka-ku, Yokohama-shi, Kanagawa",
+   "access": [
+    "2–4 min walk from Isezaki-chojamachi Station (Yokohama Municipal Subway Blue Line)",
+    "7–10 min walk from Kannai Station (JR Negishi Line), North Exit",
+    "8–9 min walk from Hinodecho Station (Keikyu Main Line)"
+   ],
+   "closed_text": "Wednesdays",
+   "hours_notes": [
+    "Closes when the noodles run out",
+    "Open as usual on public holidays (not confirmed for holidays that fall on a Wednesday)",
+    "Unscheduled closures and specials (miso days, the free \"Are\" topping, etc.) are announced on the official X account"
+   ],
+   "rules": [
+    "Line up in single file, even in a group",
+    "No waiting inside. Line up outside without blocking the bicycles of the shop next door",
+    "Staff ask your noodle amount while you are in line; say then if you want shiru-nashi (soupless)",
+    "After finishing a shiru-nashi, you can ask for soup to be poured into the bowl",
+    "No smoking"
+   ],
+   "features": [
+    "Known as the birthplace of shiru-nashi (soupless) Jiro",
+    "Sweetish emulsified (nyuka) soup with plenty of back fat",
+    "You can ask for beni (pickled red ginger) in your topping call",
+    "Even when there is a line, it moves quickly",
+    "Around its anniversary every October (the 22nd in October 2026) the shop usually serves specials such as miso ramen. Details and dates are announced on the official X account",
+    "Limited-time \"Tsumetai Shiru-nashi\" (cold soupless noodles: both the noodles and vegetables are chilled), served from summer 2026 until 4 October"
+   ],
+   "menu": {
+    "小ラーメン（豚2枚）": "Small ramen (2 slices of pork)",
+    "小ぶた（豚5枚）": "Small ramen + extra pork (5 slices)",
+    "小ぶたダブル（豚8枚）": "Small ramen + double pork (8 slices)",
+    "大ラーメン（豚2枚）": "Large ramen (2 slices of pork)",
+    "大ぶた（豚5枚）": "Large ramen + extra pork (5 slices)",
+    "大ぶたダブル（豚8枚）": "Large ramen + double pork (8 slices)",
+    "汁なし変更（追加券）": "Change to Shiru-nashi (soupless) — add-on ticket",
+    "ネギ": "Green onions",
+    "ニラキムチ": "Chive kimchi",
+    "生卵（現金）": "Raw egg (pay cash)"
+   }
+  },
+  "fujisawa": {
+   "name": "Ramen Jiro Shonan Fujisawa",
+   "short": "Shonan Fujisawa",
+   "nickname": "Fujisawa",
+   "city": "Fujisawa, Kanagawa",
+   "address": "1-10-14 Honmachi, Fujisawa-shi, Kanagawa",
+   "access": [
+    "9 min walk from Fujisawa Station (JR Tokaido Line / Odakyu Enoshima Line), North Exit, via Ginza-dori",
+    "9 min walk from Fujisawa-Hommachi Station (Odakyu Enoshima Line)"
+   ],
+   "closed_text": "Tuesdays",
+   "hours_notes": [
+    "Served if you go in by 14:30 (lunch) or 21:00 (evening)",
+    "Closes when the noodles run out",
+    "May open early when busy",
+    "Open on public holidays (not confirmed for holidays that fall on a Tuesday). Unscheduled closures are announced on the official X account",
+    "Tsukemen (dipping noodles) from about June to September, shiru-nashi (soupless) the rest of the year (in 2026, tsukemen ended in September and shiru-nashi started in October)"
+   ],
+   "rules": [
+    "Before opening, do not line up until the waiting room opens",
+    "Do not use the convenience store parking lot diagonally across the street (if you do, you will be asked to leave)",
+    "No firm-noodle requests",
+    "If you are waiting for companions after eating, wait in the waiting room"
+   ],
+   "features": [
+    "Sharp, soy-forward soup leaning non-emulsified (hi-nyuka)",
+    "Generous portions",
+    "Waiting room next door",
+    "Takeout available (ramen sets, whole pork blocks, raw noodles)"
+   ],
+   "menu": {
+    "ラーメン（豚2枚）": "Ramen (2 slices of pork)",
+    "ラーメン少なめ（豚2枚）": "Ramen, less noodles (2 slices of pork)",
+    "ラーメン半分（豚2枚）": "Ramen, half noodles (2 slices of pork)",
+    "大ラーメン（豚2枚）": "Large ramen (2 slices of pork)",
+    "ぶた入り（追加）": "Extra pork (add-on)",
+    "つけ麺変更（夏季・追加券）": "Change to Tsukemen (dipping noodles; summer) — add-on ticket",
+    "汁なし変更（夏季以外・追加券）": "Change to Shiru-nashi (soupless; outside summer) — add-on ticket"
+   }
+  },
+  "nakayama": {
+   "name": "Ramen Jiro Nakayama Ekimae",
+   "short": "Nakayama Ekimae",
+   "nickname": "Nakayama",
+   "city": "Yokohama, Kanagawa",
+   "address": "Doi Bldg. 1F, 309-1 Daimuracho, Midori-ku, Yokohama-shi, Kanagawa",
+   "access": [
+    "2 min walk from Nakayama Station (JR Yokohama Line / Yokohama Municipal Subway Green Line), South Exit"
+   ],
+   "closed_text": "Thursdays",
+   "hours_notes": [
+    "Closes when the noodles run out",
+    "Open on public holidays (not confirmed for holidays that fall on a Thursday)",
+    "Unscheduled closures and limited-time menus are announced on the official X account"
+   ],
+   "rules": [
+    "When the shop is full, wait outside until you are shown in",
+    "When you get near the shop, buy your meal ticket and go back to your place in line",
+    "For tsukemen, no requests for firm or soft noodles or atsumori (noodles served hot)",
+    "No smoking"
+   ],
+   "features": [
+    "Non-emulsified (hi-nyuka) soup",
+    "Specials change most weeks and are announced every Friday on the official X account (tsukemen, shiru-nashi, cold noodles and more)",
+    "Wide choice of paid toppings",
+    "Mashi-mashi (double-extra toppings) OK"
+   ],
+   "menu": {
+    "小ラーメン（ぶた2枚）": "Small ramen (2 slices of pork)",
+    "小ラーメン（ぶた5枚）": "Small ramen (5 slices of pork)",
+    "限定（つけ麺・汁なし等）変更（追加券）": "Change to the current special (tsukemen, shiru-nashi, etc.) — add-on ticket",
+    "生卵": "Raw egg",
+    "ピリ辛にらだれ": "Spicy garlic-chive sauce",
+    "甘〜い脂": "Sweet back fat"
+   }
+  },
+  "ikuta": {
+   "name": "Ramen Jiro Ikuta Ekimae",
+   "short": "Ikuta Ekimae",
+   "nickname": "Ikuta",
+   "city": "Kawasaki, Kanagawa",
+   "address": "8-1-15 Ikuta, Tama-ku, Kawasaki-shi, Kanagawa",
+   "access": [
+    "3–4 min walk from Ikuta Station (Odakyu Odawara Line), North Exit, along the tracks"
+   ],
+   "closed_text": "Wednesdays (plus a few other days each month)",
+   "hours_notes": [
+    "Usually no early cutoff: if you are in line by 15:00 (lunch) or 21:00 (evening), you will be served",
+    "Besides Wednesdays, closed a few days each month and for a summer break. The monthly schedule is announced on the official X account",
+    "Open on public holidays (including those in September 2026)",
+    "Has opened during the New Year holidays (January 1–3)"
+   ],
+   "rules": [
+    "When waiting outside, face the railway tracks out of consideration for neighbors",
+    "Do not let the line spill onto the road",
+    "Keep quiet in line and inside",
+    "Go in and buy your meal ticket when a waiting seat inside becomes free",
+    "No smoking"
+   ],
+   "features": [
+    "Non-emulsified (hi-nyuka) soup",
+    "The owner trained at the Meguro shop",
+    "Modest portions by Jiro standards",
+    "In summer the shop serves \"Hiyashi\", ramen in a cold soup — the only one of its kind among Jiro shops (the 2026 season ended on 22 September)",
+    "Opened 2023-05-21"
+   ],
+   "menu": {
+    "小ラーメン（豚2枚）": "Small ramen (2 slices of pork)",
+    "小豚入り（豚4枚）": "Small ramen + extra pork (4 slices)",
+    "大ラーメン（豚2枚）": "Large ramen (2 slices of pork)",
+    "生卵": "Raw egg",
+    "魚玉（うおだま・現金、当面の限定）": "Uodama (a ball of fish powder to melt into the soup; pay cash, limited time)"
+   }
+  },
+  "kawagoe": {
+   "name": "Ramen Jiro Kawagoe",
+   "short": "Kawagoe",
+   "nickname": "Kawagoe",
+   "city": "Kawagoe, Saitama",
+   "address": "1-4-15 Asahicho, Kawagoe-shi, Saitama",
+   "access": [
+    "10 min walk from Kawagoe Station (JR Kawagoe Line / Tobu Tojo Line), West Exit",
+    "15 min walk from Hon-Kawagoe Station (Seibu Shinjuku Line)",
+    "Right by the Arajukumachi bus stop (Seibu Bus)"
+   ],
+   "closed_text": "Mondays (plus irregular closures)",
+   "hours_notes": [
+    "The official X account posts each morning how the shop is open that day (all day, lunch only, etc.)",
+    "Unscheduled closures are announced on the official X and Tumblr (e.g. closed 2026-10-02)",
+    "Public holiday openings depend on announcements"
+   ],
+   "rules": [
+    "Photos of your ramen only",
+    "Groups: line up only once everyone has arrived",
+    "Line up quietly without touching the wall of the house next door, and keep the entrance clear",
+    "When you finish, put your bowl on the upper counter"
+   ],
+   "features": [
+    "Mild soup leaning emulsified (nyuka)",
+    "The owner trained at the Yokohama Kannai shop",
+    "Shiru-nashi (soupless), summer tsukemen and weekly special toppings; miso ramen and miso tsukemen appear as limited-time specials"
+   ],
+   "menu": {
+    "ラーメン": "Ramen",
+    "汁なし": "Shiru-nashi (soupless)",
+    "つけ麺": "Tsukemen (dipping noodles)",
+    "麺増し": "Extra noodles",
+    "豚増し": "Extra pork",
+    "生卵": "Raw egg",
+    "うずら": "Quail eggs",
+    "持ち帰り": "Takeout"
+   }
+  },
+  "koshigaya": {
+   "name": "Ramen Jiro Koshigaya",
+   "short": "Koshigaya",
+   "nickname": "Koshigaya",
+   "city": "Koshigaya, Saitama",
+   "address": "2-3-7 Koshigaya, Koshigaya-shi, Saitama",
+   "access": [
+    "3 min walk from Koshigaya Station (Tobu Skytree Line)"
+   ],
+   "closed_text": "Saturdays and Sundays (with special openings)",
+   "hours_notes": [
+    "Times shown are last orders (based on the official X account's morning posts)",
+    "Closed on weekends as a rule, but often opens specially (in September 2026: the 5th, 13th and 26th, 10:00–14:00 last order)",
+    "On public holidays it has been opening for lunch only, 10:00–14:00 last order",
+    "Occasional unscheduled weekday closures (e.g. 2026-10-02)"
+   ],
+   "rules": [
+    "Groups: line up only once everyone has arrived",
+    "No photos of the kitchen, staff or other customers",
+    "No requests for firm noodles (katame) or mashi-mashi (double-extra toppings)",
+    "Ask for a different noodle amount when you show your ticket",
+    "Do not bring your own seasonings"
+   ],
+   "features": [
+    "Soup leaning non-emulsified (hi-nyuka), with well-balanced soy sauce",
+    "Shiru-nashi (soupless) and shio (salt) shiru-nashi available",
+    "The owner trained at the Shonan Fujisawa shop"
+   ],
+   "menu": {
+    "ラーメン（豚1枚）": "Ramen (1 slice of pork)",
+    "ラーメン（豚2枚）": "Ramen (2 slices of pork)",
+    "つけ麺変更": "Change to Tsukemen (dipping noodles)",
+    "生卵": "Raw egg",
+    "キムチ": "Kimchi",
+    "しょうが": "Ginger",
+    "マキシマムこいたまご": "Maximum Koi-Tamago (egg topping)"
+   }
+  },
+  "omiya": {
+   "name": "Ramen Jiro Omiya-Koen Ekimae",
+   "short": "Omiya-Koen Ekimae",
+   "nickname": "Omiya-Koen",
+   "city": "Saitama City, Saitama",
+   "address": "1-24 Junocho, Omiya-ku, Saitama-shi, Saitama",
+   "access": [
+    "2 min walk from Omiya-Koen Station (Tobu Urban Park Line)"
+   ],
+   "closed_text": "Wednesdays",
+   "hours_notes": [
+    "May close early when ingredients run out",
+    "Takeout without bringing your own pot: 2 servings minimum (since 2026-08)"
+   ],
+   "rules": [
+    "Once more than 5 people are waiting inside and 5 outside, line up on the sidewalk across the street",
+    "No smoking on the street while in line",
+    "This is a residential area: please queue quietly",
+    "No car or bicycle parking",
+    "One person cannot order two bowls at once (as of September 2026)"
+   ],
+   "features": [
+    "Soup leaning non-emulsified (hi-nyuka), with tender pork",
+    "Free toppings include ginger",
+    "The owner trained at the former Omiya shop, which has since closed"
+   ],
+   "menu": {
+    "小": "Small ramen",
+    "小ぶた": "Small ramen + extra pork",
+    "大": "Large ramen",
+    "大ぶた": "Large ramen + extra pork",
+    "生たまご": "Raw egg",
+    "玉ねぎ（日により長ねぎ）": "Chopped onion (leek on some days)",
+    "おろしぽん酢": "Grated daikon with ponzu",
+    "持ち帰り豚": "Pork to take home"
+   }
+  },
+  "matsudo": {
+   "name": "Ramen Jiro Matsudo Ekimae III",
+   "short": "Matsudo Ekimae III",
+   "nickname": "Matsudo",
+   "city": "Matsudo, Chiba",
+   "address": "17-9 Honcho, Matsudo-shi, Chiba",
+   "access": [
+    "4–5 min walk from Matsudo Station (JR Joban Line / Keisei Matsudo Line, formerly the Shin-Keisei Line), West Exit"
+   ],
+   "closed_text": "Sundays (public holidays vary)",
+   "hours_notes": [
+    "Opening time varies, since the shop opens once the soup is ready",
+    "May close early when the noodles run out",
+    "Openings on public holidays and long weekends are announced on the official X account (e.g. closed Saturday 2026-09-19)"
+   ],
+   "rules": [
+    "Line up only once your whole group is there (no saving places, no joining later)",
+    "No talking or smoking in line (smoking there also breaks a city ordinance)",
+    "No photos inside the shop and no posting them on social media",
+    "No requests for mashi, mashi-mashi (extra toppings), firm noodles (katame), or flavor changes ordered in advance",
+    "No strollers; heavily drunk people are not allowed in",
+    "No takeout"
+   ],
+   "features": [
+    "Generous portions and a rich, lightly emulsified soup",
+    "Evenings only",
+    "Run by the third owner since 2015",
+    "Order a large with extra pork (大豚) and call for yasai (vegetables), and it comes split into two bowls"
+   ],
+   "menu": {
+    "半分（豚1枚）": "Half noodles (1 slice of pork)",
+    "小（豚1枚）": "Small ramen (1 slice of pork)",
+    "小": "Small ramen",
+    "小豚": "Small ramen + extra pork",
+    "大": "Large ramen",
+    "大豚": "Large ramen + extra pork"
+   }
+  },
+  "mita": {
+   "name": "Ramen Jiro Mita Honten",
+   "short": "Mita Honten",
+   "nickname": "Mita",
+   "city": "Minato, Tokyo",
+   "address": "2-16-4 Mita, Minato-ku, Tokyo",
+   "access": [
+    "8 min walk from Mita Station (Toei Asakusa / Mita lines), Exit A3",
+    "10 min walk from Tamachi Station (JR Yamanote / Keihin-Tohoku lines), Mita Exit (West Exit)",
+    "Right by the Keio Gijuku Daigaku-mae stop (Toei Bus)"
+   ],
+   "closed_text": "Sundays and public holidays",
+   "hours_notes": [
+    "The posted opening time is 8:30, but in 2026 it has usually opened around 8:00",
+    "Evening service starts at 17:00. On many days the noodles run out and staff close the line sometime between 18:00 and 20:00",
+    "No evening service on some 2nd or 3rd Saturdays",
+    "Longer breaks such as a summer holiday (no official X account; check notices at the shop or recent reviews)"
+   ],
+   "rules": [
+    "Inside, photograph only your own bowl",
+    "No holding a place in line for friends who arrive later",
+    "No smoking, including while in line",
+    "Buy your meal ticket when you near the front of the line. Ask for less, half or firm noodles when you show your ticket (not after you sit down)",
+    "Extra noodles only with the large ramen",
+    "No “mashimashi” (extra-extra) toppings. Garlic is added only if you ask for it",
+    "Asking for abura (back fat) automatically adds karame (extra soy tare) as well; say so in your call if you do not want it"
+   ],
+   "features": [
+    "Lightly emulsified soup (closer to clear on some days)",
+    "The original shop, with the founder in the kitchen",
+    "Opens around 8:00 in the morning",
+    "Standard Jiro portion (about 300 g of noodles in a small)"
+   ],
+   "menu": {
+    "小ラーメン": "Small ramen",
+    "小豚ラーメン": "Small ramen + extra pork",
+    "小ぶたダブル": "Small ramen + double pork",
+    "大ラーメン": "Large ramen",
+    "大豚ラーメン": "Large ramen + extra pork",
+    "大ぶたダブル": "Large ramen + double pork"
+   }
+  },
+  "meguro": {
+   "name": "Ramen Jiro Meguro",
+   "short": "Meguro",
+   "nickname": "Meguro",
+   "city": "Meguro, Tokyo",
+   "address": "3-7-2 Meguro, Meguro-ku, Tokyo",
+   "access": [
+    "12 min walk from Meguro Station (JR Yamanote, Tokyu Meguro, Tokyo Metro Namboku and Toei Mita lines), West Exit; go down Gonnosuke-zaka toward Yamate-dori",
+    "17 min walk from Naka-Meguro Station (Tokyu Toyoko / Tokyo Metro Hibiya lines)"
+   ],
+   "closed_text": "Open daily for now (occasional unscheduled closures)",
+   "hours_notes": [
+    "Closing time varies with the length of the line and when the noodles run out",
+    "Occasional unscheduled closures or changed hours (no confirmed official announcement account)"
+   ],
+   "rules": [
+    "Line up in a U shape following the marks on the sidewalk; buy your meal ticket when you get close to the shop",
+    "While in line you'll be asked to show the color of your ticket. Ask for less noodles when staff ask small or large",
+    "No “mashimashi” (extra-extra) toppings",
+    "After eating, put your bowl up on the counter and wipe your spot before leaving",
+    "Please eat promptly"
+   ],
+   "features": [
+    "Light, clear (non-emulsified) soup",
+    "Among the cheapest of the main-line Jiro shops",
+    "Manageable portion (about 250 g of noodles in a small)",
+    "The line moves quickly"
+   ],
+   "menu": {
+    "小ラーメン": "Small ramen",
+    "小豚入り": "Small ramen + extra pork",
+    "小W豚入り": "Small ramen + double pork",
+    "大ラーメン": "Large ramen",
+    "大豚入り": "Large ramen + extra pork",
+    "大W豚入り": "Large ramen + double pork"
+   }
+  },
+  "sengawa": {
+   "name": "Ramen Jiro Sengawa",
+   "short": "Sengawa",
+   "nickname": "Sengawa",
+   "city": "Chofu, Tokyo",
+   "address": "1-10-17 Sengawacho, Chofu-shi, Tokyo",
+   "access": [
+    "2–3 min walk from Sengawa Station (Keio Line), along the tracks"
+   ],
+   "closed_text": "Sundays and public holidays",
+   "hours_notes": [
+    "Evenings only",
+    "Whether it opens that day, and takeout sales, are often announced on the official X account the same day",
+    "May close early when the noodles run out",
+    "Mondays tend to be the busiest (according to the shop)"
+   ],
+   "rules": [
+    "Buy your meal ticket before joining the line",
+    "No children",
+    "For a large or less noodles, show your ticket and say so when staff check the line",
+    "No “mashimashi” (extra-extra) toppings",
+    "Please keep your phone away while eating and eat promptly"
+   ],
+   "features": [
+    "Clear (non-emulsified) soup",
+    "Dark soy-sauce soup with a hint of ginger",
+    "Big portion (about 350 g of noodles in a small)",
+    "Takeout kits (raw noodles and soup) sold"
+   ],
+   "menu": {
+    "ラーメン（小）": "Ramen (small)",
+    "麺少なめ": "Ramen, less noodles",
+    "大盛ラーメン": "Large ramen"
+   }
+  },
+  "kabukicho": {
+   "name": "Ramen Jiro Shinjuku Kabukicho",
+   "short": "Shinjuku Kabukicho",
+   "nickname": "Kabukicho",
+   "city": "Shinjuku, Tokyo",
+   "address": "Nisshin Bldg. 1F, 2-37-5 Kabukicho, Shinjuku-ku, Tokyo",
+   "access": [
+    "1–3 min walk from Seibu-Shinjuku Station (Seibu Shinjuku Line), North Exit",
+    "3 min walk from Shinjuku Station (Tokyo Metro Marunouchi Line), Exit B13",
+    "7 min walk from JR Shinjuku Station, East Exit"
+   ],
+   "closed_text": "Wednesdays (plus occasional irregular closures)",
+   "hours_notes": [
+    "Tuesday service runs until 2:30 on Wednesday morning",
+    "Summer and other special closures are announced on X (in 2026: closed Aug 3–6)"
+   ],
+   "rules": [
+    "Groups line up only once everyone has arrived",
+    "Free toppings (garlic, vegetables, etc.): you ask once only",
+    "Photos of your bowl only; no self-timer shots",
+    "To ask for firmer or softer noodles, fold your meal ticket"
+   ],
+   "features": [
+    "Lightly emulsified soup",
+    "Open nonstop until 2:30 the next morning",
+    "Tsukemen (dipping noodles) and plenty of paid toppings",
+    "Manageable portion (about 250 g of noodles in a small)"
+   ],
+   "menu": {
+    "ラーメン（ぶた2枚）": "Ramen (2 slices of pork)",
+    "ぶた入り": "Ramen + extra pork",
+    "ぶたダブル": "Ramen + double pork",
+    "大ラーメン": "Large ramen",
+    "大ぶた入り": "Large ramen + extra pork",
+    "大ぶたダブル": "Large ramen + double pork",
+    "つけめん": "Tsukemen (dipping noodles)",
+    "大つけめん": "Large tsukemen",
+    "味玉子": "Seasoned egg",
+    "生とじ玉子": "Soft-set egg (nama-toji)"
+   }
+  },
+  "shinagawa": {
+   "name": "Ramen Jiro Shinagawa",
+   "short": "Shinagawa",
+   "nickname": "Shinagawa",
+   "city": "Shinagawa, Tokyo",
+   "address": "1-18-5 Kitashinagawa, Shinagawa-ku, Tokyo",
+   "access": [
+    "5–6 min walk from Kita-Shinagawa Station (Keikyu Main Line)",
+    "10–12 min walk from Shinagawa Station (JR / Keikyu), Konan Exit (East Exit)"
+   ],
+   "closed_text": "Sundays and public holidays; also closed two Saturdays a month",
+   "hours_notes": [
+    "For now, evening service is Fridays only (the days change often)",
+    "Saturday closures and summer holidays are announced on X",
+    "Closes when sold out. Opens around 10:00",
+    "On some public holidays the shop opens for lunch (e.g. 2026-09-21)",
+    "Friday evenings tend to have long lines; early weekday lunchtimes are usually quieter"
+   ],
+   "rules": [
+    "Don't block the entrance or the shop next door while lining up",
+    "Buy your meal ticket before going in",
+    "Ask for less noodles, less fat or a lighter soup when you hand over your ticket"
+   ],
+   "features": [
+    "Light soup, lightly emulsified to clear, with a sharp soy-sauce edge",
+    "Known for its green-onion topping",
+    "Standard Jiro portion (about 300 g of noodles in a small)"
+   ],
+   "menu": {
+    "小（ブタ2枚）": "Small ramen (2 slices of pork)",
+    "小ブタ5枚": "Small ramen (5 slices of pork)",
+    "小Wブタ8枚": "Small ramen, double pork (8 slices)",
+    "大（ブタ2枚）": "Large ramen (2 slices of pork)",
+    "大ブタ5枚": "Large ramen (5 slices of pork)",
+    "大Wブタ8枚": "Large ramen, double pork (8 slices)",
+    "ネギ": "Green onions",
+    "煮玉子": "Soy-simmered egg"
+   }
+  },
+  "otakibashi": {
+   "name": "Ramen Jiro Shinjuku Otakibashi-dori",
+   "short": "Shinjuku Otakibashi-dori",
+   "nickname": "Otakibashi",
+   "city": "Shinjuku, Tokyo",
+   "address": "1F, 7-5-5 Nishishinjuku, Shinjuku-ku, Tokyo",
+   "access": [
+    "3–6 min walk from Seibu-Shinjuku Station (Seibu Shinjuku Line), North Exit",
+    "5 min walk from Shinjuku-nishiguchi Station (Toei Oedo Line), Exit D5",
+    "5–6 min walk from Okubo Station (JR Chuo-Sobu Line), South Exit",
+    "10 min walk from JR Shinjuku Station, West Exit"
+   ],
+   "closed_text": "Open daily (closed only on New Year's Day)",
+   "hours_notes": [
+    "Times shown are last orders; the shop closes at 23:00 Mon–Sat and 22:00 on Sundays and holidays",
+    "Sources differ on whether public holidays follow Sunday hours",
+    "Golden Week and New Year hours are announced on X"
+   ],
+   "rules": [
+    "Buy your meal ticket first, then join the line",
+    "Ask for your toppings when you hand over your ticket, not when the bowl is about to be served",
+    "Garlic is added only if you ask. You can choose back fat in chunks or liquid",
+    "For the tokumori (“Dai-Jiro”, extra-large), order only as many noodle portions as you can finish"
+   ],
+   "features": [
+    "Rich, emulsified soup sweetened by back fat",
+    "Extra-thick noodles",
+    "Tsukemen (dipping noodles) and shiru-nashi (soupless; extra charge, cash)",
+    "Table seating available"
+   ],
+   "menu": {
+    "ラーメン（小）": "Ramen (small)",
+    "ぶた入りラーメン": "Ramen + extra pork",
+    "ぶた入りWラーメン": "Ramen + double pork",
+    "大ラーメン": "Large ramen",
+    "大盛ぶた入りラーメン": "Large ramen + extra pork",
+    "小つけ麺": "Small tsukemen (dipping noodles)",
+    "大盛つけ麺": "Large tsukemen",
+    "学割ラーメン": "Student-discount ramen",
+    "特盛ラーメン（2〜5玉）": "Tokumori extra-large ramen (2–5 noodle portions)",
+    "汁なしに変更（現金）": "Change to shiru-nashi (soupless), cash",
+    "瓶ビール（サッポロ黒ラベル）": "Bottled beer (Sapporo Black Label)"
+   }
+  },
+  "shindaita": {
+   "name": "Ramen Jiro Kannana Shin-Shindaita",
+   "short": "Kannana Shin-Shindaita",
+   "nickname": "Shindaita",
+   "city": "Setagaya, Tokyo",
+   "address": "Sakurai Bldg. 1F, 5-29-5 Daita, Setagaya-ku, Tokyo",
+   "access": [
+    "1–2 min walk from Shindaita Station (Keio Inokashira Line)",
+    "5–10 min walk from Setagaya-Daita Station (Odakyu Line)"
+   ],
+   "closed_text": "Usually Mondays (irregular and unscheduled closures announced on X)",
+   "hours_notes": [
+    "Closing time varies by day (Tabelog lists 16:00)",
+    "Line updates and the day's limited-edition bowls are posted on X",
+    "Large portions are not offered on some days"
+   ],
+   "rules": [
+    "It's a residential area: line up in single file and keep quiet",
+    "Don't park bicycles, motorbikes or cars nearby",
+    "Take out your earphones when you reach the front of the outside line",
+    "Ask for less noodles, half noodles or a lighter soup when you show your ticket. Firmer or softer noodles and no abura (pork back fat) can't be requested",
+    "Inside, photos of your bowl only"
+   ],
+   "features": [
+    "Soy-forward soup with a reddish, cloudy look",
+    "Wide, extra-thick flat noodles",
+    "Many specials (the shop calls them \"gedo\" menus) and \"samashi chuka\" (cold, hiyashi-chuka-style noodles) in summer",
+    "Lunchtime only",
+    "Sells \"buta gohan no moto\" (seasoned pork to mix with rice) to take home"
+   ],
+   "menu": {
+    "小": "Small ramen",
+    "冷まし中華に変更（夏季・現金）": "Change to samashi chuka (cooled-down ramen), summer only, cash",
+    "ねぎ（現金）": "Green onions (cash)",
+    "生たまご（現金）": "Raw egg (cash)"
+   }
+  },
+  "yaen": {
+   "name": "Ramen Jiro Hachioji Yaen Kaido 2",
+   "short": "Hachioji Yaen Kaido 2",
+   "nickname": "Yaen",
+   "city": "Hachioji, Tokyo",
+   "address": "2-13-16 Horinouchi, Hachioji-shi, Tokyo",
+   "access": [
+    "10–12 min walk from Keio-Horinouchi Station (Keio Sagamihara Line)",
+    "Customer parking behind the shop"
+   ],
+   "closed_text": "Mondays (including Monday holidays)",
+   "hours_notes": [
+    "Public holidays: open straight through about 11:00–20:00, except Monday holidays (closed)",
+    "Closing times are approximate; may close early when ingredients run out",
+    "Opens at 8:00 on Sundays",
+    "The shop has announced it may close early, even with people in line, if customers park at neighboring businesses",
+    "The day's hours and limited-edition bowls are announced on X"
+   ],
+   "rules": [
+    "Each person buys their own meal ticket before joining the line",
+    "No joining others already in line or cutting in; line up together",
+    "Firm noodles can't be requested",
+    "Park cars and motorbikes in the shop's lot or a nearby coin parking lot, never at neighboring businesses",
+    "No smoking around the shop"
+   ],
+   "features": [
+    "Rich, emulsified soup",
+    "Generous pork, vegetables and noodles",
+    "Wide range of paid toppings and limited-edition bowls",
+    "Table seating available",
+    "Nabe Jiro (takeout in your own pot) and other takeout"
+   ],
+   "menu": {
+    "小ラーメン": "Small ramen",
+    "プチ二郎": "Petit Jiro (smaller bowl)",
+    "ブタ（増し）": "Extra pork",
+    "ネギ": "Green onions"
+   }
+  },
+  "ikebukuro": {
+   "name": "Ramen Jiro Ikebukuro Higashiguchi",
+   "short": "Ikebukuro Higashiguchi",
+   "nickname": "Ikebukuro",
+   "city": "Toshima, Tokyo",
+   "address": "1F, 2-27-17 Minamiikebukuro, Toshima-ku, Tokyo",
+   "access": [
+    "5 min walk from Ikebukuro Station (JR, Tokyo Metro Marunouchi / Yurakucho lines, Seibu Ikebukuro Line), East Exit"
+   ],
+   "closed_text": "Tuesdays (if Tuesday is a public holiday, open that day and closed Wednesday instead)",
+   "hours_notes": [
+    "Because of the summer heat, evenings only since 2026-07-09; last orders 21:30 since 2026-07-22 (official X, 2026-07-16)",
+    "Times shown are last orders",
+    "Open on Tuesday holidays and closed the following Wednesday instead (e.g. open 2026-09-22, closed 09-23)"
+   ],
+   "rules": [
+    "Groups of 2 or more line up only once everyone has arrived",
+    "Don't block the entrance while lining up",
+    "Inside, photos of your bowl only"
+   ],
+   "features": [
+    "Mild, mostly emulsified soup",
+    "Evenings only since summer 2026, for now",
+    "Sister shop of Shinjuku Kabukicho"
+   ],
+   "menu": {
+    "ラーメン（ぶた2枚）": "Ramen (2 slices of pork)",
+    "ぶた入り（ぶた4枚）": "Ramen + extra pork (4 slices)",
+    "大ラーメン": "Large ramen",
+    "大ぶた入り": "Large ramen + extra pork",
+    "ぶた増し（2枚）": "Extra pork (2 slices)",
+    "うずら玉子": "Quail eggs",
+    "生玉子": "Raw egg",
+    "生姜": "Ginger"
+   }
+  },
+  "kameido": {
+   "name": "Ramen Jiro Kameido",
+   "short": "Kameido",
+   "nickname": "Kameido",
+   "city": "Koto, Tokyo",
+   "address": "Room 101, 4-35-17 Kameido, Koto-ku, Tokyo",
+   "access": [
+    "7–8 min walk from Kameido Station (JR Sobu Line / Tobu Kameido Line), North Exit; head north on Meiji-dori, the shop is on Kuramaebashi-dori"
+   ],
+   "closed_text": "Irregular (announced on the official X account)",
+   "hours_notes": [
+    "Closes when the noodles run out (announced on its separate announcements-only X account)",
+    "Hours sometimes change by season",
+    "Hours based on the official X schedule in effect since February 2025"
+   ],
+   "rules": [
+    "Inside, photos of your bowl only",
+    "No smoking or littering while in line",
+    "No “mashimashi” (extra-extra) toppings",
+    "Tsukemen (dipping noodles): no choice of noodle firmness and no atsumori (noodles served hot)",
+    "The ticket machine takes cash only",
+    "When it is busy, one person cannot order two bowls at once"
+   ],
+   "features": [
+    "Mostly clear soup with a sharp soy-sauce edge",
+    "Rolled pork",
+    "Shiru-nashi (soupless) all year; tsukemen in summer only",
+    "Open for lunch and dinner",
+    "In autumn and winter the shop serves miso ramen on some days (buy a ramen ticket plus the \"today's topping\" ticket; add a shiru-nashi ticket for soupless miso)"
+   ],
+   "menu": {
+    "ラーメン（ブタ1枚）": "Ramen (1 slice of pork)",
+    "大盛りラーメン（ブタ1枚）": "Large ramen (1 slice of pork)",
+    "汁なしに変更": "Change to shiru-nashi (soupless)",
+    "ブタ1枚追加（3枚まで）": "Add 1 slice of pork (up to 3)",
+    "生卵": "Raw egg",
+    "タマネギキムチ": "Onion kimchi",
+    "刻みタマネギ": "Chopped onion"
+   }
+  },
+  "fuchu": {
+   "name": "Ramen Jiro Fuchu",
+   "short": "Fuchu",
+   "nickname": "Fuchu",
+   "city": "Fuchu, Tokyo",
+   "address": "Sekinoya Bldg. 1F, 1-15-5 Miyanishicho, Fuchu-shi, Tokyo",
+   "access": [
+    "2–3 min walk from Fuchu Station (Keio Line), South Exit",
+    "9–10 min walk from Fuchuhommachi Station (JR Nambu / Musashino lines)"
+   ],
+   "closed_text": "Saturdays, Sundays and public holidays",
+   "hours_notes": [
+    "Weekday evenings only",
+    "Changes to opening times are posted on a notice at the shop"
+   ],
+   "rules": [
+    "Photos of your own food only (no photos of the interior, staff or other customers, and no video)",
+    "The ticket machine can't break large bills; have 1,000-yen notes ready",
+    "Firm noodles can't be requested",
+    "Tell staff your free toppings, such as yasai (bean sprouts and cabbage), when they ask just before serving"
+   ],
+   "features": [
+    "Clear (non-emulsified) soup",
+    "Corned-beef-like abura (pork fat) mixed with bits of lean meat",
+    "Sometimes comes with an “akai daiya” (“red diamond”, a small clump of vegetables)",
+    "Noodles are now a little thinner than the extra-thick ones used before",
+    "Tsukemen can also be ordered atsumori (with warm noodles)"
+   ],
+   "menu": {
+    "小ラーメン": "Small ramen",
+    "大つけ麺": "Large tsukemen (dipping noodles)",
+    "温泉玉子": "Onsen egg (soft-boiled)",
+    "チーズ": "Cheese"
+   }
+  },
+  "mejirodai": {
+   "name": "Ramen Jiro Mejirodai",
+   "short": "Mejirodai",
+   "nickname": "Mejirodai",
+   "city": "Hachioji, Tokyo",
+   "address": "513-9 Kunugidamachi, Hachioji-shi, Tokyo",
+   "access": [
+    "9–12 min walk from Mejirodai Station (Keio Takao Line)",
+    "15 min walk from Yamada Station (Keio Takao Line)",
+    "Parking for 3 cars, plus motorcycle parking, at the shop"
+   ],
+   "closed_text": "Thursdays (public holidays vary)",
+   "hours_notes": [
+    "Whether it opens on public holidays varies; announced on X",
+    "Staff sometimes close the line before the posted closing time"
+   ],
+   "rules": [
+    "Don't use other businesses' parking lots nearby",
+    "Wait for staff to show you to a seat",
+    "Do not wait for a space at the shop's parking lot (inside the lot or on the road). If it is full, use a nearby coin parking lot"
+   ],
+   "features": [
+    "Clear (non-emulsified) soup",
+    "Soy-forward soup and seasoned abura (pork fat)",
+    "Variations such as tsukemen (dipping noodles) and spicy ramen",
+    "Moved here from Hosei Daigaku-mae in May 2017; reopened under a new owner on 2023-06-18 (the previous shop closed in January 2023)",
+    "The limited Black tsukemen can also be ordered kamaage (noodles served hot, without rinsing in cold water)"
+   ],
+   "menu": {
+    "ミニラーメン": "Mini ramen",
+    "小ラーメン": "Small ramen",
+    "ぶた小ラーメン": "Small ramen + extra pork",
+    "大ラーメン": "Large ramen",
+    "ぶた大ラーメン": "Large ramen + extra pork",
+    "生たまご": "Raw egg",
+    "ブラックつけ麺に変更（2026年夏からの期間限定）": "Change to Black tsukemen (dipping noodles in a dark soy-and-pepper sauce; limited time, since summer 2026)"
+   }
+  },
+  "ogikubo": {
+   "name": "Ramen Jiro Ogikubo",
+   "short": "Ogikubo",
+   "nickname": "Ogikubo",
+   "city": "Suginami, Tokyo",
+   "address": "4-33-1 Ogikubo, Suginami-ku, Tokyo",
+   "access": [
+    "5–7 min walk from Ogikubo Station (JR Chuo Line / Tokyo Metro Marunouchi Line), South Exit; on Ome-kaido"
+   ],
+   "closed_text": "Sundays (holiday and Saturday closures announced on X)",
+   "hours_notes": [
+    "Closes when ingredients run out; in the evening the line is usually closed around 21:20–21:30",
+    "Sometimes open on public holidays. Closures are announced on X (e.g. closed Sat 2026-10-03)"
+   ],
+   "rules": [
+    "Buy your meal ticket first, then join the line",
+    "No entry if you've been drinking",
+    "No photos showing the kitchen, staff or other customers, and no video",
+    "Aim to finish eating in about 15 minutes",
+    "No smoking in line (smokers go to the back of the line)",
+    "Firm noodles can't be requested",
+    "To pay electronically, tell staff inside instead of using the ticket machine"
+   ],
+   "features": [
+    "Known for Aburamen, a soupless-style bowl, at no extra charge",
+    "Variations such as tsukemen-flavored ramen and limited-edition bowls",
+    "Electronic payment accepted",
+    "Available for delivery via Uber Eats since August 2026"
+   ],
+   "menu": {
+    "豚1枚ラーメン": "Ramen (1 slice of pork)",
+    "豚2枚ラーメン": "Ramen (2 slices of pork)",
+    "豚4枚ラーメン": "Ramen (4 slices of pork)",
+    "アブラーメンに変更": "Change to Aburamen (soupless style)",
+    "つけ麺味ラーメンに変更": "Change to tsukemen-flavored ramen",
+    "生卵": "Raw egg"
+   }
+  },
+  "kaminoge": {
+   "name": "Ramen Jiro Kaminoge",
+   "short": "Kaminoge",
+   "nickname": "Kaminoge",
+   "city": "Setagaya, Tokyo",
+   "address": "1-26-16 Kaminoge, Setagaya-ku, Tokyo",
+   "access": [
+    "1–2 min walk from Kaminoge Station (Tokyu Oimachi Line), Main Exit"
+   ],
+   "closed_text": "Sundays and public holidays",
+   "hours_notes": [
+    "May close early when the noodles run out (announced on X)",
+    "In the evening the line is usually closed around 21:40–21:45",
+    "Evening service sometimes opens a little before 18:00"
+   ],
+   "rules": [
+    "Join the line, buy your ticket at the machine near the entrance, then return to your place",
+    "Ask for firmer or softer noodles, less noodles, a lighter soup or less fat when you sit down",
+    "No “mashimashi” (extra-extra) vegetables",
+    "No smoking at all. Ask staff if you need change",
+    "The ticket machine takes cash only"
+   ],
+   "features": [
+    "Clear soup with a strong soy-sauce edge",
+    "Polite, attentive service",
+    "The large is very big (it's on the top row of the ticket machine, so check before you press)"
+   ],
+   "menu": {
+    "小ラーメン": "Small ramen",
+    "小ぶた入り": "Small ramen + extra pork",
+    "大ラーメン": "Large ramen",
+    "大ぶた入り": "Large ramen + extra pork",
+    "小ラーメン 麺半分": "Small ramen, half noodles",
+    "生玉子": "Raw egg",
+    "ウーロン茶": "Oolong tea"
+   }
+  },
+  "ichinoe": {
+   "name": "Ramen Jiro Kannana Ichinoe",
+   "short": "Kannana Ichinoe",
+   "nickname": "Ichinoe",
+   "city": "Edogawa, Tokyo",
+   "address": "8-3-4 Ichinoe, Edogawa-ku, Tokyo",
+   "access": [
+    "3 min walk from Ichinoe Station (Toei Shinjuku Line), on Kannana-dori (Ring Road 7)"
+   ],
+   "closed_text": "Wednesdays (plus occasional irregular closures)",
+   "hours_notes": [
+    "Evening service is irregular; the monthly schedule and same-day evening openings are posted on X (some evenings other than Friday too)",
+    "Closes when sold out. On weekdays it sometimes opens before 10:30"
+   ],
+   "rules": [
+    "Groups line up only once everyone has arrived",
+    "Buy your meal ticket when you're about 5th or 6th in line, and hold it where staff can see it",
+    "Ask for less or half noodles in advance. Firmer or softer noodles and “mashimashi” (extra-extra) toppings aren't available",
+    "Inside, photos of your bowl only; no photographing the interior from outside",
+    "The ticket machine takes 1,000-yen notes and coins only",
+    "The only drinks you may bring in are ones from the vending machine in front of the shop"
+   ],
+   "features": [
+    "Lightly emulsified soup, sweet and rich",
+    "With shiru-nashi (soupless), you can ask for fish powder",
+    "Manageable portion (about 250 g of noodles in a small)",
+    "Takeout sets (reservation required)"
+   ],
+   "menu": {
+    "ぶた2枚入り小ラーメン": "Small ramen (2 slices of pork)",
+    "ぶた5枚入り小ラーメン": "Small ramen (5 slices of pork)",
+    "ぶた2枚入り大ラーメン": "Large ramen (2 slices of pork)",
+    "ぶた5枚入り大ラーメン": "Large ramen (5 slices of pork)",
+    "ぶた2枚入り小汁なし": "Small shiru-nashi (soupless), 2 slices of pork",
+    "ぶた5枚入り小汁なし": "Small shiru-nashi (soupless), 5 slices of pork",
+    "豚ダブル（追加）": "Double pork (add-on)",
+    "生たまご（奥久慈卵）": "Raw egg (Okukuji egg)",
+    "味付玉子": "Seasoned egg",
+    "しょうが": "Ginger"
+   }
+  },
+  "jimbocho": {
+   "name": "Ramen Jiro Kanda Jimbocho",
+   "short": "Kanda Jimbocho",
+   "nickname": "Jimbocho",
+   "city": "Chiyoda, Tokyo",
+   "address": "1-21-4 Kanda Jimbocho, Chiyoda-ku, Tokyo",
+   "access": [
+    "3–4 min walk from Jimbocho Station (Toei Mita / Shinjuku lines, Tokyo Metro Hanzomon Line), Exit A7",
+    "9 min walk from JR Ochanomizu Station, Ochanomizubashi Exit",
+    "9–11 min walk from Shin-Ochanomizu Station (Tokyo Metro Chiyoda Line), Exit B5"
+   ],
+   "closed_text": "Sundays and public holidays (occasional unscheduled closures)",
+   "hours_notes": [
+    "Often closes early when ingredients run out (sometimes around 16:30 on weekdays, 14:30 on Saturdays). The line may be closed off early when it gets long",
+    "Closing for the day and unscheduled closures are announced on X"
+   ],
+   "rules": [
+    "Tell staff your noodle order (small or large; less, half or firm) when they ask in front of the shop",
+    "Photos of your bowl only; no video",
+    "No smoking, including in line",
+    "Try to keep pace with your “lot” (the group of bowls served together)"
+   ],
+   "features": [
+    "Very large portions (about 350–400 g of noodles in a small)",
+    "Mostly clear soup and tender pork",
+    "Lines tend to be long",
+    "Takeout resumed on 2026-04-16 (Mondays and Fridays only)"
+   ],
+   "menu": {
+    "ラーメン（小）": "Ramen (small)",
+    "小豚": "Small ramen + extra pork",
+    "大": "Large ramen",
+    "大豚": "Large ramen + extra pork",
+    "生玉子": "Raw egg",
+    "うずら（5個）": "Quail eggs (5)",
+    "千切生姜": "Shredded ginger",
+    "ネギ": "Green onions",
+    "お持ち帰り（汁なし1人前セット・月金限定）": "Takeout (shiru-nashi set for one; Mondays and Fridays only)"
+   }
+  },
+  "okubo": {
+   "name": "Ramen Jiro Keisei Okubo",
+   "short": "Keisei Okubo",
+   "nickname": "Keisei Okubo",
+   "city": "Funabashi, Chiba",
+   "address": "2-1-11 Miyama, Funabashi-shi, Chiba",
+   "access": [
+    "10 min walk from Keisei-Okubo Station (Keisei Main Line)"
+   ],
+   "closed_text": "Temporarily closed since 2026-07-25 for a change of owner. Reopening is planned; date not announced",
+   "hours_notes": [
+    "Temporarily closed after service on 2026-07-25 for a change of owner. It is expected to reopen",
+    "Reopening date and new hours not announced yet (as of 2026-09-30)"
+   ],
+   "rules": [
+    "(Before the closure) Buy a shokken (meal ticket) from the machine as you enter",
+    "(Before the closure) Staff did not ask about toppings for tsukemen (dipping noodles), so tell them when you hand over your ticket"
+   ],
+   "features": [
+    "Served miso ramen and miso tsukemen, rare among Jiro shops",
+    "Soup leaning emulsified (rich and cloudy)",
+    "Lunch only before the closure"
+   ],
+   "menu": {
+    "ミニラーメン": "Mini ramen",
+    "小ラーメン": "Small ramen",
+    "大ラーメン": "Large ramen",
+    "みそラーメン": "Miso ramen",
+    "つけ麺": "Tsukemen (dipping noodles)",
+    "みそつけ麺": "Miso tsukemen",
+    "大つけ麺": "Large tsukemen",
+    "大みそつけ麺": "Large miso tsukemen",
+    "ブタ3枚": "3 extra slices of pork"
+   }
+  },
+  "kashiwa": {
+   "name": "Ramen Jiro Kashiwa",
+   "short": "Kashiwa",
+   "nickname": "Kashiwa",
+   "city": "Kashiwa, Chiba",
+   "address": "MEM Kashiwa (Maruhan Mega City Kashiwa) 1F, 249-5 Toyofuta, Kashiwa-shi, Chiba",
+   "access": [
+    "25 min walk from Kashiwanoha-Campus Station (Tsukuba Express)",
+    "From Kashiwa Station (JR / Tobu), West Exit: Tobu Bus to the Kanoezuka or Minami-Okinagen stop, then 3–5 min walk"
+   ],
+   "closed_text": "Sundays",
+   "hours_notes": [
+    "Closing time varies (the official X account says “until about 16:00”)",
+    "Since September 2026 it has also closed every Thursday (Sep 3, 10, 17, 24 and Oct 1)",
+    "Public holidays depend on the shop’s announcements (open as usual on 2026-09-23)"
+   ],
+   "rules": [
+    "If you are among the first 6 in line, buy your meal ticket before you wait",
+    "Don’t lean on the wall while waiting outside",
+    "Photos of the food only (no people)",
+    "No toilet in the shop (use the ones in the complex)"
+   ],
+   "features": [
+    "Savory, lightly emulsified soup",
+    "Inside a large commercial complex with parking",
+    "You choose nami, chu or dai (regular, medium, large) by the amount of noodles",
+    "Moved here from Ibaraki Moriya in 2023"
+   ],
+   "menu": {
+    "並ラーメン": "Regular ramen (nami)",
+    "中ラーメン": "Medium ramen (chu)"
+   }
+  },
+  "chiba": {
+   "name": "Ramen Jiro Chiba",
+   "short": "Chiba",
+   "nickname": "Chiba",
+   "city": "Chiba City, Chiba",
+   "address": "1-7-8 Chuo, Chuo-ku, Chiba-shi, Chiba",
+   "access": [
+    "5 min walk from Yoshikawa-Koen Station (Chiba Urban Monorail)",
+    "10 min walk from Keisei Chiba-Chuo Station (Keisei Chiba Line)",
+    "13 min walk from Chiba Station (JR)"
+   ],
+   "closed_text": "Sundays (public holidays vary)",
+   "hours_notes": [
+    "The monthly schedule is posted as an image on the official X account",
+    "On some days only the evening session is cancelled"
+   ],
+   "rules": [
+    "Close the entrance door behind you",
+    "Wait until you are shown to a seat",
+    "Ask for fewer or firmer noodles when staff check your ticket or when you sit down"
+   ],
+   "features": [
+    "Meaty, lightly emulsified pork soup",
+    "Owner trained at Nishidai Ekimae",
+    "Tsukemen (dipping noodles) in summer, shiru-nashi (soupless) in winter"
+   ],
+   "menu": {
+    "ミニ": "Mini",
+    "小": "Small",
+    "大": "Large",
+    "豚追加": "Extra pork",
+    "汁なし変更": "Change to shiru-nashi (soupless)",
+    "つけめん変更": "Change to tsukemen (dipping noodles)",
+    "生玉子": "Raw egg",
+    "しょうが": "Ginger",
+    "うずら": "Quail eggs",
+    "ねぎ": "Green onion",
+    "キムチ": "Kimchi",
+    "粉チーズ": "Grated cheese"
+   }
+  },
+  "maebashi": {
+   "name": "Ramen Jiro Maebashi Chiyoda-machi",
+   "short": "Maebashi Chiyoda-machi",
+   "nickname": "Maebashi",
+   "city": "Maebashi, Gunma",
+   "address": "4-12-3 Chiyoda-machi, Maebashi-shi, Gunma",
+   "access": [
+    "4 min walk from Chuo-Maebashi Station (Jomo Electric Railway)",
+    "16 min walk from Maebashi Station (JR Ryomo Line)"
+   ],
+   "closed_text": "Mondays (also when Monday is a public holiday)",
+   "hours_notes": [
+    "20:00 in the evening may be the last order time",
+    "Closes when ingredients run out",
+    "Unscheduled closures are announced on the official X account (e.g. 2026-09-06 and 09-18)",
+    "Public holidays on other days depend on the shop’s announcements"
+   ],
+   "rules": [
+    "Tell staff early if you want firmer or fewer noodles",
+    "When a seat opens up, seat yourself",
+    "Stand while you wait inside"
+   ],
+   "features": [
+    "Slightly sweet, non-emulsified soup (it was emulsified when the shop opened)",
+    "Inside the Orion-dori shopping arcade",
+    "The only Jiro shop in Gunma"
+   ],
+   "menu": {
+    "小ラーメン": "Small ramen",
+    "小豚ラーメン": "Small ramen + extra pork",
+    "大ラーメン": "Large ramen",
+    "大豚ラーメン": "Large ramen + extra pork"
+   }
+  },
+  "tochigi": {
+   "name": "Ramen Jiro Tochigi Kaido",
+   "short": "Tochigi Kaido",
+   "nickname": "Tochigi Kaido",
+   "city": "Mibu, Tochigi",
+   "address": "2-15-67 Honmaru, Mibu-machi, Shimotsuga-gun, Tochigi",
+   "access": [
+    "15 min walk from Mibu Station (Tobu Utsunomiya Line)",
+    "Own parking lot (plus a second lot)"
+   ],
+   "closed_text": "Sundays (public holidays vary)",
+   "hours_notes": [
+    "The posted hours changed in late September 2026 (visitor posts, Ramen Database). It sometimes opens before 12:00",
+    "Each session ends when the noodles run out",
+    "Open on some public holidays and closed on others (closed 2026-09-21, open on the 22nd and 23rd)"
+   ],
+   "rules": [
+    "Photos of the ramen only (no staff or customers)",
+    "Smoke only where there is an ashtray, and tell the people in front of and behind you before leaving the line",
+    "Close the entrance door after you open it",
+    "If you order extra yasai (bean sprouts and cabbage) or a large bowl, finish it"
+   ],
+   "features": [
+    "Non-emulsified soup with a strong soy sauce taste",
+    "A wide menu, including TARO, a ramen seasoned like tsukemen dipping soup",
+    "Suburban shop with a large parking lot"
+   ],
+   "menu": {
+    "ラーメン": "Ramen",
+    "大ラーメン": "Large ramen",
+    "ラーメン豚入り": "Ramen + extra pork",
+    "つけ麺変更": "Change to tsukemen (dipping noodles)",
+    "紙エプロン": "Paper apron"
+   }
+  },
+  "hitachinaka": {
+   "name": "Ramen Jiro Hitachinaka",
+   "short": "Hitachinaka",
+   "nickname": "Hitachinaka",
+   "city": "Hitachinaka, Ibaraki",
+   "address": "1648-4 Tabiko, Hitachinaka-shi, Ibaraki",
+   "access": [
+    "25–30 min walk from Katsuta Station (JR Joban Line), West Exit",
+    "Free parking for 22 cars"
+   ],
+   "closed_text": "Sundays (changes around long weekends)",
+   "hours_notes": [
+    "Each week’s schedule is posted as an image on the official X account",
+    "Usually no last-order call; the shop closes once the line is gone",
+    "Around long weekends the schedule changes, e.g. open on Sunday and closed the days after (September 2026: open Sun 20th, closed 21st–23rd)"
+   ],
+   "rules": [
+    "Buy your meal ticket before joining the line (if you forget, go back to the end)",
+    "No meeting up with or joining friends in line",
+    "No photos inside except of your ramen",
+    "Do not park at the nearby home center; use the shop’s own lot"
+   ],
+   "features": [
+    "Non-emulsified soup with a clear soy sauce taste",
+    "Generous portions",
+    "Roomy shop in a former convenience store, with table seats",
+    "In summer the shop serves tsukemen (dipping noodles) with a tangy dipping sauce, and from time to time specials such as \"ura tsukemen\" without the tang (announced on the official X account)"
+   ],
+   "menu": {
+    "ミニラーメン": "Mini ramen",
+    "小ラーメン": "Small ramen",
+    "豚増し": "Extra pork",
+    "生たまご": "Raw egg",
+    "しょうが": "Ginger",
+    "うずら": "Quail eggs",
+    "ねぎ": "Green onion",
+    "はんぺん脂": "Hanpen abura (a thick slab of pork back fat)"
+   }
+  },
+  "niigata": {
+   "name": "Ramen Jiro Niigata",
+   "short": "Niigata",
+   "nickname": "Niigata",
+   "city": "Niigata City, Niigata",
+   "address": "5-2-8 Bandai, Chuo-ku, Niigata-shi, Niigata",
+   "access": [
+    "8–10 min walk from Niigata Station (JR), Bandai Exit"
+   ],
+   "closed_text": "Mondays and Thursdays",
+   "hours_notes": [
+    "Public holidays may be 10:00–15:30 (per Ramen Scene)",
+    "Announcements are on Instagram only (no X account)"
+   ],
+   "rules": [
+    "Line up on the road side of the sidewalk so you don’t block the neighboring shops",
+    "Ask for fewer or firmer noodles or a lighter taste out loud when staff check your noodle amount",
+    "Say your call (topping order) loudly and clearly",
+    "When you finish, put your bowl up on the counter and wipe the counter with the cloth (not needed at table seats)"
+   ],
+   "features": [
+    "Rich, lightly emulsified soup",
+    "The pork stands out; the small with extra pork is popular",
+    "The owner was the second owner of Matsudo Ekimae"
+   ],
+   "menu": {
+    "ラーメンミニ（豚1枚/麺200g）": "Mini ramen (1 slice of pork, 200 g noodles)",
+    "ラーメン小（豚2枚/麺300g）": "Small ramen (2 slices of pork, 300 g noodles)",
+    "ラーメン小ぶた入り（豚5枚）": "Small ramen + extra pork (5 slices)",
+    "ラーメン大（豚2枚/麺400g）": "Large ramen (2 slices of pork, 400 g noodles)",
+    "ラーメン大ぶた入り（豚5枚）": "Large ramen + extra pork (5 slices)",
+    "生たまご": "Raw egg",
+    "ニラキムチ": "Garlic chive kimchi",
+    "岩のり": "Iwa-nori (rock seaweed)",
+    "しょうが": "Ginger",
+    "豚1枚": "1 extra slice of pork",
+    "うずら卵4コ": "4 quail eggs"
+   }
+  },
+  "matsumoto": {
+   "name": "Ramen Jiro Matsumoto",
+   "short": "Matsumoto",
+   "nickname": "Matsumoto",
+   "city": "Matsumoto, Nagano",
+   "address": "1-27-15 Chuo, Matsumoto-shi, Nagano",
+   "access": [
+    "5 min walk from Matsumoto Station (JR), near the 7-Eleven Metobabashi store"
+   ],
+   "closed_text": "Not announced yet",
+   "hours_notes": [
+    "As of 2026-09-30 only the shop sign has gone up. Opening date, hours and menu not announced yet"
+   ],
+   "features": [
+    "Expected to be the first Jiro shop in Nagano",
+    "The owner reportedly trained at Kannana Shin-Shindaita (per a Jiro history site)"
+   ]
+  },
+  "nagoya": {
+   "name": "Ramen Jiro Nagoya Ozone",
+   "short": "Nagoya Ozone",
+   "nickname": "Nagoya Ozone",
+   "city": "Nagoya, Aichi",
+   "address": "4-3-7 Yada, Higashi-ku, Nagoya-shi, Aichi",
+   "access": [
+    "8 min walk from Ozone Station (JR Chuo Line, Meitetsu Seto Line, Meijo Subway Line)",
+    "6 min walk from Nagoya Dome-mae Yada Station (Meijo Subway Line)"
+   ],
+   "closed_text": "Sundays",
+   "hours_notes": [
+    "The day’s hours are posted on the official X account every morning",
+    "Closes once the line is cut off, often before the listed closing time",
+    "Public holidays depend on the shop’s announcements (open for lunch and evening on 2026-09-22 and 23)"
+   ],
+   "rules": [
+    "Groups line up only after everyone has arrived",
+    "Line up on the road side of the sidewalk, and not between the tree and the intersection"
+   ],
+   "features": [
+    "The first Jiro shop in the Chubu region",
+    "Mild, lightly emulsified soup",
+    "Owner trained at Shinjuku Kabukicho and Ikebukuro Higashiguchi"
+   ],
+   "menu": {
+    "小": "Small",
+    "豚": "Small + extra pork",
+    "大": "Large",
+    "大豚": "Large + extra pork",
+    "生卵": "Raw egg"
+   }
+  },
+  "kyoto": {
+   "name": "Ramen Jiro Kyoto",
+   "short": "Kyoto",
+   "nickname": "Kyoto",
+   "city": "Kyoto City, Kyoto",
+   "address": "4 Ichijoji Satonomae-cho, Sakyo-ku, Kyoto-shi, Kyoto",
+   "access": [
+    "1 min walk from Ichijoji Station (Eizan Electric Railway)"
+   ],
+   "closed_text": "Wednesdays, plus irregular days",
+   "hours_notes": [
+    "Evenings only on weekdays (the official X post goes up in the afternoon)",
+    "Some nights it closes before 23:00 (several days ended at 22:00 in September 2026)",
+    "Some public holidays follow Saturday hours (e.g. 2026-09-21)",
+    "Holidays and closures are announced on the official X account"
+   ],
+   "rules": [
+    "Order only as much as you can finish (out of consideration for the neighbors)",
+    "Don’t use the bicycle parking of the drugstore across the street",
+    "No strollers inside"
+   ],
+   "features": [
+    "The only Jiro shop in the Kansai region",
+    "On the Ichijoji “ramen street”",
+    "Kujo negi (Kyoto green onion) topping and many limited-time bowls (miso, tsukemen and more)",
+    "Open late on weekdays",
+    "Also available for delivery via Uber Eats (confirmed in August 2026)"
+   ],
+   "menu": {
+    "ラーメン半分": "Ramen, half noodles",
+    "ラーメン並": "Ramen, regular",
+    "ラーメン中盛": "Ramen, medium",
+    "ラーメン大盛": "Ramen, large",
+    "豚増し": "Extra pork",
+    "生たまご": "Raw egg",
+    "九条ねぎ": "Kujo negi (Kyoto green onion)",
+    "辛いラーメン変更": "Change to spicy ramen",
+    "脂飯": "Abura-meshi (rice with pork back fat)"
+   }
+  },
+  "sapporo": {
+   "name": "Ramen Jiro Sapporo",
+   "short": "Sapporo",
+   "nickname": "Sapporo",
+   "city": "Sapporo, Hokkaido",
+   "address": "8-11 Kita 6-jo Nishi 8-chome, Kita-ku, Sapporo-shi, Hokkaido",
+   "access": [
+    "8 min walk from Sapporo Station (JR / Namboku Subway Line)"
+   ],
+   "closed_text": "Sundays (public holidays vary)",
+   "hours_notes": [
+    "Closes when ingredients run out",
+    "In September 2026 it was often closed all day on Wednesdays (Sep 9, 16, 30; announced in advance on the official X account)",
+    "Holiday hours are announced on the official X account (2026-09-21 and 22: 10:30–14:00 / 17:00–20:00; 23rd: lunch only)"
+   ],
+   "rules": [
+    "No joining others who are already in line",
+    "No outside food or drinks (drinks from the vending machine out front are OK)",
+    "Photos of the ramen only",
+    "Keep your phone away while eating and after you finish",
+    "Ask for firmer noodles etc. when you show your meal ticket"
+   ],
+   "features": [
+    "The only Jiro shop in Hokkaido",
+    "Its pork is highly rated",
+    "Many options: tsukemen (dipping noodles), shiru-nashi (soupless), TARO and daily paid toppings",
+    "Owner trained at Sakuradai Ekimae"
+   ],
+   "menu": {
+    "ラーメン": "Ramen",
+    "ミニ（豚1枚）": "Mini (1 slice of pork)",
+    "ぶた増し（2枚）": "Extra pork (2 slices)",
+    "つけ麺変更": "Change to tsukemen (dipping noodles)",
+    "汁なし変更": "Change to shiru-nashi (soupless)",
+    "辛みそ変更": "Change to spicy miso",
+    "生卵": "Raw egg",
+    "ねぎ生姜": "Green onion and ginger"
+   }
+  },
+  "sendai": {
+   "name": "Ramen Jiro Sendai 2",
+   "short": "Sendai 2",
+   "nickname": "Sendai",
+   "city": "Sendai, Miyagi",
+   "address": "Daiichi Kanko Bldg. 1F, 2-5-32 Ichibancho, Aoba-ku, Sendai-shi, Miyagi",
+   "access": [
+    "Right by Aobadori-Ichibancho Station (Sendai Subway Tozai Line)",
+    "9 min walk from Sendai Station (JR)"
+   ],
+   "closed_text": "Open every day as a rule (occasional closures)",
+   "hours_notes": [
+    "You can usually get in any time during opening hours",
+    "On weekends and holidays, about 15:00–17:00 is relatively quiet (per the official X account)"
+   ],
+   "rules": [
+    "Groups line up only after everyone has arrived",
+    "First-timers are advised to order the small ramen (sign in the shop)",
+    "No choice of noodle firmness for shiru-nashi (soupless)"
+   ],
+   "features": [
+    "The first Jiro shop in Tohoku (opened 2011)",
+    "Soup leaning emulsified, with back fat",
+    "Shiru-nashi all year, tsukemen (dipping noodles) in summer",
+    "Moved to Ichibancho in April 2025 and renamed “Sendai 2”"
+   ],
+   "menu": {
+    "小ラーメン（ブタ2枚）": "Small ramen (2 slices of pork)",
+    "小豚ラーメン（ブタ5枚）": "Small ramen + extra pork (5 slices)",
+    "大ラーメン（ブタ2枚）": "Large ramen (2 slices of pork)",
+    "大豚ラーメン（ブタ5枚）": "Large ramen + extra pork (5 slices)",
+    "汁なし変更": "Change to shiru-nashi (soupless)",
+    "ブタ追加1枚": "1 extra slice of pork",
+    "生卵": "Raw egg",
+    "キムチ": "Kimchi",
+    "生姜": "Ginger",
+    "玉ねぎ": "Chopped onion",
+    "チーズ": "Cheese",
+    "うずら（5個）": "Quail eggs (5)"
+   }
+  },
+  "aizu": {
+   "name": "Ramen Jiro Aizu-Wakamatsu Ekimae",
+   "short": "Aizu-Wakamatsu Ekimae",
+   "nickname": "Aizu-Wakamatsu",
+   "city": "Aizuwakamatsu, Fukushima",
+   "address": "6-31 Ekimae-machi, Aizuwakamatsu-shi, Fukushima",
+   "access": [
+    "2–3 min walk from Aizu-Wakamatsu Station (JR)"
+   ],
+   "closed_text": "Mondays and the 1st, 3rd and 5th Sundays (public holidays vary)",
+   "hours_notes": [
+    "Open only on the 2nd and 4th Sundays, 11:00–15:00 (the weekly table shows Sunday as closed)",
+    "Sometimes opens on a 1st/3rd/5th Sunday or a Monday holiday (e.g. Sun 2026-09-06 and holiday Mon 09-21, 11:00–15:00)",
+    "The monthly schedule is announced on the official X account"
+   ],
+   "rules": [
+    "No holding places for others, and no cutting in",
+    "Line up on the left as you face the shop (there is no sidewalk, so watch for cars)"
+   ],
+   "features": [
+    "Soup leaning emulsified, full of pork flavor",
+    "The shrimp-flavored tsukemen (dipping noodles) is popular",
+    "Spacious, with tables and raised tatami seating"
+   ],
+   "menu": {
+    "小ラーメン": "Small ramen",
+    "大ラーメン": "Large ramen",
+    "ミニラーメン（麺少なめ・豚1枚）": "Mini ramen (fewer noodles, 1 slice of pork)",
+    "プチラーメン（麺半分・豚1枚）": "Petit ramen (half noodles, 1 slice of pork)",
+    "つけ麺変更（エビorサバ）": "Change to tsukemen (shrimp or mackerel)",
+    "汁なし変更（しょうゆorしお）": "Change to shiru-nashi (soy sauce or salt)",
+    "豚マシ": "Extra pork",
+    "生たまご": "Raw egg",
+    "味玉": "Seasoned egg",
+    "鍋二郎": "Nabe Jiro (takeout in a pot)"
+   }
+  },
+  "asakura": {
+   "name": "Ramen Jiro Asakura Kaido Ekimae",
+   "short": "Asakura Kaido Ekimae",
+   "nickname": "Asakura Kaido",
+   "city": "Chikushino, Fukuoka",
+   "address": "2-17-8 Harisuri Chuo, Chikushino-shi, Fukuoka",
+   "access": [
+    "1–2 min walk from Asakuragaido Station (Nishitetsu Tenjin Omuta Line)",
+    "7–10 min walk from Tenpaizan Station (JR Kagoshima Main Line)"
+   ],
+   "closed_text": "Saturdays and Sundays (sometimes open on Saturdays); public holidays vary",
+   "hours_notes": [
+    "Often opens on Saturdays 12:00–15:00, announced that morning on the official X account (September 2026: the 12th, 19th and 26th)",
+    "Has opened 12:00–15:00 on public holidays (2026-09-22 and 23)",
+    "Sometimes closes more than an hour earlier than scheduled"
+   ],
+   "rules": [
+    "No holding places for others, cutting in, drinking or smoking",
+    "Photos of the ramen only (no photos or videos showing customers or staff)",
+    "Do not park at nearby shops, the bank or the hospital; coming by train is recommended",
+    "Keep quiet in line and don’t block the sidewalk",
+    "Buy your meal ticket once you are among the 5 people lined up in front of the shop"
+   ],
+   "features": [
+    "The first Jiro shop in Kyushu",
+    "Lightly emulsified soup with a clear soy sauce taste",
+    "Owner trained at Kannana Shin-Shindaita"
+   ],
+   "menu": {
+    "小ラーメン": "Small ramen",
+    "大ラーメン": "Large ramen",
+    "うぐいすつけ麺変更": "Change to uguisu tsukemen (dipping noodles)",
+    "生卵": "Raw egg",
+    "ネギ（現金）": "Green onion (pay in cash)"
+   }
+  },
+  "okinawa": {
+   "name": "Ramen Jiro Okinawa",
+   "short": "Okinawa",
+   "nickname": "Okinawa",
+   "city": "Naha, Okinawa",
+   "address": "1-6-16 Tsuboya, Naha-shi, Okinawa",
+   "access": [
+    "10 min walk from Makishi Station (Okinawa Urban Monorail, “Yui Rail”)"
+   ],
+   "closed_text": "Wednesdays",
+   "hours_notes": [
+    "May close early when ingredients run out",
+    "Unscheduled closures and changed hours happen (September 2026: closed on the 5th; 10:30–14:30 on the 13th and 20th–22nd, etc.). Check the official X account before you go",
+    "Saturday evening service is paused for now (Ramen Scene, July 2026)",
+    "For takeout pork or ramen, don’t join the line; ask a staff member"
+   ],
+   "rules": [
+    "Inside, photos of the ramen only",
+    "No drinks from outside except from the vending machine out front",
+    "No parking lot; no street parking"
+   ],
+   "features": [
+    "The southernmost Jiro in Japan and the first in Okinawa",
+    "Soup leaning non-emulsified, with a clear soy sauce taste",
+    "Owner trained at Kannana Ichinoe",
+    "Koregusu (chili soaked in awamori) on the table",
+    "Ramen for Okinawa residents only, and Okinawa soba"
+   ],
+   "menu": {
+    "小ラーメン": "Small ramen",
+    "小 ブタ増ラーメン": "Small ramen + extra pork",
+    "大ラーメン": "Large ramen",
+    "大 ブタ増ラーメン": "Large ramen + extra pork",
+    "沖縄県民ラーメン（県民限定・要身分証）": "Okinawa residents’ ramen",
+    "紅生姜": "Pickled ginger",
+    "生たまご": "Raw egg",
+    "味玉": "Seasoned egg",
+    "持ち帰りブタ 並": "Takeout pork, regular",
+    "持ち帰りブタ 上等": "Takeout pork, premium",
+    "沖縄そば（2026年8月からの限定。ヤサイの代わりにネギ、かまぼこ入りの塩味）": "Okinawa soba (special since August 2026: salt-based soup, topped with green onions instead of vegetables, plus kamaboko fish cake)"
+   },
+   "menu_notes": {
+    "沖縄県民ラーメン（県民限定・要身分証）": "Okinawa residents only (ID required)"
+   }
+  },
+  "sakuradai": {
+   "name": "Ramen Jiro Sakuradai Ekimae",
+   "short": "Sakuradai Ekimae",
+   "nickname": "Sakuradai",
+   "city": "Nerima, Tokyo",
+   "address": "1-5-1 Sakuradai, Nerima-ku, Tokyo",
+   "access": [
+    "2 min walk from Sakuradai Station (Seibu Ikebukuro Line), North Exit"
+   ],
+   "closed_text": "Permanently closed",
+   "hours_notes": [
+    "Before closing (early 2025): Fri 11:00–14:00 / 17:30–21:00, Sat–Sun 10:00–16:00 (per Take4, a fan site)"
+   ],
+   "features": [
+    "Emulsified soup",
+    "Softer noodles"
+   ],
+   "menu": {
+    "小ラーメン": "Small ramen"
+   },
+   "closed_note": "Opened in January 2007 and closed on March 2, 2025, after about 18 years."
+  },
+  "toritsudaigaku": {
+   "name": "Ramen Jiro Toritsu-Daigaku (first shop)",
+   "short": "Toritsu-Daigaku (first shop)",
+   "nickname": "Toritsu-Daigaku",
+   "city": "Meguro, Tokyo",
+   "address": "Meguro-ku, Tokyo (near Toritsu-Daigaku Station on the Tokyu Toyoko Line)",
+   "access": [
+    "Near Toritsu-Daigaku Station (Tokyu Toyoko Line)"
+   ],
+   "features": [
+    "The shop where Ramen Jiro began. The name was then written 次郎 instead of today’s 二郎 (both are read “Jiro”)"
+   ],
+   "closed_note": "Founded in 1968 near Toritsu-Daigaku Station as “Ramen Jiro” (written 次郎). It moved to Mita because of river improvement work on the Nomi River, and with that move the name came to be written 二郎."
+  },
+  "mita_old": {
+   "name": "Ramen Jiro Mita (former site)",
+   "short": "Mita (former site)",
+   "nickname": "Mita",
+   "city": "Minato, Tokyo",
+   "address": "Mita 2-chome, Minato-ku, Tokyo (corner of the Mita 2-chome intersection on Mita-dori)",
+   "access": [
+    "On the street from Tamachi Station (JR) and Mita Station (Toei Subway) to the main gate of Keio University’s Mita Campus"
+   ],
+   "features": [
+    "Stood on the Mita 2-chome intersection, at the southeast corner of Keio University’s Mita Campus"
+   ],
+   "closed_note": "Closed at this site at the end of February 1996 because Mita-dori was being widened, and reopened in June that year at the current site on Sakurada-dori, west of Keio University’s main gate."
+  },
+  "yoyogi": {
+   "name": "Ramen Jiro Yoyogi",
+   "short": "Yoyogi",
+   "nickname": "Yoyogi",
+   "city": "Shibuya, Tokyo",
+   "address": "4-29-12 Sendagaya, Shibuya-ku, Tokyo",
+   "access": [
+    "Nearest station: Yoyogi Station (JR / Toei Oedo Line)"
+   ],
+   "closed_text": "Open every day",
+   "hours_notes": [
+    "Hours as listed by All About (a Japanese guide site) in its 2003 list of closed shops"
+   ],
+   "closed_note": "Opened in September 1998 and closed in April 1999."
+  },
+  "akabane1": {
+   "name": "Ramen Jiro Akabane (original)",
+   "short": "Akabane (original)",
+   "nickname": "Akabane (original)",
+   "city": "Kita, Tokyo",
+   "address": "3-29-11 Kamiya, Kita-ku, Tokyo",
+   "access": [
+    "On Kitahon-dori. Nearest stations: Shimo Station (Tokyo Metro Namboku Line) and Akabane Station (JR)"
+   ],
+   "features": [
+    "Also called “Ojiro”, because it was in the Oji-Kamiya area",
+    "The owners of Meguro, Sengawa, Keikyu Kawasaki and other shops trained here (per the Take4 fan site’s timeline)"
+   ],
+   "closed_note": "In 2001 it changed its name to “Ramen Marujiro” (○二郎), leaving the Ramen Jiro name, and later became “Ramen Fujimaru”."
+  },
+  "kichijoji": {
+   "name": "Ramen Jiro Kichijoji",
+   "short": "Kichijoji",
+   "nickname": "Kichijoji",
+   "city": "Musashino, Tokyo",
+   "address": "3-4-3 Kichijoji-Kitamachi, Musashino-shi, Tokyo",
+   "access": [
+    "Nearest station: Kichijoji Station (JR / Keio Inokashira Line). On Itsukaichi-kaido, in front of Seikei University"
+   ],
+   "features": [
+    "Said to be the second Jiro shop, after Mita Honten"
+   ],
+   "closed_note": "One of the very first Jiro branches. In spring 2001 it was renamed “Ramen Ikuro” and left the Ramen Jiro name (Ikuro closed in April 2015)."
+  },
+  "machida": {
+   "name": "Ramen Jiro Machida",
+   "short": "Machida",
+   "nickname": "Machida",
+   "city": "Machida, Tokyo",
+   "address": "426-4 Tsuruma, Machida-shi, Tokyo",
+   "access": [
+    "Nearest station: Minami-Machida Station (Tokyu Den-en-toshi Line; now Minami-Machida Grandberry Park Station). Near the Machiyahara intersection on Machida-kaido"
+   ],
+   "closed_text": "Tuesdays and the 4th Thursday of the month",
+   "hours_notes": [
+    "Also closed on the 4th Thursday of the month",
+    "As of a visit by Ramen Kiko.net (a Japanese ramen site) on 2002-09-22"
+   ],
+   "features": [
+    "Had its own menu item, “MO”, made with sakura shrimp from Suruga Bay"
+   ],
+   "menu": {
+    "ラーメン": "Ramen",
+    "小豚": "Small ramen + extra pork",
+    "小豚ダブル": "Small ramen + double pork",
+    "MO": "MO (with sakura shrimp)"
+   },
+   "closed_note": "Closed on September 29, 2002. In 2003 the owner opened “Ramen Oyama” (ラーメン大山) in their hometown of Fuji, Shizuoka."
+  },
+  "fuchu_old": {
+   "name": "Ramen Jiro Fuchu (former site)",
+   "short": "Fuchu (former site)",
+   "nickname": "Fuchu",
+   "city": "Fuchu, Tokyo",
+   "address": "2-3-1 Miyanishicho, Fuchu-shi, Tokyo",
+   "access": [
+    "Nearest stations: Fuchu Station (Keio Line) and Fuchuhommachi Station (JR)"
+   ],
+   "closed_text": "Open every day",
+   "hours_notes": [
+    "Hours as listed by All About (a Japanese guide site) in 2003"
+   ],
+   "menu": {
+    "ラーメン": "Ramen",
+    "豚入りラーメン": "Ramen + extra pork",
+    "豚W": "Ramen + double pork"
+   },
+   "closed_note": "Closed its shop in Miyanishicho 2-chome in March 2006 and reopened in May at the current site in Miyanishicho 1-chome."
+  },
+  "yaen_old": {
+   "name": "Ramen Jiro Hachioji Yaen Kaido (original)",
+   "short": "Hachioji Yaen Kaido (original)",
+   "nickname": "Yaen",
+   "city": "Hachioji, Tokyo",
+   "address": "321-1 Shimoyugi, Hachioji-shi, Tokyo",
+   "access": [
+    "Keio Bus from Minami-Osawa Station (Keio Sagamihara Line) to the Tonogayato stop. On Yaen-kaido"
+   ],
+   "closed_text": "Sundays",
+   "hours_notes": [
+    "Hours as listed by All About (a Japanese guide site) in 2003"
+   ],
+   "closed_note": "Closed its shop in Shimoyugi in May 2006 and moved in June to the current site in Horinouchi, renamed “Hachioji Yaen Kaido 2”."
+  },
+  "sagamiono_ekimae": {
+   "name": "Ramen Jiro Sagami-Ono Ekimae",
+   "short": "Sagami-Ono Ekimae",
+   "nickname": "Sagami-Ono",
+   "city": "Sagamihara, Kanagawa",
+   "address": "Sagamihara-shi, Kanagawa (exact address of the old shop not confirmed)",
+   "closed_note": "Closed the old shop in May 2009 and moved in June to the current site in Sagami-Ono 6-chome, renamed “Sagami-Ono”."
+  },
+  "takadanobaba_old": {
+   "name": "Ramen Jiro Takadanobaba (former site)",
+   "short": "Takadanobaba (former site)",
+   "nickname": "Takadanobaba",
+   "city": "Shinjuku, Tokyo",
+   "address": "3-12-1 Takadanobaba, Shinjuku-ku, Tokyo",
+   "access": [
+    "Along Waseda-dori from Takadanobaba Station (JR / Seibu / Tokyo Metro), just past the Seiyu supermarket"
+   ],
+   "closed_text": "Sundays and public holidays",
+   "hours_notes": [
+    "Hours as listed by All About (a Japanese guide site) in 2003"
+   ],
+   "menu": {
+    "小": "Small ramen",
+    "小豚": "Small ramen + extra pork",
+    "大": "Large ramen"
+   },
+   "closed_note": "Closed its shop on Waseda-dori in December 2009 and moved to Shin-Mejiro-dori in January 2010."
+  },
+  "musashikosugi": {
+   "name": "Ramen Jiro Musashi-Kosugi",
+   "short": "Musashi-Kosugi",
+   "nickname": "Musashi-Kosugi",
+   "city": "Kawasaki, Kanagawa",
+   "address": "1-1401 Kamimaruko-Sannocho, Nakahara-ku, Kawasaki-shi, Kanagawa",
+   "access": [
+    "8 min walk from Musashi-Kosugi Station (JR / Tokyu), North Exit"
+   ],
+   "closed_text": "Tuesdays",
+   "hours_notes": [
+    "Hours from its Jiro days, as listed on Ramen Database (a Japanese ramen review site)"
+   ],
+   "menu": {
+    "ラーメン": "Ramen",
+    "豚入": "Ramen + extra pork",
+    "ラーメン大": "Large ramen",
+    "大豚": "Large ramen + extra pork"
+   },
+   "closed_note": "In January 2011 it was renamed “Ramen Kojiro 526 Musashi-Kosugi” and left the Ramen Jiro name (that shop has since closed too)."
+  },
+  "tsurumi": {
+   "name": "Ramen Jiro Tsurumi",
+   "short": "Tsurumi",
+   "nickname": "Tsurumi",
+   "city": "Yokohama, Kanagawa",
+   "address": "2-13-7 Kishiya, Tsurumi-ku, Yokohama-shi, Kanagawa",
+   "access": [
+    "10 min walk from Namamugi Station (Keikyu Main Line), on the Daini-Keihin road (Route 1)"
+   ],
+   "closed_text": "Wednesdays",
+   "hours_notes": [
+    "Hours shortly before closing, as listed on Ramen Database (a Japanese ramen review site)"
+   ],
+   "features": [
+    "The first Jiro shop in Kanagawa",
+    "The owner of Yokohama Kannai trained here"
+   ],
+   "menu": {
+    "小": "Small ramen",
+    "小ブタ": "Small ramen + extra pork",
+    "小ダブル": "Small ramen + double pork",
+    "大": "Large ramen",
+    "大ブタ": "Large ramen + extra pork",
+    "大ダブル": "Large ramen + double pork"
+   },
+   "closed_note": "The first Jiro shop in Kanagawa. It ended business in Tsurumi in spring 2013 and started again in November 2014 in Ota-ku, Tokyo, as “JR Nishiguchi Kamata”."
+  },
+  "takadanobaba": {
+   "name": "Ramen Jiro Takadanobaba",
+   "short": "Takadanobaba",
+   "nickname": "Takadanobaba",
+   "city": "Toshima, Tokyo",
+   "address": "3-17-8 Takada, Toshima-ku, Tokyo",
+   "access": [
+    "7 min walk from Takadanobaba Station (JR / Seibu / Tokyo Metro), on Shin-Mejiro-dori"
+   ],
+   "closed_text": "Mondays, Wednesdays, Fridays, Sundays and public holidays",
+   "hours_notes": [
+    "Hours shortly before closing, as listed on Ramen Database (a Japanese ramen review site)",
+    "Lunch only from April 2012 (per the Ramen Database message board)"
+   ],
+   "features": [
+    "Known for its tender, shredded pork",
+    "The owners of Ibaraki Moriya (now Kashiwa), Nishidai Ekimae and Omiya trained here (per the Take4 fan site’s timeline)"
+   ],
+   "menu": {
+    "ラーメン": "Ramen",
+    "煮玉子ラーメン": "Ramen with a seasoned boiled egg",
+    "ドカ盛ラーメン": "Doka-mori (extra-large) ramen",
+    "ドカ盛豚ラーメン": "Doka-mori (extra-large) ramen + extra pork"
+   },
+   "closed_note": "Moved to Shin-Mejiro-dori in January 2010 and kept going there until it closed in March 2013."
+  },
+  "shindaita_old": {
+   "name": "Ramen Jiro Kannana Shindaita",
+   "short": "Kannana Shindaita",
+   "nickname": "Shindaita",
+   "city": "Setagaya, Tokyo",
+   "address": "5-29-5 Daita, Setagaya-ku, Tokyo",
+   "access": [
+    "Right by Shindaita Station (Keio Inokashira Line), on Kannana-dori (Ring Road 7)"
+   ],
+   "closed_text": "Sundays, Thursdays and public holidays",
+   "hours_notes": [
+    "Hours as listed on Ramen Jiro Johokyoku, a fan site that was online until about 2018"
+   ],
+   "features": [
+    "Open in the evening only"
+   ],
+   "closed_note": "Business under the first owner ended in April 2014. In May the second owner opened at the same site as “Kannana Shin-Shindaita”."
+  },
+  "kabukicho_old": {
+   "name": "Ramen Jiro Kabukicho (former site)",
+   "short": "Kabukicho (former site)",
+   "nickname": "Kabukicho",
+   "city": "Shinjuku, Tokyo",
+   "address": "1-19-3 Kabukicho, Shinjuku-ku, Tokyo",
+   "access": [
+    "3 min walk from Seibu-Shinjuku Station (Seibu Shinjuku Line); 6 min walk from JR Shinjuku Station, East Exit"
+   ],
+   "closed_text": "Open every day",
+   "hours_notes": [
+    "Hours before the move, as listed on Ramen Database (a Japanese ramen review site)"
+   ],
+   "menu": {
+    "普通盛": "Regular ramen",
+    "チャーシュー": "Ramen + extra pork (chashu)",
+    "大盛": "Large ramen",
+    "つけ麺普通": "Tsukemen (dipping noodles), regular size"
+   },
+   "closed_note": "Closed its shop in Kabukicho 1-chome at the end of August 2016 and reopened in October in Kabukicho 2-chome as “Shinjuku Kabukicho”."
+  },
+  "omiya_shimocho": {
+   "name": "Ramen Jiro Omiya",
+   "short": "Omiya",
+   "nickname": "Omiya",
+   "city": "Saitama City, Saitama",
+   "address": "1-25 Shimocho, Omiya-ku, Saitama-shi, Saitama",
+   "access": [
+    "5 min walk from Omiya Station (JR), East Exit, via Minami-Ginza-dori"
+   ],
+   "closed_text": "Open every day",
+   "hours_notes": [
+    "Hours at the time of closing, as listed on Ramen Database (a Japanese ramen review site)"
+   ],
+   "features": [
+    "The first Jiro shop in Saitama",
+    "From 2013 the noodle sizes were called ramen, large ramen and extra-large ramen"
+   ],
+   "menu": {
+    "ラーメン": "Ramen",
+    "大ラーメン": "Large ramen",
+    "特大ラーメン": "Extra-large ramen"
+   },
+   "closed_note": "The first Jiro shop in Saitama. Closed on November 30, 2016, after about eight years."
+  },
+  "akabane2": {
+   "name": "Ramen Jiro Akabane",
+   "short": "Akabane",
+   "nickname": "Akabane",
+   "city": "Kita, Tokyo",
+   "address": "1-22-3 Akabane, Kita-ku, Tokyo",
+   "access": [
+    "3 min walk from Akabane Station (JR), East Exit"
+   ],
+   "closed_text": "Sundays and public holidays",
+   "hours_notes": [
+    "Hours shortly before closing, as listed on Ramen Database (a Japanese ramen review site)",
+    "Until September 2016 it also opened in the evening, 17:00–20:00"
+   ],
+   "menu": {
+    "小ラーメン": "Small ramen",
+    "小豚ラーメン": "Small ramen + extra pork",
+    "大ラーメン": "Large ramen",
+    "大豚ラーメン": "Large ramen + extra pork"
+   },
+   "closed_note": "Opened in January 2012 by the first owner of Matsudo Ekimae. Closed on April 30, 2017."
+  },
+  "mejirodai_hosei": {
+   "name": "Ramen Jiro Mejirodai Hosei Daigaku-mae",
+   "short": "Mejirodai Hosei Daigaku-mae",
+   "nickname": "Mejirodai",
+   "city": "Hachioji, Tokyo",
+   "address": "233-2 Teradamachi, Hachioji-shi, Tokyo",
+   "access": [
+    "Keio Bus from Mejirodai Station (Keio Takao Line), toward Hosei University, to the Harunabashi stop; the shop was right by it"
+   ],
+   "closed_text": "Thursdays, Sundays and public holidays",
+   "hours_notes": [
+    "Hours before the move, as listed on Ramen Database (a Japanese ramen review site)"
+   ],
+   "features": [
+    "Served “tsukeaji ramen”: hot ramen made with the tsukemen (dipping noodle) soup"
+   ],
+   "menu": {
+    "ミニらーめん": "Mini ramen",
+    "小ラーメン": "Small ramen",
+    "ぶた小ラーメン": "Small ramen + extra pork",
+    "大ラーメン": "Large ramen"
+   },
+   "closed_note": "Closed its shop in Teradamachi in May 2017 and moved to the current site in Kunugidamachi, renamed “Mejirodai”."
+  },
+  "jimbocho_old": {
+   "name": "Ramen Jiro Kanda Jimbocho (former site)",
+   "short": "Kanda Jimbocho (former site)",
+   "nickname": "Jimbocho",
+   "city": "Chiyoda, Tokyo",
+   "address": "1F, 2-4-11 Kanda Jimbocho, Chiyoda-ku, Tokyo",
+   "access": [
+    "Right by Jimbocho Station (Toei Mita / Shinjuku lines, Tokyo Metro Hanzomon Line)"
+   ],
+   "closed_text": "Sundays and public holidays",
+   "hours_notes": [
+    "Hours before the move, as listed on Ramen Database (a Japanese ramen review site)"
+   ],
+   "features": [
+    "Known for very large portions (about 350 g of noodles in a small)"
+   ],
+   "menu": {
+    "小": "Small ramen",
+    "小豚": "Small ramen + extra pork",
+    "大": "Large ramen",
+    "大豚": "Large ramen + extra pork"
+   },
+   "closed_note": "Closed its shop in Jimbocho 2-chome in November 2017 and reopened in December in Jimbocho 1-chome."
+  },
+  "shinbashi": {
+   "name": "Ramen Jiro Shimbashi",
+   "short": "Shimbashi",
+   "nickname": "Shimbashi",
+   "city": "Minato, Tokyo",
+   "address": "2-33-4 Nishishimbashi, Minato-ku, Tokyo",
+   "access": [
+    "8 min walk from Shimbashi Station (JR / subway), in Nishi-Shimbashi 2-chome toward Atago and Toranomon"
+   ],
+   "closed_text": "Sundays",
+   "hours_notes": [
+    "Hours at the time of closing, as listed on Ramen Database (a Japanese ramen review site)"
+   ],
+   "features": [
+    "Run by NS Planning, the same company as Shinjuku Kabukicho and Ikebukuro Higashiguchi",
+    "The owner of Hitachinaka trained here (per the Take4 fan site’s timeline)"
+   ],
+   "menu": {
+    "ラーメン": "Ramen",
+    "ブタ入り": "Ramen + extra pork",
+    "大ラーメン": "Large ramen",
+    "大ブタ入り": "Large ramen + extra pork"
+   },
+   "closed_note": "Opened in September 2011 and closed on April 21, 2018."
+  },
+  "nishidai_temp": {
+   "name": "Ramen Jiro Nishidai Ekimae (temporary site)",
+   "short": "Nishidai Ekimae (temporary site)",
+   "nickname": "Nishidai",
+   "city": "Itabashi, Tokyo",
+   "address": "3-8-14 Hasune, Itabashi-ku, Tokyo",
+   "access": [
+    "Near Nishidai Station (Toei Mita Line), close to the shop’s usual location"
+   ],
+   "closed_text": "Sundays and public holidays",
+   "hours_notes": [
+    "Hours when the temporary shop opened, as reported by Itabashi TIMES (a local news site) in November 2016",
+    "Closed for the day when ingredients ran out"
+   ],
+   "features": [
+    "Had limited-edition bowls such as “SUB ramen” on Tuesday evenings (per Ramen Scene, a Japanese ramen blog)"
+   ],
+   "closed_note": "A temporary shop used while the shop’s building was rebuilt during earthquake-proofing work on the elevated Toei Mita Line. After the work, in November 2018, the shop moved back to its original location in the new building."
+  },
+  "koganei": {
+   "name": "Ramen Jiro Shin-Koganei Kaido",
+   "short": "Shin-Koganei Kaido",
+   "nickname": "Shin-Koganei",
+   "city": "Koganei, Tokyo",
+   "address": "3-5-7 Nukui-Kitamachi, Koganei-shi, Tokyo",
+   "access": [
+    "15 min walk from Musashi-Koganei Station (JR Chuo Line), North Exit, on Shin-Koganei-kaido. Right by the Pool-mae stop (Keio Bus)"
+   ],
+   "closed_text": "Tuesdays",
+   "hours_notes": [
+    "Hours shortly before closing, as listed on Ramen Database (a Japanese ramen review site)",
+    "Closed for the day when the noodles ran out"
+   ],
+   "features": [
+    "The owners of Hibarigaoka Ekimae, Sendai, Ikuta Ekimae and other shops trained here (per the Take4 fan site’s timeline)"
+   ],
+   "menu": {
+    "ミニラーメン": "Mini ramen",
+    "小ラーメン": "Small ramen",
+    "大ラーメン": "Large ramen",
+    "小つけ麺": "Small tsukemen (dipping noodles)"
+   },
+   "closed_note": "Business under the first owner ended in May 2018. From June the shop kept going under a temporary manager until it closed on December 23, 2018."
+  },
+  "kamata": {
+   "name": "Ramen Jiro JR Nishiguchi Kamata",
+   "short": "JR Nishiguchi Kamata",
+   "nickname": "Kamata",
+   "city": "Ota, Tokyo",
+   "address": "Takahashi Bldg. 1F, 7-6-9 Nishikamata, Ota-ku, Tokyo",
+   "access": [
+    "3 min walk from Kamata Station (JR / Tokyu), West Exit"
+   ],
+   "closed_text": "Wednesdays",
+   "hours_notes": [
+    "Hours as listed on Ramen Database (a Japanese ramen review site)"
+   ],
+   "menu": {
+    "小": "Small ramen",
+    "小ブタ": "Small ramen + extra pork",
+    "大": "Large ramen",
+    "大ブタ": "Large ramen + extra pork"
+   },
+   "closed_note": "Opened in November 2014 when Tsurumi moved here. Closed on October 11, 2019, ending about 23 years of history counting the Tsurumi years."
+  },
+  "moriya": {
+   "name": "Ramen Jiro Ibaraki Moriya",
+   "short": "Ibaraki Moriya",
+   "nickname": "Moriya",
+   "city": "Moriya, Ibaraki",
+   "address": "Misono Bldg. 1F, 4-1-5 Misono, Moriya-shi, Ibaraki",
+   "access": [
+    "About 1.5 km from Minami-Moriya Station (Kanto Railway Joso Line). Or take the Kanto Railway Bus (Misono loop) from Moriya Station, West Exit, to the Misono stop"
+   ],
+   "closed_text": "Sundays",
+   "hours_notes": [
+    "Times are last orders (per Ramen Scene, a Japanese ramen blog, September 2022)",
+    "Had a parking lot"
+   ],
+   "features": [
+    "The first Jiro shop in Ibaraki",
+    "Tsukemen (dipping noodles) came in several flavors, including tomato"
+   ],
+   "menu": {
+    "麺半分": "Ramen, half noodles",
+    "小ラーメン麺少なめ": "Small ramen, less noodles",
+    "小ラーメン": "Small ramen",
+    "大ラーメン": "Large ramen"
+   },
+   "closed_note": "The first Jiro shop in Ibaraki. It ended business in Moriya on December 9, 2022, and started again in January 2023 in Kashiwa, Chiba, as “Kashiwa”."
+  },
+  "sendai_old": {
+   "name": "Ramen Jiro Sendai (original)",
+   "short": "Sendai (original)",
+   "nickname": "Sendai",
+   "city": "Sendai, Miyagi",
+   "address": "2-8 Tachimachi, Aoba-ku, Sendai-shi, Miyagi",
+   "access": [
+    "5 min walk from Omachi-Nishikoen Station (Sendai Subway Tozai Line); 10 min walk from Hirose-dori Station (Namboku Line)"
+   ],
+   "closed_text": "Open every day (occasional closures)",
+   "hours_notes": [
+    "Hours before the move, as listed on Ramen Database and Ramen Scene (Japanese ramen sites)",
+    "You bought your meal ticket first, then joined the line"
+   ],
+   "features": [
+    "The first Jiro shop in Tohoku",
+    "Served shiru-nashi (soupless) all year round"
+   ],
+   "menu": {
+    "小ラーメン": "Small ramen",
+    "小豚ラーメン": "Small ramen + extra pork",
+    "大ラーメン": "Large ramen",
+    "大ラーメン（ブタ5枚）": "Large ramen (5 slices of pork)"
+   },
+   "closed_note": "The first Jiro shop in Tohoku. It ended business in Tachimachi on March 23, 2025, and started again on April 20 in Ichibancho as “Sendai 2”."
+  }
+ },
+ "news": {
+  "2024-05-28:kabukicho:pause": {
+   "title": "Ramen Jiro Shinjuku Kabukicho closes temporarily",
+   "summary": "The shop closed temporarily and reopened about four months later, on September 19, 2024."
+  },
+  "2024-09-19:kabukicho:open": {
+   "title": "Ramen Jiro Shinjuku Kabukicho reopens",
+   "summary": "The shop reopened after a 113-day temporary closure."
+  },
+  "2024-12-01:asakura:open": {
+   "title": "Ramen Jiro Asakura Kaido Ekimae opens (first in Kyushu)",
+   "summary": "The first chokkei (official Ramen Jiro) shop in Kyushu opened in Chikushino, Fukuoka Prefecture. The owner trained at Kannana Shin-Shindaita."
+  },
+  "2025-03-02:sakuradai:close": {
+   "title": "Ramen Jiro Sakuradai Ekimae closes",
+   "summary": "The Sakuradai Ekimae shop in Nerima, Tokyo, open since 2007, closed after about 18 years."
+  },
+  "2025-03-24:sendai:pause": {
+   "title": "Ramen Jiro Sendai closes temporarily to relocate",
+   "summary": "The shop ended business at its old location in Tachimachi, Aoba-ku, and closed temporarily to prepare for the move."
+  },
+  "2025-04-20:sendai:move": {
+   "title": "Ramen Jiro Sendai moves to Ichibancho and becomes \"Sendai 2\"",
+   "summary": "The shop reopened on the ground floor of the Daiichi Kanko Building, right by Aoba-dori Ichibancho Station, under the new name Sendai 2."
+  },
+  "2025-11-30:nagoya:open": {
+   "title": "Ramen Jiro Nagoya Ozone opens (first in the Chubu region)",
+   "summary": "The first chokkei (official Ramen Jiro) shop in the Chubu/Tokai region opened in Yada, Higashi-ku, Nagoya. The owner trained at Shinjuku Kabukicho and other shops."
+  },
+  "2026-06-21:okinawa:open": {
+   "title": "Ramen Jiro Okinawa opens (first in Okinawa)",
+   "summary": "The first chokkei (official Ramen Jiro) shop in Okinawa Prefecture, and the southernmost in Japan, opened in Tsuboya, Naha. The owner trained at Kannana Ichinoe."
+  },
+  "2026-07-25:okubo:pause": {
+   "title": "Ramen Jiro Keisei Okubo closes temporarily",
+   "summary": "Keisei Okubo, open since 2002, closed temporarily after business on July 25, 2026. A reopening has been announced, but no date had been given as of late September 2026."
+  },
+  "2026-09-30:matsumoto:upcoming": {
+   "title": "\"Ramen Jiro Matsumoto\" sign spotted near Matsumoto Station",
+   "summary": "A sign for a Matsumoto shop has been spotted in central Matsumoto, Nagano Prefecture. The opening date and hours have not been announced yet."
+  }
+ },
+ "daisukiman": {
+  "facts": [
+   {
+    "text": "Claims in the YouTube channel description to have eaten more Ramen Jiro than anyone alive. Lists over 6,000 bowls in total, with records of 15 bowls in a day, 37 in a week and 124 in a month.",
+    "source": "https://www.youtube.com/channel/UCnblzHDvdCnrvx2hgaq8bpw/about",
+    "date": "2026-10-01"
+   },
+   {
+    "text": "Self-reported yearly totals: 747 bowls in 2023, 1,301 in 2024 and 1,243 in 2025.",
+    "source": "https://www.youtube.com/channel/UCnblzHDvdCnrvx2hgaq8bpw/about",
+    "date": "2026-10-01"
+   },
+   {
+    "text": "Has eaten at every chokkei (official Ramen Jiro) shop. The channel description says 43 shops have each been visited at least 38 times (Asakura Kaido Ekimae, Nagoya Ozone and Okinawa fewer than 38).",
+    "source": "https://www.youtube.com/channel/UCnblzHDvdCnrvx2hgaq8bpw/about",
+    "date": "2026-10-01"
+   },
+   {
+    "text": "The channel description shows a streak of \"1,100 days in a row (ongoing)\" as of the date checked; when it was last updated is not stated.",
+    "source": "https://www.youtube.com/channel/UCnblzHDvdCnrvx2hgaq8bpw/about",
+    "date": "2026-10-01"
+   },
+   {
+    "text": "The Instagram profile shown in search results lists 6,150 bowls in total, 890 in 2026 and a 1,170-day streak (the snippet probably dates from around September 2026).",
+    "source": "https://www.instagram.com/delicious26261126/",
+    "date": "2026-09"
+   },
+   {
+    "text": "Reached 1,000 days of Ramen Jiro in a row on April 8, 2026, and released a video to mark it.",
+    "source": "https://www.youtube.com/watch?v=EKkNF1wONy8",
+    "date": "2026-04-09"
+   },
+   {
+    "text": "Released a top-10 video after eating 614 bowls in the first half of 2026.",
+    "source": "https://www.youtube.com/watch?v=cKsVfet-HOg",
+    "date": "2026-08-08"
+   },
+   {
+    "text": "Reported 104 bowls in August 2026, the 35th month in a row with 100 or more.",
+    "source": "https://www.youtube.com/shorts/Z6ZH9udgQ5Q",
+    "date": "2026-08-31"
+   },
+   {
+    "text": "Posted on note (a Japanese blogging platform) that the run of 100+ bowls a month reached 36 months (September 2026).",
+    "source": "https://note.com/delicious2626/n/n6eb7edd9ff5c",
+    "date": "2026-09-30"
+   },
+   {
+    "text": "Released a follow-along video of eating 15 bowls (at 9 shops) in one day, beating the previous year's personal record of 14.",
+    "source": "https://www.youtube.com/watch?v=h1uN9o0XgKk",
+    "date": "2026-07-11"
+   },
+   {
+    "text": "Ate 14 bowls in one day on July 15, 2025 (the previous record was 13, on July 12, 2024).",
+    "source": "https://www.youtube.com/watch?v=56fliNbGm2k",
+    "date": "2025-07-18"
+   },
+   {
+    "text": "Posted that the 5,000th lifetime bowl was eaten at Ikebukuro Higashiguchi on October 12, 2025.",
+    "source": "https://x.com/delicious2626/status/1978663424893816873",
+    "date": "2025-10-16"
+   },
+   {
+    "text": "Started the YouTube channel on June 16, 2025, with the first video (a self-introduction) on June 20, 2025. About 18,500 subscribers as of October 1, 2026.",
+    "source": "https://www.youtube.com/channel/UCnblzHDvdCnrvx2hgaq8bpw/about",
+    "date": "2026-10-01"
+   },
+   {
+    "text": "Announced in a video description that the X account (@delicious2626) has passed 50,000 followers.",
+    "source": "https://www.youtube.com/watch?v=57Mo327vD-U",
+    "date": "2026-09-27"
+   },
+   {
+    "text": "Guest on episodes 81–85 of the Sankei podcast \"Ramen Kanryo to Yamaguchi Eriko no Zurutto Ramen Talk\" (released June 20 to July 18, 2024). The show introduced it as the first media appearance.",
+    "source": "https://omny.fm/shows/ramen/sn81-240618",
+    "date": "2024-06-20"
+   },
+   {
+    "text": "In episode 84 of the same show, explained how to route between shops to fit 7 bowls into one day.",
+    "source": "https://omny.fm/shows/ramen/sn84-240619",
+    "date": "2024-07-11"
+   },
+   {
+    "text": "Featured in Shukan Josei PRIME (364 bowls in 2024 by April, and a record of 10 bowls in a day).",
+    "source": "https://www.jprime.jp/articles/-/31583",
+    "date": "2024-04-12"
+   },
+   {
+    "text": "Gadget Tsushin covered eating 4 bowls in one hour at Aizuwakamatsu Ekimae.",
+    "source": "https://getnews.jp/archives/3590338",
+    "date": "2025-01-13"
+   },
+   {
+    "text": "FRIDAY Digital ran an interview (1,301 bowls in 2024 and a streak of over 500 days).",
+    "source": "https://friday.kodansha.co.jp/article/415685",
+    "date": "2025-03-01"
+   },
+   {
+    "text": "Bunshun Online ran a two-part interview (a streak of over 900 days and more than 1,200 bowls a year).",
+    "source": "https://bunshun.jp/articles/-/85196",
+    "date": "2026-02-14"
+   },
+   {
+    "text": "According to Bunshun Online, the first Jiro was at Shinjuku Otakibashi-dori in the first year of high school, and Meguro is where the habit really took hold.",
+    "source": "https://bunshun.jp/articles/-/85197",
+    "date": "2026-02-14"
+   },
+   {
+    "text": "Bunshun Online published a profile titled \"Who is Chokkei Jiro Daisuki Man?\"",
+    "source": "https://bunshun.jp/articles/-/86199",
+    "date": "2026-02-19"
+   },
+   {
+    "text": "On SUSURU TV episode 3645, ate at five chokkei shops in a row with SUSURU (Shinagawa → Hachioji Yaen Kaido 2 → Kanda Jimbocho → Kaminoge → Keikyu Kawasaki).",
+    "source": "https://www.youtube.com/watch?v=4SW9U9eQBjU",
+    "date": "2025-11-26"
+   },
+   {
+    "text": "Released a video of a visit to Mita Honten with the internet personality Hiroyuki (Hiroyuki Nishimura).",
+    "source": "https://www.youtube.com/watch?v=kX8k73tDmtM",
+    "date": "2025-12-12"
+   },
+   {
+    "text": "Also posts long shop reports on note (note.com/delicious2626), a Japanese blogging platform. Some are paid articles.",
+    "source": "https://note.com/delicious2626",
+    "date": "2026-10-01"
+   }
+  ],
+  "tips": [
+   {
+    "text": "For a multi-shop day, combine shops with relatively short queues (Hitotsubashi Gakuen, Ogikubo) with shops that stay open between lunch and dinner (Mita Honten, Koshigaya, Kanda Jimbocho). This can fit as many as 7 bowls into one day.",
+    "source": "https://omny.fm/shows/ramen/sn84-240619"
+   },
+   {
+    "text": "On multi-bowl days, the biggest challenge is not your stomach but time, and the slight embarrassment of joining the queue again. Running between shops is sometimes part of the plan.",
+    "source": "https://www.youtube.com/watch?v=56fliNbGm2k"
+   },
+   {
+    "text": "Example of a 15-bowl day: Mita Honten in the morning, then Shinagawa → Kannana Ichinoe → Kameido → Meguro → Shinjuku Otakibashi-dori → Shinjuku Kabukicho → Yokohama Kannai, ending at Keikyu Kawasaki just before closing, using taxis and the shinkansen (bullet train). The second half of the video explains the route choices.",
+    "source": "https://www.youtube.com/watch?v=h1uN9o0XgKk"
+   },
+   {
+    "text": "When planning several shops in a day, treat lunch service as ending around 17:00: visit the shops open at lunch first, then move on to those open in the evening. (Explained on a whiteboard as \"Jiro renshoku-gaku\", the study of multi-bowl days.)",
+    "source": "https://www.youtube.com/watch?v=AN9UqpzzXq0"
+   },
+   {
+    "text": "Sengawa → Fuchu is an easy pair to combine, and a favorite route for getting 5 bowls in while still getting home early.",
+    "source": "https://x.com/delicious2626/status/1965927088302731605"
+   },
+   {
+    "text": "When you queue again for a second bowl, order it without yasai (boiled bean sprouts and cabbage). The soup stays undiluted and the soy sauce comes through more strongly, so it tastes different from the first bowl.",
+    "source": "https://x.com/delicious2626/status/1742158448069107990"
+   },
+   {
+    "text": "Shinagawa is in an office district, so it is relatively quiet early in the morning and in the early evening. At other times it is usually busy.",
+    "source": "https://www.youtube.com/shorts/wXdf05v6APk"
+   },
+   {
+    "text": "Hibarigaoka Ekimae tends to be less crowded at lunch than in the evening.",
+    "source": "https://x.com/delicious2626/status/1784612118458999259"
+   },
+   {
+    "text": "At Hibarigaoka Ekimae, skip tenchi-gaeshi (flipping the noodles over the vegetables) and take time to enjoy the emulsified soup near the top. For abura (pork back fat), consider the paid topping rather than the free call. Adding an ajitama (seasoned egg) is also recommended.",
+    "source": "https://note.com/delicious2626/n/n990dd81baae2"
+   },
+   {
+    "text": "At Shinjuku Otakibashi-dori, a favorite move is ordering ramen and tsukemen (dipping noodles) together to compare them. Add the black pepper on the counter to the yasai (boiled bean sprouts and cabbage). The soup tastes different at the top and bottom, so enjoy the top layer for as long as you can. Later in the evening is the recommended time to go.",
+    "source": "https://note.com/delicious2626/n/n3f3f7e8afd51"
+   },
+   {
+    "text": "On miso ramen days at Yokohama Kannai, calling \"karame\" (extra seasoning) adds more miso sauce.",
+    "source": "https://x.com/delicious2626/status/2006929363191935070"
+   },
+   {
+    "text": "For miso ramen at Yokohama Kannai, adding butter, grated cheese and green onion is recommended. Miso dishes also tend to appear at the shop's yearly anniversary event.",
+    "source": "https://www.youtube.com/watch?v=57Mo327vD-U"
+   },
+   {
+    "text": "At Maebashi Chiyodamachi, leaving abura (pork back fat) out of your call makes the bowl lighter and easier to eat, with a milder sweetness.",
+    "source": "https://x.com/delicious2626/status/1719704763619738110"
+   },
+   {
+    "text": "At Hachioji Yaen Kaido 2, tsukemen (dipping noodles) is recommended atsumori (with warm noodles), not only for the \"Naminori\".",
+    "source": "https://www.youtube.com/shorts/17PGZDnMxCI"
+   },
+   {
+    "text": "Kashiwa's tsukemen (dipping noodles; tomato, garlic or sesame flavor) comes with about 1.5 times the noodles of the ramen. The personal favorite is tomato.",
+    "source": "https://www.youtube.com/shorts/_oDj5yqFRWY"
+   },
+   {
+    "text": "For Chiba's fish-powder tsukemen (dipping noodles), finish with soup-wari (thinning the leftover dipping soup with broth so you can drink it).",
+    "source": "https://www.youtube.com/watch?v=Rfi1ydrA7-A"
+   },
+   {
+    "text": "At Kaminoge, to get fewer noodles: for \"sukuname\" (less), buy a small ramen ticket and tell the staff; for \"men hanbun\" (half noodles), there is a separate ticket. (The explanation in the video was corrected in its description.)",
+    "source": "https://www.youtube.com/watch?v=WbmRI6NVPiw"
+   },
+   {
+    "text": "At Kameido, tell the staff any requests, such as fewer noodles, firmer or softer noodles, less fat or a lighter taste, when you show your shokken (meal ticket).",
+    "source": "https://x.com/delicious2626/status/1884750780173033812"
+   },
+   {
+    "text": "Photos of the ticket machine and the inside of the shop are said not to be allowed at Fuchu, Matsudo Ekimae III and Kashiwa, so their menus are shared as text instead.",
+    "source": "https://x.com/delicious2626/status/1889302846472073690"
+   },
+   {
+    "text": "One sign of emulsified (cloudy, rich) soup rather than non-emulsified (clearer, soy-forward) soup: the bean sprouts tend to sink.",
+    "source": "https://www.youtube.com/watch?v=zhdwjRzbhno"
+   },
+   {
+    "text": "Shows how to cook nabe-jiro (takeout carried home in your own pot) and turn it into dishes such as takikomi gohan (seasoned rice).",
+    "source": "https://www.youtube.com/watch?v=M1D1FjrxQwQ"
+   },
+   {
+    "text": "For first-timers, recommends Yokohama Kannai and Keikyu Kawasaki, where the staff are friendly.",
+    "source": "https://www.youtube.com/shorts/AaIfJTRYBjg"
+   },
+   {
+    "text": "Other picks for first-timers: Kaminoge and Chiba.",
+    "source": "https://www.youtube.com/shorts/bY_vw8AQ2dk"
+   },
+   {
+    "text": "Kannana Ichinoe is described as easy for first-timers and women to visit, for its taste, portion size and service.",
+    "source": "https://www.youtube.com/shorts/O7NBiIIKQqM"
+   },
+   {
+    "text": "For a trip to Niigata, JR East's \"Kyun Pass\" cut the round-trip shinkansen (bullet train) fare to about half.",
+    "source": "https://www.youtube.com/shorts/rhkiWfe1a00"
+   },
+   {
+    "text": "Chokkei Jiro Daisuki Man is not good at slurping, so eats by lifting a big bite of noodles with chopsticks and chewing it.",
+    "source": "https://www.youtube.com/shorts/kcaVLUv1nZs"
+   },
+   {
+    "text": "A video on eating at Fukuoka (Asakura Kaido Ekimae) and Sapporo on the same day covers tips, upsides and a taste comparison of the two shops.",
+    "source": "https://www.youtube.com/watch?v=EPtX8z1Kfs0"
+   }
+  ]
+ },
+ "ramenscene_about": "A personal ramen blog focused on every chokkei (official) Ramen Jiro shop, with a page for each shop on its typical flavor, menu prices, how to queue, how to make the call (free toppings) and opening hours, along with visit reports.",
+ "lineage": {
+  "mita": {
+   "name": "Mita Honten",
+   "note": "The root of the family tree. Founded in 1968 near Toritsu-Daigaku Station, then moved to Mita, and to the current site in 1996."
+  },
+  "meguro": {
+   "name": "Meguro",
+   "note": "The owner apprenticed at Mita Honten before opening this shop (per a newspaper profile of the owner). The Take4 fan site says the owner came from the original Akabane shop."
+  },
+  "sengawa": {
+   "name": "Sengawa",
+   "note": "The current owner, in charge since 2005, worked as an assistant at Sengawa, then trained at Mita Honten before taking over."
+  },
+  "kabukicho": {
+   "name": "Shinjuku Kabukicho",
+   "note": "No source names the shop where the owner trained. Moved from the former Kabukicho shop and renamed in 2016."
+  },
+  "shinagawa": {
+   "name": "Shinagawa",
+   "note": "The owner trained again at Mita Honten and joined the official Jiro group."
+  },
+  "otakibashi": {
+   "name": "Shinjuku Otakibashi-dori",
+   "note": "Like Shinagawa, the owner is said to have trained at Mita Honten and then joined the official Jiro group (one source only)."
+  },
+  "shindaita": {
+   "name": "Kannana Shin-Shindaita",
+   "note": "The current owner worked as an assistant at the Kabukicho shop before it moved. Took over Kannana Shindaita in 2014 and renamed it."
+  },
+  "yaen": {
+   "name": "Hachioji Yaen Kaido 2",
+   "note": "The owner trained at Mita Honten and elsewhere. Moved from the original Hachioji Yaen Kaido shop and renamed in 2006."
+  },
+  "ikebukuro": {
+   "name": "Ikebukuro Higashiguchi",
+   "note": "The owner is said to have trained at Mita Honten and elsewhere. The founder of the operating company is also said to have received noren-wake (permission to open under the Jiro name) from Mita Honten."
+  },
+  "kameido": {
+   "name": "Kameido",
+   "note": "The current owner, in charge since 2013, trained at Yokohama Kannai and Shonan Fujisawa. The years under the previous owner (2001–2013) are shown as a separate entry in the tree."
+  },
+  "fuchu": {
+   "name": "Fuchu",
+   "note": "No source found showing where the owner trained."
+  },
+  "mejirodai": {
+   "name": "Mejirodai",
+   "note": "The current owner, in charge since 2023, came from Hachioji Yaen Kaido 2. Moved from Mejirodai Hosei Daigaku-mae and renamed in 2017."
+  },
+  "ogikubo": {
+   "name": "Ogikubo",
+   "note": "The current owner, in charge since 2016, worked as an assistant at Sakuradai Ekimae."
+  },
+  "kaminoge": {
+   "name": "Kaminoge",
+   "note": "No source found showing where the current owner (in charge since 2006) trained."
+  },
+  "ichinoe": {
+   "name": "Kannana Ichinoe",
+   "note": "The owner trained at Kameido in the years under its previous owner (2001–2013)."
+  },
+  "jimbocho": {
+   "name": "Kanda Jimbocho",
+   "note": "The owner came from the former Jiro Kanda shop (now Ramen Kanda)."
+  },
+  "koiwa": {
+   "name": "Koiwa",
+   "note": "Most sources say the owner came from Kanda Jimbocho, but the Take4 fan site says Ikebukuro Higashiguchi, so they disagree."
+  },
+  "hibarigaoka": {
+   "name": "Hibarigaoka Ekimae",
+   "note": "The owner came from Shin-Koganei Kaido (some sources also mention time at Sengawa)."
+  },
+  "tachikawa": {
+   "name": "Tachikawa",
+   "note": "The current owner, in charge since 2023, came from Kannana Ichinoe (the founding owner is said to have come from Kaminoge)."
+  },
+  "senjuohashi": {
+   "name": "Senju-Ohashi Ekimae",
+   "note": "The owner trained at Kannana Ichinoe and Koiwa."
+  },
+  "nishidai": {
+   "name": "Nishidai Ekimae",
+   "note": "The owner trained at Takadanobaba and also worked at Kanda Jimbocho."
+  },
+  "hitotsubashi": {
+   "name": "Hitotsubashi-Gakuen",
+   "note": "The owner came from Kanda Jimbocho (some sources also mention time at Shin-Koganei Kaido)."
+  },
+  "kawasaki": {
+   "name": "Keikyu Kawasaki",
+   "note": "The owner came from the original Akabane shop, among others."
+  },
+  "sagamiono": {
+   "name": "Sagami-Ono",
+   "note": "The owner trained at Shin-Koganei Kaido, Hachioji Yaen Kaido and elsewhere. Moved from Sagami-Ono Ekimae and renamed in 2009."
+  },
+  "kannai": {
+   "name": "Yokohama Kannai",
+   "note": "The owner came from Tsurumi."
+  },
+  "fujisawa": {
+   "name": "Shonan Fujisawa",
+   "note": "The owner came from Yokohama Kannai."
+  },
+  "nakayama": {
+   "name": "Nakayama Ekimae",
+   "note": "The owner trained at Yokohama Kannai. Other sources also mention time at Hachioji Yaen Kaido, Shin-Koganei Kaido and Tsurumi."
+  },
+  "ikuta": {
+   "name": "Ikuta Ekimae",
+   "note": "The owner trained at several shops and is placed in the line of Meguro, where they worked last and longest. Also worked at Hachioji Yaen Kaido and Shin-Koganei Kaido."
+  },
+  "kawagoe": {
+   "name": "Kawagoe",
+   "note": "The owner came from Yokohama Kannai."
+  },
+  "koshigaya": {
+   "name": "Koshigaya",
+   "note": "The owner came from Shonan Fujisawa and also ran Shin-Koganei Kaido shortly before it closed."
+  },
+  "omiya": {
+   "name": "Omiya-Koen Ekimae",
+   "note": "The owner trained at the earlier Omiya shop."
+  },
+  "matsudo": {
+   "name": "Matsudo Ekimae III",
+   "note": "The third owner, in charge since 2015, trained at Hachioji Yaen Kaido 2 and elsewhere."
+  },
+  "okubo": {
+   "name": "Keisei Okubo",
+   "note": "No source found showing where the founding owner trained. Temporarily closed after business on 2026-07-25; a reopening has been announced."
+  },
+  "kashiwa": {
+   "name": "Kashiwa",
+   "note": "The owner trained at Takadanobaba and elsewhere (some sources also mention time at Hibarigaoka Ekimae). Moved here from Ibaraki Moriya in 2023."
+  },
+  "chiba": {
+   "name": "Chiba",
+   "note": "The owner trained at Nishidai Ekimae."
+  },
+  "maebashi": {
+   "name": "Maebashi Chiyoda-machi",
+   "note": "Most sources say the owner came from Hachioji Yaen Kaido, but others say Shin-Koganei Kaido or mention time at Aizu-Wakamatsu Ekimae and Mita Honten, so they disagree."
+  },
+  "tochigi": {
+   "name": "Tochigi Kaido",
+   "note": "The owner trained at Hachioji Yaen Kaido 2 and Shin-Koganei Kaido."
+  },
+  "hitachinaka": {
+   "name": "Hitachinaka",
+   "note": "The owner trained at Shimbashi and elsewhere, and also worked at Sakuradai Ekimae and Shin-Koganei Kaido."
+  },
+  "nagoya": {
+   "name": "Nagoya Ozone",
+   "note": "The owner came from Shinjuku Kabukicho. Some sources also mention time at Ikebukuro Higashiguchi and Sakuradai Ekimae."
+  },
+  "kyoto": {
+   "name": "Kyoto",
+   "note": "The owner came from Kanda Jimbocho."
+  },
+  "sapporo": {
+   "name": "Sapporo",
+   "note": "The owner trained at Sakuradai Ekimae and Mita Honten (some sources also mention time at Hibarigaoka Ekimae)."
+  },
+  "sendai": {
+   "name": "Sendai 2",
+   "note": "The owner trained at Shin-Koganei Kaido and Hachioji Yaen Kaido 2. Moved from the original Sendai shop and renamed in 2025."
+  },
+  "aizu": {
+   "name": "Aizu-Wakamatsu Ekimae",
+   "note": "The owner came from Hachioji Yaen Kaido 2 (some sources also mention time at Shin-Koganei Kaido)."
+  },
+  "asakura": {
+   "name": "Asakura Kaido Ekimae",
+   "note": "The owner came from Kannana Shin-Shindaita."
+  },
+  "okinawa": {
+   "name": "Okinawa",
+   "note": "The owner came from Kannana Ichinoe."
+  },
+  "niigata": {
+   "name": "Niigata",
+   "note": "The owner trained at Ikebukuro Higashiguchi and elsewhere, and ran Matsudo Ekimae as its second owner from 2012 to 2015."
+  },
+  "akabane1": {
+   "name": "Akabane (original)",
+   "note": "An early branch, opened in 1991. It left Jiro in 2001 and took a different name. Placed under Mita Honten based on a written account."
+  },
+  "tsurumi": {
+   "name": "Tsurumi",
+   "note": "The owner of Yokohama Kannai trained here. No source found showing where this shop’s own owner trained. Moved to Kamata in 2014 (as JR Nishiguchi Kamata) and closed in 2019."
+  },
+  "takadanobaba": {
+   "name": "Takadanobaba",
+   "note": "The owners of Nishidai Ekimae, Ibaraki Moriya and the earlier Omiya shop trained here. No source found showing where this shop’s own owner trained. Closed in 2013."
+  },
+  "koganei": {
+   "name": "Shin-Koganei Kaido",
+   "note": "The owner trained at Mita Honten before opening. Closed in 2018."
+  },
+  "sakuradai": {
+   "name": "Sakuradai Ekimae",
+   "note": "The owner trained at Yokohama Kannai and elsewhere. Closed on 2025-03-02."
+  },
+  "moriya": {
+   "name": "Ibaraki Moriya",
+   "note": "The owner came from Takadanobaba, among others. Moved to Kashiwa in January 2023 and became Kashiwa."
+  },
+  "omiya_shimocho": {
+   "name": "Omiya",
+   "note": "The owner trained at Takadanobaba. Closed in 2016."
+  },
+  "kyumatsudo": {
+   "name": "Matsudo Ekimae (original)",
+   "note": "The founding owner came from Kameido in the years under its previous owner. From 2012 to 2015 a second owner from Ikebukuro Higashiguchi (later the owner of Niigata) ran it, and in 2015 it passed to a third owner as Matsudo Ekimae III."
+  },
+  "yaen_old": {
+   "name": "Hachioji Yaen Kaido (original)",
+   "note": "Same owner as today’s Hachioji Yaen Kaido 2; the owner trained at Mita Honten and elsewhere. Moved and renamed in 2006."
+  },
+  "shinbashi": {
+   "name": "Shimbashi",
+   "note": "The manager put in charge of the shop trained at Ikebukuro Higashiguchi. Closed in 2018."
+  },
+  "kyukameido": {
+   "name": "Kameido (previous owner, 2001–2013)",
+   "note": "Kameido before its change of owner. The previous owner is said to have come from the old Shimbashi shop. The owners of Kannana Ichinoe and the original Matsudo Ekimae trained here in this period."
+  },
+  "kyushimbashi": {
+   "name": "Shimbashi (old shop, until 2004)",
+   "note": "Said to be where the previous owner of Kameido trained. Opened as a shop of the operating company and changed its name in 2004. No source found showing where its owner trained."
+  },
+  "kanda": {
+   "name": "Kanda (now Ramen Kanda)",
+   "note": "Where the owner of Kanda Jimbocho trained. Opened as a shop of the operating company, changed its name in 2004 and is still in business. No source found showing where its owner trained."
+  },
+  "shindaita_old": {
+   "name": "Kannana Shindaita",
+   "note": "The founding owner is said to have come from the original Akabane shop. The owner changed in 2014 and the shop was renamed Kannana Shin-Shindaita."
+  },
+  "kabukicho_old": {
+   "name": "Kabukicho (former site)",
+   "note": "No source found showing where the owner trained. Moved in 2016 and renamed Shinjuku Kabukicho."
+  },
+  "mejirodai_hosei": {
+   "name": "Mejirodai Hosei Daigaku-mae",
+   "note": "No source found showing where the founding owner trained. Moved in 2017 and renamed Mejirodai."
+  },
+  "sagamiono_ekimae": {
+   "name": "Sagami-Ono Ekimae",
+   "note": "Same owner as today’s Sagami-Ono (trained at Shin-Koganei Kaido, Hachioji Yaen Kaido and elsewhere). Moved and renamed in 2009."
+  },
+  "sendai_old": {
+   "name": "Sendai (original)",
+   "note": "Same owner as today’s Sendai 2 (trained at Shin-Koganei Kaido and Hachioji Yaen Kaido 2). Moved and renamed in 2025."
+  }
+ }
+}

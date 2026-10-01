@@ -1,0 +1,22 @@
+{
+  "name": "二郎ログ",
+  "description": "直系ラーメン二郎専門の情報サイト。全店の営業時間・定休日・ルール、いま営業中の店、地図、はじめての人向けガイドと自分用の訪問ログ。",
+  "base_url": "https://ippo0127.github.io/jirolog/",
+  "name_en": "Jiro Log",
+  "description_en": "An unofficial guide to every Ramen Jiro shop in Japan: what is open now, hours, house rules, a map, how to order, and your own visit log.",
+  "feed_exclude": [
+    "炎上",
+    "火災",
+    "火事",
+    "事故",
+    "閉店理由",
+    "トラブル",
+    "騒動",
+    "不祥事",
+    "逮捕",
+    "入院",
+    "体調"
+  ],
+  "report_endpoint": "",
+  "report_repo": "ippo0127/jirolog-reports"
+}

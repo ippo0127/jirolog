@@ -1,0 +1,112 @@
+[
+ {
+  "date": "2024-05-28",
+  "type": "pause",
+  "store_id": "kabukicho",
+  "title": "新宿歌舞伎町店が一時休業",
+  "summary": "一時休業し、約4か月後の 2024-09-19 に営業を再開した。",
+  "source": {
+   "label": "新宿ニュースBlog「ラーメン二郎歌舞伎町店 113日ぶりに営業を再開」",
+   "url": "https://shinjukunews.com/51313"
+  }
+ },
+ {
+  "date": "2024-09-19",
+  "type": "open",
+  "store_id": "kabukicho",
+  "title": "新宿歌舞伎町店が営業再開",
+  "summary": "一時休業から113日ぶりに営業を再開した。",
+  "source": {
+   "label": "新宿ニュースBlog",
+   "url": "https://shinjukunews.com/51313"
+  }
+ },
+ {
+  "date": "2024-12-01",
+  "type": "open",
+  "store_id": "asakura",
+  "title": "朝倉街道駅前店が開店（九州初）",
+  "summary": "福岡県筑紫野市に九州で初めての直系店が開店した。店主は環七新新代田店の出身。",
+  "source": {
+   "label": "ラーメンシーン【ラーメン二郎 朝倉街道駅前店】",
+   "url": "https://ramen-scene.com/asakuragaido"
+  }
+ },
+ {
+  "date": "2025-03-02",
+  "type": "close",
+  "store_id": "sakuradai",
+  "title": "桜台駅前店が閉店",
+  "summary": "2007年開店の練馬区・桜台駅前店が約18年の営業を終えて閉店した。",
+  "source": {
+   "label": "練馬ジモピー局「【閉店】ラーメン二郎 桜台駅前店、18年の歴史に幕」",
+   "url": "https://nerima-jmpy.com/ramenjirosakuradai-event-ramen-202503/"
+  }
+ },
+ {
+  "date": "2025-03-24",
+  "type": "pause",
+  "store_id": "sendai",
+  "title": "仙台店が移転のため休業",
+  "summary": "青葉区立町の旧店舗での営業を終え、移転準備のため一時休業に入った。",
+  "source": {
+   "label": "ikkos films「ラーメン二郎 仙台店」",
+   "url": "https://ikkos-films.com/ramen-jiro-sendai/"
+  }
+ },
+ {
+  "date": "2025-04-20",
+  "type": "move",
+  "store_id": "sendai",
+  "title": "仙台店が一番町へ移転し「仙台店2」に",
+  "summary": "青葉通一番町駅すぐの第一観光ビル1階へ移転して営業を再開し、店名を仙台店2に改めた。",
+  "source": {
+   "label": "食べログ ラーメン二郎 仙台店2",
+   "url": "https://tabelog.com/miyagi/A0401/A040101/4028874/"
+  }
+ },
+ {
+  "date": "2025-11-30",
+  "type": "open",
+  "store_id": "nagoya",
+  "title": "名古屋大曽根店が開店（中部初）",
+  "summary": "名古屋市東区矢田に中部・東海地方で初めての直系店が開店した。店主は新宿歌舞伎町店などの出身。",
+  "source": {
+   "label": "食べログ ラーメン二郎 名古屋大曽根店",
+   "url": "https://tabelog.com/aichi/A2301/A230110/23094216/"
+  }
+ },
+ {
+  "date": "2026-06-21",
+  "type": "open",
+  "store_id": "okinawa",
+  "title": "沖縄店が開店（沖縄県初）",
+  "summary": "那覇市壺屋に沖縄県初、日本最南端の直系店が開店した。店主は環七一之江店の出身。",
+  "source": {
+   "label": "ラーメンシーン【ラーメン二郎 沖縄店】",
+   "url": "https://ramen-scene.com/jiro-okinawa"
+  }
+ },
+ {
+  "date": "2026-07-25",
+  "type": "pause",
+  "store_id": "okubo",
+  "title": "京成大久保店が一時休業",
+  "summary": "2002年開店の京成大久保店が、2026-07-25 の営業をもって一時休業に入った。再開が予告されているが、9月末時点で再開日は未発表。",
+  "source": {
+   "label": "Theデブ☆マニアックス「【さらば眉二】ラーメン二郎京成大久保店…」",
+   "url": "https://thedebu.com/2026/07/22/mayuji-58/"
+  }
+ },
+ {
+  "date": "2026-09-30",
+  "type": "upcoming",
+  "store_id": "matsumoto",
+  "title": "松本駅近くに「ラーメン二郎 松本店」の看板",
+  "summary": "長野県松本市の中心市街地で松本店の看板設置が確認された。開店日や営業時間はまだ発表されていない。",
+  "source": {
+   "label": "ぐんぐるブログ",
+   "url": "https://www.gummaumaimono.info/entry/2026/09/30/221547"
+  }
+ }
+]

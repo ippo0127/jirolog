@@ -1,0 +1,1923 @@
+{
+ "nodes": [
+  {
+   "id": "mita",
+   "name": "三田本店",
+   "status": "open",
+   "parent": null,
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "1968",
+   "confidence": "high",
+   "note": "系譜の根。1968年に都立大学駅の近くで創業し三田へ移転、1996年に現在地へ",
+   "sources": [
+    {
+     "label": "Wikipedia「ラーメン二郎」",
+     "url": "https://ja.wikipedia.org/wiki/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E",
+     "date": "2026-06-27"
+    },
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-mita",
+     "date": "2026-07-15"
+    }
+   ]
+  },
+  {
+   "id": "meguro",
+   "name": "目黒店",
+   "status": "open",
+   "parent": "mita",
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "1995-07",
+   "confidence": "high",
+   "note": "店主は三田本店に弟子入りして独立（店主紹介の新聞記事による）。Take4 は旧赤羽店出身と記す",
+   "sources": [
+    {
+     "label": "Wikipedia「ラーメン二郎」（北日本新聞 2008-01-21 の店主紹介記事を出典として引用）",
+     "url": "https://ja.wikipedia.org/wiki/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E",
+     "date": "2026-06-27"
+    },
+    {
+     "label": "せんちゃん 1000ch「ラーメン二郎 目黒店」",
+     "url": "https://y-senga.com/jiro_meguro/",
+     "date": "2015-12-24"
+    },
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    }
+   ]
+  },
+  {
+   "id": "sengawa",
+   "name": "仙川店",
+   "status": "open",
+   "parent": "mita",
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "1995-10",
+   "confidence": "high",
+   "note": "2005年からの現店主は仙川店で助手を務めたのち三田本店で修業して継いだ",
+   "sources": [
+    {
+     "label": "ラーメンWalker「武蔵野・多摩地区のラーメン二郎6店舗」",
+     "url": "https://ramen.walkerplus.com/article/4052463/",
+     "date": "2021-04-26"
+    },
+    {
+     "label": "mixi ラーメン二郎コミュニティ「仙川の創業店長」",
+     "url": "https://mixi.jp/view_bbs.pl?comm_id=251&id=8770849",
+     "date": "2006-07-21"
+    }
+   ]
+  },
+  {
+   "id": "kabukicho",
+   "name": "新宿歌舞伎町店",
+   "status": "open",
+   "parent": null,
+   "also_trained_at": [],
+   "successor_of": "kabukicho_old",
+   "opened": "2016-10",
+   "confidence": "unknown",
+   "note": "店主の修業先を店名で示す出典は見つからない。2016年に旧・歌舞伎町店から移転・改称",
+   "sources": [
+    {
+     "label": "Wikipedia「ラーメン二郎」",
+     "url": "https://ja.wikipedia.org/wiki/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E",
+     "date": "2026-06-27"
+    },
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-kabukicho",
+     "date": "2025-06-29"
+    }
+   ]
+  },
+  {
+   "id": "shinagawa",
+   "name": "品川店",
+   "status": "open",
+   "parent": "mita",
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "1997",
+   "confidence": "high",
+   "note": "店主が三田本店で改めて修業し直系に加わった",
+   "sources": [
+    {
+     "label": "Wikipedia「ラーメン二郎」",
+     "url": "https://ja.wikipedia.org/wiki/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E",
+     "date": "2026-06-27"
+    },
+    {
+     "label": "IKKO'S FILMS「ラーメン二郎 品川」",
+     "url": "https://ikkos-films.com/ramen-jiro-shinagawa/",
+     "date": "2026-02-03"
+    },
+    {
+     "label": "ラーメンタル「ラーメン二郎 品川店」",
+     "url": "https://ramental.net/2021/05/30/jiro-shinagawa/",
+     "date": "2021-05-30"
+    }
+   ]
+  },
+  {
+   "id": "otakibashi",
+   "name": "新宿小滝橋通り店",
+   "status": "open",
+   "parent": "mita",
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "1999-02",
+   "confidence": "low",
+   "note": "品川店と同じく店主が三田本店で修業して直系に加わったとされる（出典は1件）",
+   "sources": [
+    {
+     "label": "Wikipedia「ラーメン二郎」",
+     "url": "https://ja.wikipedia.org/wiki/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E",
+     "date": "2026-06-27"
+    }
+   ]
+  },
+  {
+   "id": "shindaita",
+   "name": "環七新新代田店",
+   "status": "open",
+   "parent": "kabukicho",
+   "also_trained_at": [],
+   "successor_of": "shindaita_old",
+   "opened": "2014-05",
+   "confidence": "high",
+   "note": "現店主は移転前の歌舞伎町店で助手を務めた。2014年に環七新代田店を継いで改称",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "IKKO'S FILMS「ラーメン二郎 環七新新代田店」",
+     "url": "https://ikkos-films.com/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E-%E7%92%B0%E4%B8%83%E6%96%B0%E6%96%B0%E4%BB%A3%E7%94%B0%E5%BA%97%EF%BD%9C%E5%88%9D%E4%BB%A3%E3%81%AF%E6%B2%B9%E5%B1%A4%EF%BC%92cm%E3%81%AE/",
+     "date": "2026-02-03"
+    },
+    {
+     "label": "ラーメン二郎 PC店Ⅲ（ブログ）",
+     "url": "https://ramen-jiro-pc3.com/shndaita/",
+     "date": "2024-09-07"
+    },
+    {
+     "label": "ラーメンデータベース 店舗情報（備考欄）",
+     "url": "https://ramendb.supleks.jp/s/75362.html",
+     "date": "2026-10-01"
+    }
+   ]
+  },
+  {
+   "id": "yaen",
+   "name": "八王子野猿街道店2",
+   "status": "open",
+   "parent": "mita",
+   "also_trained_at": [],
+   "successor_of": "yaen_old",
+   "opened": "2006-06",
+   "confidence": "high",
+   "note": "店主は三田本店などで修業。2006年に八王子野猿街道店から移転・改称",
+   "sources": [
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-yaen",
+     "date": "2025-10-07"
+    },
+    {
+     "label": "ラーメン二郎 PC店Ⅲ（ブログ）",
+     "url": "https://ramen-jiro-pc3.com/yaen2/",
+     "date": "2024-08-29"
+    },
+    {
+     "label": "ラーメンWalker「武蔵野・多摩地区のラーメン二郎6店舗」",
+     "url": "https://ramen.walkerplus.com/article/4052463/",
+     "date": "2021-04-26"
+    }
+   ]
+  },
+  {
+   "id": "ikebukuro",
+   "name": "池袋東口店",
+   "status": "open",
+   "parent": "mita",
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "2001-02",
+   "confidence": "low",
+   "note": "店主は三田本店などで修業とされる。運営会社の創業者も三田本店からのれん分けを受けたとされる",
+   "sources": [
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-ikebukuro",
+     "date": "2025-07-25"
+    },
+    {
+     "label": "ラーメンデータベース 店舗情報（備考欄）",
+     "url": "https://ramendb.supleks.jp/s/67.html",
+     "date": "2026-10-01"
+    }
+   ]
+  },
+  {
+   "id": "kameido",
+   "name": "亀戸店",
+   "status": "open",
+   "parent": "fujisawa",
+   "also_trained_at": [
+    "kannai"
+   ],
+   "successor_of": "kyukameido",
+   "opened": "2001-04",
+   "confidence": "high",
+   "note": "2013年からの現店主は横浜関内店・湘南藤沢店で修業。先代店主の時代（2001〜2013年）は別ノードに分けて記録",
+   "sources": [
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-kameido",
+     "date": "2026-01-10"
+    },
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "Wikipedia「ラーメン二郎」",
+     "url": "https://ja.wikipedia.org/wiki/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E",
+     "date": "2026-06-27"
+    }
+   ]
+  },
+  {
+   "id": "fuchu",
+   "name": "府中店",
+   "status": "open",
+   "parent": null,
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "2001-05",
+   "confidence": "unknown",
+   "note": "店主の修業先を示す出典は見つからない",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-fuchu",
+     "date": "2025-07-10"
+    }
+   ]
+  },
+  {
+   "id": "mejirodai",
+   "name": "めじろ台店",
+   "status": "open",
+   "parent": "yaen",
+   "also_trained_at": [],
+   "successor_of": "mejirodai_hosei",
+   "opened": "2017-05",
+   "confidence": "high",
+   "note": "2023年からの現店主は八王子野猿街道店2出身。2017年にめじろ台法政大学前店から移転・改称",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "ラーメン二郎 PC店Ⅲ（ブログ）",
+     "url": "https://ramen-jiro-pc3.com/mejirodai/",
+     "date": "2024-09-01"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-mejirodai2",
+     "date": "2026-06-20"
+    }
+   ]
+  },
+  {
+   "id": "ogikubo",
+   "name": "荻窪店",
+   "status": "open",
+   "parent": "sakuradai",
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "2002-10",
+   "confidence": "high",
+   "note": "2016年からの現店主は桜台駅前店で助手を務めた",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-ogikubo",
+     "date": "2025-11-09"
+    },
+    {
+     "label": "IKKO'S FILMS「ラーメン二郎 全店まとめ」",
+     "url": "https://ikkos-films.com/%E3%80%90%E5%AE%8C%E5%85%A8%E4%BF%9D%E5%AD%98%E7%89%88%E3%80%91%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E-%E7%9B%B4%E7%B3%BB%E5%85%A8%E5%BA%97%E3%81%BE%E3%81%A8%E3%82%81%EF%BD%9C%E6%9C%AC/",
+     "date": "2026-06-02"
+    },
+    {
+     "label": "ラーメン二郎 PC店Ⅲ（ブログ）",
+     "url": "https://ramen-jiro-pc3.com/ogikubo/",
+     "date": "2024-08-30"
+    }
+   ]
+  },
+  {
+   "id": "kaminoge",
+   "name": "上野毛店",
+   "status": "open",
+   "parent": null,
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "2002-11",
+   "confidence": "unknown",
+   "note": "2006年からの現店主の修業先を示す出典は見つからない",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "IKKO'S FILMS「ラーメン二郎 上野毛店」",
+     "url": "https://ikkos-films.com/2018-07-13-%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E_%E5%85%A8%E5%BA%97%E5%88%B6%E8%A6%87_3%E5%91%A8%E7%9B%AE_vol_7%E3%80%8C_%E4%B8%8A%E9%87%8E%E6%AF%9B%E5%BA%97_%E3%80%8D%E5%B0%8F/",
+     "date": "2026-03-13"
+    }
+   ]
+  },
+  {
+   "id": "ichinoe",
+   "name": "環七一之江店",
+   "status": "open",
+   "parent": "kyukameido",
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "2003-11",
+   "confidence": "high",
+   "note": "店主は先代店主時代（2001〜2013年）の亀戸店で修業",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-ichinoe",
+     "date": "2026-08-01"
+    }
+   ]
+  },
+  {
+   "id": "jimbocho",
+   "name": "神田神保町店",
+   "status": "open",
+   "parent": "kanda",
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "2004-11",
+   "confidence": "high",
+   "note": "店主は旧・二郎神田店（現 ラーメン 神田店）出身",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "なずなにきのグルメブログ「ラーメン二郎 神田神保町店」",
+     "url": "https://nzn073.blog.jp/archives/27967700.html",
+     "date": "2025-07-18"
+    }
+   ]
+  },
+  {
+   "id": "koiwa",
+   "name": "小岩店",
+   "status": "open",
+   "parent": "jimbocho",
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "2005-11",
+   "confidence": "low",
+   "note": "店主は神田神保町店出身とする出典が多いが、Take4 は池袋東口店出身とし一致しない",
+   "sources": [
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-koiwa",
+     "date": "2026-06-23"
+    },
+    {
+     "label": "MGMG LABO「ラーメン二郎 小岩店」",
+     "url": "https://mgmglabo.com/ramen-jiro-koiwajiro-tokyo-gourmet/",
+     "date": "2021-11-09"
+    },
+    {
+     "label": "Webデザイナーのグルメ日記「ラーメン二郎 小岩店」",
+     "url": "https://webdesign-gourmet.com/jiro-koiwa-ramen-edogawa",
+     "date": "2025-11-27"
+    },
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    }
+   ]
+  },
+  {
+   "id": "hibarigaoka",
+   "name": "ひばりヶ丘駅前店",
+   "status": "open",
+   "parent": "koganei",
+   "also_trained_at": [
+    "sengawa"
+   ],
+   "successor_of": null,
+   "opened": "2006-06",
+   "confidence": "high",
+   "note": "店主は新小金井街道店出身（仙川店での経験を挙げる出典もある）",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "IKKO'S FILMS「ラーメン二郎 全店まとめ」",
+     "url": "https://ikkos-films.com/%E3%80%90%E5%AE%8C%E5%85%A8%E4%BF%9D%E5%AD%98%E7%89%88%E3%80%91%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E-%E7%9B%B4%E7%B3%BB%E5%85%A8%E5%BA%97%E3%81%BE%E3%81%A8%E3%82%81%EF%BD%9C%E6%9C%AC/",
+     "date": "2026-06-02"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-hibarigaoka",
+     "date": "2026-02-15"
+    }
+   ]
+  },
+  {
+   "id": "tachikawa",
+   "name": "立川店",
+   "status": "open",
+   "parent": "ichinoe",
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "2008-04",
+   "confidence": "high",
+   "note": "2023年からの現店主は環七一之江店出身（開店時の店主は上野毛店出身とされる）",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "IKKO'S FILMS「ラーメン二郎 全店まとめ」",
+     "url": "https://ikkos-films.com/%E3%80%90%E5%AE%8C%E5%85%A8%E4%BF%9D%E5%AD%98%E7%89%88%E3%80%91%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E-%E7%9B%B4%E7%B3%BB%E5%85%A8%E5%BA%97%E3%81%BE%E3%81%A8%E3%82%81%EF%BD%9C%E6%9C%AC/",
+     "date": "2026-06-02"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-tachikawa2",
+     "date": "2026-05-02"
+    },
+    {
+     "label": "ラーメン二郎 PC店Ⅲ（ブログ）",
+     "url": "https://ramen-jiro-pc3.com/tachikawa/",
+     "date": "2024-10-02"
+    }
+   ]
+  },
+  {
+   "id": "senjuohashi",
+   "name": "千住大橋駅前店",
+   "status": "open",
+   "parent": "ichinoe",
+   "also_trained_at": [
+    "koiwa"
+   ],
+   "successor_of": null,
+   "opened": "2009-04",
+   "confidence": "high",
+   "note": "店主は環七一之江店と小岩店で修業",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-senjuohashi",
+     "date": "2026-04-03"
+    },
+    {
+     "label": "ラーメン二郎 PC店Ⅲ（ブログ）",
+     "url": "https://ramen-jiro-pc3.com/senjuohashi/",
+     "date": "2024-03-13"
+    }
+   ]
+  },
+  {
+   "id": "nishidai",
+   "name": "西台駅前店",
+   "status": "open",
+   "parent": "takadanobaba",
+   "also_trained_at": [
+    "jimbocho"
+   ],
+   "successor_of": null,
+   "opened": "2010-06",
+   "confidence": "high",
+   "note": "店主は高田馬場店で修業し、神田神保町店も経験",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-nishidai",
+     "date": "2025-09-28"
+    },
+    {
+     "label": "不羈奔放（ブログ）「ラーメン二郎 高田馬場店の跡地を訪ねて」",
+     "url": "https://nannyoudakara1414.blog.jp/archives/12640533.html",
+     "date": "2018-10-13"
+    },
+    {
+     "label": "ラーメン二郎 PC店Ⅲ（ブログ）",
+     "url": "https://ramen-jiro-pc3.com/nishidai/",
+     "date": "2024-11-07"
+    }
+   ]
+  },
+  {
+   "id": "hitotsubashi",
+   "name": "一橋学園店",
+   "status": "open",
+   "parent": "jimbocho",
+   "also_trained_at": [
+    "koganei"
+   ],
+   "successor_of": null,
+   "opened": "2022-08",
+   "confidence": "high",
+   "note": "店主は神田神保町店出身（新小金井街道店の経験を挙げる出典もある）",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "IKKO'S FILMS「ラーメン二郎 全店まとめ」",
+     "url": "https://ikkos-films.com/%E3%80%90%E5%AE%8C%E5%85%A8%E4%BF%9D%E5%AD%98%E7%89%88%E3%80%91%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E-%E7%9B%B4%E7%B3%BB%E5%85%A8%E5%BA%97%E3%81%BE%E3%81%A8%E3%82%81%EF%BD%9C%E6%9C%AC/",
+     "date": "2026-06-02"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-hitotsubashi",
+     "date": "2026-08-03"
+    },
+    {
+     "label": "ラーメン二郎 PC店Ⅲ（ブログ）",
+     "url": "https://ramen-jiro-pc3.com/hitotsubashi/",
+     "date": "2024-03-12"
+    }
+   ]
+  },
+  {
+   "id": "kawasaki",
+   "name": "京急川崎店",
+   "status": "open",
+   "parent": "akabane1",
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "2001-04",
+   "confidence": "high",
+   "note": "店主は旧赤羽店などの出身",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-kawasaki",
+     "date": "2026-05-23"
+    }
+   ]
+  },
+  {
+   "id": "sagamiono",
+   "name": "相模大野店",
+   "status": "open",
+   "parent": "koganei",
+   "also_trained_at": [
+    "yaen"
+   ],
+   "successor_of": "sagamiono_ekimae",
+   "opened": "2009-06",
+   "confidence": "high",
+   "note": "店主は新小金井街道店・八王子野猿街道店などで修業。2009年に相模大野駅前店から移転・改称",
+   "sources": [
+    {
+     "label": "食べログ 口コミ（マーコラーメン）「ラーメン二郎 相模大野店」",
+     "url": "https://tabelog.com/kanagawa/A1407/A140701/14000839/dtlrvwlst/B111405788/",
+     "date": "2015-03"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-sagamiono",
+     "date": "2026-05-17"
+    },
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    }
+   ]
+  },
+  {
+   "id": "kannai",
+   "name": "横浜関内店",
+   "status": "open",
+   "parent": "tsurumi",
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "2004-10",
+   "confidence": "high",
+   "note": "店主は鶴見店出身",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "IKKO'S FILMS「ラーメン二郎 全店まとめ」",
+     "url": "https://ikkos-films.com/%E3%80%90%E5%AE%8C%E5%85%A8%E4%BF%9D%E5%AD%98%E7%89%88%E3%80%91%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E-%E7%9B%B4%E7%B3%BB%E5%85%A8%E5%BA%97%E3%81%BE%E3%81%A8%E3%82%81%EF%BD%9C%E6%9C%AC/",
+     "date": "2026-06-02"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-kannai",
+     "date": "2026-05-28"
+    },
+    {
+     "label": "ラーメン二郎 PC店Ⅲ（ブログ）",
+     "url": "https://ramen-jiro-pc3.com/kannai/",
+     "date": "2024-03-13"
+    }
+   ]
+  },
+  {
+   "id": "fujisawa",
+   "name": "湘南藤沢店",
+   "status": "open",
+   "parent": "kannai",
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "2010-03",
+   "confidence": "high",
+   "note": "店主は横浜関内店出身",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "IKKO'S FILMS「ラーメン二郎 全店まとめ」",
+     "url": "https://ikkos-films.com/%E3%80%90%E5%AE%8C%E5%85%A8%E4%BF%9D%E5%AD%98%E7%89%88%E3%80%91%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E-%E7%9B%B4%E7%B3%BB%E5%85%A8%E5%BA%97%E3%81%BE%E3%81%A8%E3%82%81%EF%BD%9C%E6%9C%AC/",
+     "date": "2026-06-02"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-fujisawa",
+     "date": "2024-11-30"
+    },
+    {
+     "label": "ラーメンデータベース 店舗情報（備考欄）",
+     "url": "https://ramendb.supleks.jp/s/25545.html",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "ラーメン二郎 PC店Ⅲ（ブログ）",
+     "url": "https://ramen-jiro-pc3.com/fujisawa/",
+     "date": "2024-03-13"
+    }
+   ]
+  },
+  {
+   "id": "nakayama",
+   "name": "中山駅前店",
+   "status": "open",
+   "parent": "kannai",
+   "also_trained_at": [
+    "yaen",
+    "koganei",
+    "tsurumi"
+   ],
+   "successor_of": null,
+   "opened": "2010-12",
+   "confidence": "high",
+   "note": "店主は横浜関内店で修業。ほかに野猿街道店・新小金井街道店・鶴見店での経験を挙げる出典がある",
+   "sources": [
+    {
+     "label": "IKKO'S FILMS「ラーメン二郎 全店まとめ」",
+     "url": "https://ikkos-films.com/%E3%80%90%E5%AE%8C%E5%85%A8%E4%BF%9D%E5%AD%98%E7%89%88%E3%80%91%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E-%E7%9B%B4%E7%B3%BB%E5%85%A8%E5%BA%97%E3%81%BE%E3%81%A8%E3%82%81%EF%BD%9C%E6%9C%AC/",
+     "date": "2026-06-02"
+    },
+    {
+     "label": "ラーメンデータベース 店舗情報（備考欄）",
+     "url": "https://ramendb.supleks.jp/s/30935.html",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-nakayama",
+     "date": "2024-11-23"
+    },
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "ラーメン二郎 PC店Ⅲ（ブログ）",
+     "url": "https://ramen-jiro-pc3.com/nakayamaekimae/",
+     "date": "2024-08-17"
+    }
+   ]
+  },
+  {
+   "id": "ikuta",
+   "name": "生田駅前店",
+   "status": "open",
+   "parent": "meguro",
+   "also_trained_at": [
+    "yaen",
+    "koganei"
+   ],
+   "successor_of": null,
+   "opened": "2023-05",
+   "confidence": "high",
+   "note": "店主は複数店で修業し、最後に長く務めた目黒店の流れをくむ。野猿街道店・新小金井街道店も経験",
+   "sources": [
+    {
+     "label": "Yahoo!ニュース エキスパート（ラーメンたろしん）「ラーメン二郎生田駅前店」",
+     "url": "https://news.yahoo.co.jp/expert/articles/2423e57e6bc5196080bd5aaf24b868d147195ab3",
+     "date": "2023-06-04"
+    },
+    {
+     "label": "アメブロ r55jcw「ラーメン二郎 生田駅前店」",
+     "url": "https://ameblo.jp/r55jcw/entry-12804637255.html",
+     "date": "2023-05-26"
+    },
+    {
+     "label": "さむらい流らぁ麺道「ラーメン二郎 生田駅前店」",
+     "url": "https://samura-men.com/jiro/jiro_ikutaekimae01/",
+     "date": "2025-07-29"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-ikuta",
+     "date": "2026-07-27"
+    },
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "ラーメン二郎 PC店Ⅲ（ブログ）",
+     "url": "https://ramen-jiro-pc3.com/ikuta/",
+     "date": "2024-08-17"
+    }
+   ]
+  },
+  {
+   "id": "kawagoe",
+   "name": "川越店",
+   "status": "open",
+   "parent": "kannai",
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "2017-03",
+   "confidence": "high",
+   "note": "店主は横浜関内店出身",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-kawagoe",
+     "date": "2026-06-02"
+    },
+    {
+     "label": "ラーメン二郎 PC店Ⅲ（ブログ）",
+     "url": "https://ramen-jiro-pc3.com/kawagoe/",
+     "date": "2024-08-17"
+    }
+   ]
+  },
+  {
+   "id": "koshigaya",
+   "name": "越谷店",
+   "status": "open",
+   "parent": "fujisawa",
+   "also_trained_at": [
+    "koganei"
+   ],
+   "successor_of": null,
+   "opened": "2019-03",
+   "confidence": "high",
+   "note": "店主は湘南藤沢店出身で、閉店前の新小金井街道店も担当した",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-koshigaya",
+     "date": "2025-09-13"
+    },
+    {
+     "label": "ラーメン二郎 PC店Ⅲ（ブログ）",
+     "url": "https://ramen-jiro-pc3.com/koshigaya/",
+     "date": "2024-08-17"
+    }
+   ]
+  },
+  {
+   "id": "omiya",
+   "name": "大宮公園駅前店",
+   "status": "open",
+   "parent": "omiya_shimocho",
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "2020-06",
+   "confidence": "high",
+   "note": "店主は旧大宮店で修業",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-omiyakoen",
+     "date": "2025-07-29"
+    },
+    {
+     "label": "ラーメンデータベース 店舗情報（備考欄）",
+     "url": "https://ramendb.supleks.jp/s/125117.html",
+     "date": "2026-10-01"
+    }
+   ]
+  },
+  {
+   "id": "matsudo",
+   "name": "松戸駅前店Ⅲ",
+   "status": "open",
+   "parent": "yaen",
+   "also_trained_at": [],
+   "successor_of": "kyumatsudo",
+   "opened": "2015-08",
+   "confidence": "high",
+   "note": "2015年からの3代目店主は八王子野猿街道店2などで修業",
+   "sources": [
+    {
+     "label": "ラーメンデータベース 店舗情報（備考欄）",
+     "url": "https://ramendb.supleks.jp/s/286.html",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "IKKO'S FILMS「ラーメン二郎 全店まとめ」",
+     "url": "https://ikkos-films.com/%E3%80%90%E5%AE%8C%E5%85%A8%E4%BF%9D%E5%AD%98%E7%89%88%E3%80%91%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E-%E7%9B%B4%E7%B3%BB%E5%85%A8%E5%BA%97%E3%81%BE%E3%81%A8%E3%82%81%EF%BD%9C%E6%9C%AC/",
+     "date": "2026-06-02"
+    },
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-matsudo",
+     "date": "2026-01-11"
+    },
+    {
+     "label": "ラーメン二郎 PC店Ⅲ（ブログ）",
+     "url": "https://ramen-jiro-pc3.com/matsudo/",
+     "date": "2024-09-02"
+    }
+   ]
+  },
+  {
+   "id": "okubo",
+   "name": "京成大久保店",
+   "status": "open",
+   "parent": null,
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "2002-12",
+   "confidence": "unknown",
+   "note": "開店時の店主の修業先を示す出典は見つからない。2026-07-25 の営業を最後に一時休業中（再開予定）",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-okubo",
+     "date": "2026-05-08"
+    },
+    {
+     "label": "サウナと麺（note）ラーメン店ニュース",
+     "url": "https://note.com/saunatomen/n/nbb740949f40d",
+     "date": "2026-07"
+    }
+   ]
+  },
+  {
+   "id": "kashiwa",
+   "name": "柏店",
+   "status": "open",
+   "parent": "takadanobaba",
+   "also_trained_at": [
+    "hibarigaoka"
+   ],
+   "successor_of": "moriya",
+   "opened": "2023-01",
+   "confidence": "high",
+   "note": "店主は高田馬場店などで修業（ひばりヶ丘駅前店での経験を挙げる出典もある）。2023年に茨城守谷店から移転",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-kashiwa",
+     "date": "2024-11-01"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-moriya",
+     "date": "2023-11-04"
+    },
+    {
+     "label": "不羈奔放（ブログ）「ラーメン二郎 高田馬場店の跡地を訪ねて」",
+     "url": "https://nannyoudakara1414.blog.jp/archives/12640533.html",
+     "date": "2018-10-13"
+    }
+   ]
+  },
+  {
+   "id": "chiba",
+   "name": "千葉店",
+   "status": "open",
+   "parent": "nishidai",
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "2020-06",
+   "confidence": "high",
+   "note": "店主は西台駅前店で修業",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "IKKO'S FILMS「ラーメン二郎 全店まとめ」",
+     "url": "https://ikkos-films.com/%E3%80%90%E5%AE%8C%E5%85%A8%E4%BF%9D%E5%AD%98%E7%89%88%E3%80%91%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E-%E7%9B%B4%E7%B3%BB%E5%85%A8%E5%BA%97%E3%81%BE%E3%81%A8%E3%82%81%EF%BD%9C%E6%9C%AC/",
+     "date": "2026-06-02"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-chiba",
+     "date": "2026-05-14"
+    },
+    {
+     "label": "ラーメン二郎 PC店Ⅲ（ブログ）",
+     "url": "https://ramen-jiro-pc3.com/chiba/",
+     "date": "2024-08-17"
+    }
+   ]
+  },
+  {
+   "id": "maebashi",
+   "name": "前橋千代田町店",
+   "status": "open",
+   "parent": "yaen",
+   "also_trained_at": [
+    "koganei",
+    "aizu",
+    "mita"
+   ],
+   "successor_of": null,
+   "opened": "2019-10",
+   "confidence": "low",
+   "note": "店主は八王子野猿街道店出身とする出典が多いが、新小金井街道店出身とする記述や、会津若松駅前店・三田本店での経験を挙げる記述もあり一致しない",
+   "sources": [
+    {
+     "label": "ラーメン二郎 PC店Ⅲ（ブログ）",
+     "url": "https://ramen-jiro-pc3.com/maebashichiyoda/",
+     "date": "2024-03-13"
+    },
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "Take4 二郎食記録「二郎系図」",
+     "url": "https://take4.hiyamugi.com/shop/shop_genealogy.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-maebashi",
+     "date": "2025-10-26"
+    },
+    {
+     "label": "Theデブ☆マニアックス「前橋千代田町店 判明している事まとめ」",
+     "url": "https://thedebu.com/2019/07/03/jiroumaebashi/",
+     "date": "2020-02-15"
+    }
+   ]
+  },
+  {
+   "id": "tochigi",
+   "name": "栃木街道店",
+   "status": "open",
+   "parent": "yaen",
+   "also_trained_at": [
+    "koganei"
+   ],
+   "successor_of": null,
+   "opened": "2007-11",
+   "confidence": "high",
+   "note": "店主は八王子野猿街道店2・新小金井街道店で修業",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-tochigikaidou",
+     "date": "2025-11-01"
+    },
+    {
+     "label": "ラーメン二郎 PC店Ⅲ（ブログ）",
+     "url": "https://ramen-jiro-pc3.com/tochigikaido/",
+     "date": "2024-03-08"
+    }
+   ]
+  },
+  {
+   "id": "hitachinaka",
+   "name": "ひたちなか店",
+   "status": "open",
+   "parent": "shinbashi",
+   "also_trained_at": [
+    "sakuradai",
+    "koganei"
+   ],
+   "successor_of": null,
+   "opened": "2021-12",
+   "confidence": "high",
+   "note": "店主は新橋店などで修業し、桜台駅前店・新小金井街道店も経験",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "ラーメン二郎 PC店Ⅲ（ブログ）",
+     "url": "https://ramen-jiro-pc3.com/hitachinaka/",
+     "date": "2024-08-17"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-hitachinaka",
+     "date": "2025-10-27"
+    },
+    {
+     "label": "アメブロ r55jcw「ラーメン二郎 ひたちなか店」",
+     "url": "https://ameblo.jp/r55jcw/entry-12889844455.html",
+     "date": "2025-03-14"
+    }
+   ]
+  },
+  {
+   "id": "nagoya",
+   "name": "名古屋大曽根店",
+   "status": "open",
+   "parent": "kabukicho",
+   "also_trained_at": [
+    "ikebukuro",
+    "sakuradai"
+   ],
+   "successor_of": null,
+   "opened": "2025-11",
+   "confidence": "high",
+   "note": "店主は新宿歌舞伎町店出身。池袋東口店・桜台駅前店での経験を挙げる出典もある",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-nagoyaozone",
+     "date": "2026-05-04"
+    },
+    {
+     "label": "アメブロ r55jcw「ラーメン二郎 名古屋大曽根店」",
+     "url": "https://ameblo.jp/r55jcw/entry-12964056426.html",
+     "date": "2026-04-26"
+    },
+    {
+     "label": "麺旅「ラーメン二郎 名古屋大曽根店」",
+     "url": "https://mentabi.jp/aichi/jiro_ohzone/",
+     "date": "2026-09-29"
+    }
+   ]
+  },
+  {
+   "id": "kyoto",
+   "name": "京都店",
+   "status": "open",
+   "parent": "jimbocho",
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "2017-04",
+   "confidence": "high",
+   "note": "店主は神田神保町店出身",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "IKKO'S FILMS「ラーメン二郎 全店まとめ」",
+     "url": "https://ikkos-films.com/%E3%80%90%E5%AE%8C%E5%85%A8%E4%BF%9D%E5%AD%98%E7%89%88%E3%80%91%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E-%E7%9B%B4%E7%B3%BB%E5%85%A8%E5%BA%97%E3%81%BE%E3%81%A8%E3%82%81%EF%BD%9C%E6%9C%AC/",
+     "date": "2026-06-02"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-kyoto",
+     "date": "2024-01-27"
+    },
+    {
+     "label": "ラーメン二郎 PC店Ⅲ（ブログ）",
+     "url": "https://ramen-jiro-pc3.com/kyoto/",
+     "date": "2024-08-17"
+    }
+   ]
+  },
+  {
+   "id": "sapporo",
+   "name": "札幌店",
+   "status": "open",
+   "parent": "sakuradai",
+   "also_trained_at": [
+    "mita",
+    "hibarigaoka"
+   ],
+   "successor_of": null,
+   "opened": "2013-03",
+   "confidence": "high",
+   "note": "店主は桜台駅前店と三田本店で修業（ひばりヶ丘駅前店の経験を挙げる出典もある）",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "IKKO'S FILMS「ラーメン二郎 全店まとめ」",
+     "url": "https://ikkos-films.com/%E3%80%90%E5%AE%8C%E5%85%A8%E4%BF%9D%E5%AD%98%E7%89%88%E3%80%91%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E-%E7%9B%B4%E7%B3%BB%E5%85%A8%E5%BA%97%E3%81%BE%E3%81%A8%E3%82%81%EF%BD%9C%E6%9C%AC/",
+     "date": "2026-06-02"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-sapporo",
+     "date": "2024-01-27"
+    },
+    {
+     "label": "ラーメン二郎 PC店Ⅲ（ブログ）",
+     "url": "https://ramen-jiro-pc3.com/sapporo/",
+     "date": "2024-03-13"
+    },
+    {
+     "label": "ラーメンデータベース 店舗情報（備考欄）",
+     "url": "https://ramendb.supleks.jp/s/65267.html",
+     "date": "2026-10-01"
+    }
+   ]
+  },
+  {
+   "id": "sendai",
+   "name": "仙台店2",
+   "status": "open",
+   "parent": "koganei",
+   "also_trained_at": [
+    "yaen"
+   ],
+   "successor_of": "sendai_old",
+   "opened": "2025-04",
+   "confidence": "high",
+   "note": "店主は新小金井街道店・八王子野猿街道店2で修業。2025年に仙台店から移転・改称",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-sendai2",
+     "date": "2025-10-31"
+    },
+    {
+     "label": "ラーメンデータベース 店舗情報（備考欄）",
+     "url": "https://ramendb.supleks.jp/s/53010.html",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "ラーメン二郎 PC店Ⅲ（ブログ）",
+     "url": "https://ramen-jiro-pc3.com/sendai/",
+     "date": "2024-03-08"
+    },
+    {
+     "label": "IKKO'S FILMS「ラーメン二郎 仙台店」",
+     "url": "https://ikkos-films.com/ramen-jiro-sendai/",
+     "date": "2026-06-02"
+    }
+   ]
+  },
+  {
+   "id": "aizu",
+   "name": "会津若松駅前店",
+   "status": "open",
+   "parent": "yaen",
+   "also_trained_at": [
+    "koganei"
+   ],
+   "successor_of": null,
+   "opened": "2014-09",
+   "confidence": "high",
+   "note": "店主は八王子野猿街道店2出身（新小金井街道店の経験を挙げる出典もある）",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-aizu",
+     "date": "2025-10-27"
+    },
+    {
+     "label": "ラーメン二郎 PC店Ⅲ（ブログ）",
+     "url": "https://ramen-jiro-pc3.com/aizuwakamatsu/",
+     "date": "2024-05-06"
+    }
+   ]
+  },
+  {
+   "id": "asakura",
+   "name": "朝倉街道駅前店",
+   "status": "open",
+   "parent": "shindaita",
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "2024-12",
+   "confidence": "high",
+   "note": "店主は環七新新代田店出身",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/asakuragaido",
+     "date": "2025-05-25"
+    },
+    {
+     "label": "ラーメンデータベース 店舗情報（備考欄）",
+     "url": "https://ramendb.supleks.jp/s/161889.html",
+     "date": "2026-10-01"
+    }
+   ]
+  },
+  {
+   "id": "okinawa",
+   "name": "沖縄店",
+   "status": "open",
+   "parent": "ichinoe",
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "2026-06",
+   "confidence": "high",
+   "note": "店主は環七一之江店出身",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-okinawa",
+     "date": "2026-08-01"
+    }
+   ]
+  },
+  {
+   "id": "niigata",
+   "name": "新潟店",
+   "status": "open",
+   "parent": "ikebukuro",
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "2015-11",
+   "confidence": "high",
+   "note": "店主は池袋東口店などで修業し、2012〜2015年に松戸駅前店の2代目店主を務めた",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "IKKO'S FILMS「ラーメン二郎 全店まとめ」",
+     "url": "https://ikkos-films.com/%E3%80%90%E5%AE%8C%E5%85%A8%E4%BF%9D%E5%AD%98%E7%89%88%E3%80%91%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E-%E7%9B%B4%E7%B3%BB%E5%85%A8%E5%BA%97%E3%81%BE%E3%81%A8%E3%82%81%EF%BD%9C%E6%9C%AC/",
+     "date": "2026-06-02"
+    },
+    {
+     "label": "ラーメンデータベース 店舗情報（備考欄）",
+     "url": "https://ramendb.supleks.jp/s/286.html",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "松戸ラーメン探検隊「ラーメン二郎松戸店初代店主を振り返る」",
+     "url": "https://wl29.net/matudora/2019/03/07/syodai/",
+     "date": "2019-04-19"
+    }
+   ]
+  },
+  {
+   "id": "akabane1",
+   "name": "赤羽店（初代）",
+   "status": "closed",
+   "parent": "mita",
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "1991-02",
+   "confidence": "low",
+   "note": "1991年開店の初期の支店。2001年に二郎から独立し別屋号に。三田本店の流れとする記述による",
+   "sources": [
+    {
+     "label": "Wikipedia「ラーメン二郎」",
+     "url": "https://ja.wikipedia.org/wiki/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E",
+     "date": "2026-06-27"
+    },
+    {
+     "label": "Take4 二郎食記録「二郎系図」",
+     "url": "https://take4.hiyamugi.com/shop/shop_genealogy.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "全マシニキは今日も全マシ「ラーメン富士丸」",
+     "url": "https://www.zenmashiniki.com/entry/%E5%AF%8C%E5%A3%AB%E4%B8%B8",
+     "date": "2019-06-05"
+    }
+   ]
+  },
+  {
+   "id": "tsurumi",
+   "name": "鶴見店",
+   "status": "closed",
+   "parent": null,
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "1996-02",
+   "confidence": "unknown",
+   "note": "横浜関内店の店主の修業先。店主自身の修業先を示す出典は見つからない。2014年に蒲田へ移り（JR西口蒲田店）2019年閉店",
+   "sources": [
+    {
+     "label": "Wikipedia「ラーメン二郎」",
+     "url": "https://ja.wikipedia.org/wiki/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E",
+     "date": "2026-06-27"
+    },
+    {
+     "label": "IKKO'S FILMS「ラーメン二郎 鶴見店」",
+     "url": "https://ikkos-films.com/%E3%80%90%E9%96%89%E5%BA%97%E3%80%91%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E-%E9%B6%B4%E8%A6%8B%E5%BA%97%EF%BD%9C/",
+     "date": "2026-02-03"
+    },
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    }
+   ]
+  },
+  {
+   "id": "takadanobaba",
+   "name": "高田馬場店",
+   "status": "closed",
+   "parent": null,
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "2002-05",
+   "confidence": "unknown",
+   "note": "西台駅前店・茨城守谷店・旧大宮店の店主が修業した店。店主自身の修業先を示す出典は見つからない。2013年閉店",
+   "sources": [
+    {
+     "label": "Wikipedia「ラーメン二郎」",
+     "url": "https://ja.wikipedia.org/wiki/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E",
+     "date": "2026-06-27"
+    },
+    {
+     "label": "不羈奔放（ブログ）「ラーメン二郎 高田馬場店の跡地を訪ねて」",
+     "url": "https://nannyoudakara1414.blog.jp/archives/12640533.html",
+     "date": "2018-10-13"
+    },
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    }
+   ]
+  },
+  {
+   "id": "koganei",
+   "name": "新小金井街道店",
+   "status": "closed",
+   "parent": "mita",
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "2001-03",
+   "confidence": "low",
+   "note": "店主は三田本店で修業して開店。2018年閉店",
+   "sources": [
+    {
+     "label": "ラーメンWalker「武蔵野・多摩地区のラーメン二郎6店舗」",
+     "url": "https://ramen.walkerplus.com/article/4052463/",
+     "date": "2021-04-26"
+    },
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    }
+   ]
+  },
+  {
+   "id": "sakuradai",
+   "name": "桜台駅前店",
+   "status": "closed",
+   "parent": "kannai",
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "2007-01",
+   "confidence": "high",
+   "note": "店主は横浜関内店などで修業。2025-03-02閉店",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-sakuradai",
+     "date": "2024-09-28"
+    },
+    {
+     "label": "Wikipedia「ラーメン二郎」",
+     "url": "https://ja.wikipedia.org/wiki/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E",
+     "date": "2026-06-27"
+    }
+   ]
+  },
+  {
+   "id": "moriya",
+   "name": "茨城守谷店",
+   "status": "closed",
+   "parent": "takadanobaba",
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "2009-06",
+   "confidence": "high",
+   "note": "店主は高田馬場店などの出身。2023年1月に柏へ移転し柏店に",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-moriya",
+     "date": "2023-11-04"
+    },
+    {
+     "label": "不羈奔放（ブログ）「ラーメン二郎 高田馬場店の跡地を訪ねて」",
+     "url": "https://nannyoudakara1414.blog.jp/archives/12640533.html",
+     "date": "2018-10-13"
+    }
+   ]
+  },
+  {
+   "id": "omiya_shimocho",
+   "name": "大宮店（旧）",
+   "status": "closed",
+   "parent": "takadanobaba",
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "2008-08",
+   "confidence": "high",
+   "note": "店主は高田馬場店で修業。2016年閉店",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "不羈奔放（ブログ）「ラーメン二郎 高田馬場店の跡地を訪ねて」",
+     "url": "https://nannyoudakara1414.blog.jp/archives/12640533.html",
+     "date": "2018-10-13"
+    },
+    {
+     "label": "Wikipedia「ラーメン二郎」",
+     "url": "https://ja.wikipedia.org/wiki/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E",
+     "date": "2026-06-27"
+    }
+   ]
+  },
+  {
+   "id": "kyumatsudo",
+   "name": "松戸駅前店（旧）",
+   "status": "closed",
+   "parent": "kyukameido",
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "2002-05",
+   "confidence": "low",
+   "note": "開店時の店主は先代店主時代の亀戸店出身。2012〜2015年は池袋東口店出身の2代目（のちの新潟店主）が営業し、2015年に3代目の松戸駅前店Ⅲへ",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "ラーメンデータベース 店舗情報（備考欄）",
+     "url": "https://ramendb.supleks.jp/s/286.html",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "Wikipedia「ラーメン二郎」",
+     "url": "https://ja.wikipedia.org/wiki/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E",
+     "date": "2026-06-27"
+    }
+   ]
+  },
+  {
+   "id": "yaen_old",
+   "name": "八王子野猿街道店（旧）",
+   "status": "closed",
+   "parent": "mita",
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "2000-08",
+   "confidence": "high",
+   "note": "現・野猿街道店2と同じ店主で、店主は三田本店などで修業。2006年に移転し改称",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "ラーメンWalker「武蔵野・多摩地区のラーメン二郎6店舗」",
+     "url": "https://ramen.walkerplus.com/article/4052463/",
+     "date": "2021-04-26"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-yaen",
+     "date": "2025-10-07"
+    },
+    {
+     "label": "ラーメン二郎 PC店Ⅲ（ブログ）",
+     "url": "https://ramen-jiro-pc3.com/yaen2/",
+     "date": "2024-08-29"
+    }
+   ]
+  },
+  {
+   "id": "shinbashi",
+   "name": "新橋店（2011〜2018）",
+   "status": "closed",
+   "parent": "ikebukuro",
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "2011-09",
+   "confidence": "high",
+   "note": "店を任された店長は池袋東口店で修業。2018年閉店",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「二郎系図」",
+     "url": "https://take4.hiyamugi.com/shop/shop_genealogy.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "さんたつ by 散歩の達人「新橋『麺屋 味方』」",
+     "url": "https://san-tatsu.jp/articles/229976/",
+     "date": "2023-03-15"
+    },
+    {
+     "label": "IKKO'S FILMS「ラーメン二郎 新橋店」",
+     "url": "https://ikkos-films.com/%E6%96%B0%E6%A9%8B%E5%BA%97/",
+     "date": "2026-02-02"
+    },
+    {
+     "label": "Wikipedia「ラーメン二郎」",
+     "url": "https://ja.wikipedia.org/wiki/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E",
+     "date": "2026-06-27"
+    }
+   ]
+  },
+  {
+   "id": "kyukameido",
+   "name": "亀戸店（先代店主の時代 2001〜2013）",
+   "status": "closed",
+   "parent": "kyushimbashi",
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "2001-04",
+   "confidence": "low",
+   "note": "現・亀戸店の店主交代前の時代。先代店主は旧新橋店出身とされる。環七一之江店と旧松戸駅前店の店主がこの時代に修業",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "Take4 二郎食記録「二郎系図」",
+     "url": "https://take4.hiyamugi.com/shop/shop_genealogy.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "Wikipedia「ラーメン二郎」",
+     "url": "https://ja.wikipedia.org/wiki/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E",
+     "date": "2026-06-27"
+    }
+   ]
+  },
+  {
+   "id": "kyushimbashi",
+   "name": "新橋店（旧・2004年まで）",
+   "status": "closed",
+   "parent": null,
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": null,
+   "confidence": "unknown",
+   "note": "先代亀戸店主の出身店とされる。運営会社の店舗として開店し、2004年に屋号を変えた。店主の修業先を示す出典は見つからない",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "Take4 二郎食記録「二郎系図」",
+     "url": "https://take4.hiyamugi.com/shop/shop_genealogy.htm",
+     "date": "2026-10-01"
+    }
+   ]
+  },
+  {
+   "id": "kanda",
+   "name": "神田店（現 ラーメン 神田店）",
+   "status": "closed",
+   "parent": null,
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "1998-04",
+   "confidence": "unknown",
+   "note": "神田神保町店の店主の出身店。運営会社の店舗として開店し、2004年に屋号を変えて現在も営業。店主の修業先を示す出典は見つからない",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "Take4 二郎食記録「二郎系図」",
+     "url": "https://take4.hiyamugi.com/shop/shop_genealogy.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/kanda",
+     "date": "2024-02-10"
+    },
+    {
+     "label": "IKKO'S FILMS「ラーメン二郎 全店まとめ」",
+     "url": "https://ikkos-films.com/%E3%80%90%E5%AE%8C%E5%85%A8%E4%BF%9D%E5%AD%98%E7%89%88%E3%80%91%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E-%E7%9B%B4%E7%B3%BB%E5%85%A8%E5%BA%97%E3%81%BE%E3%81%A8%E3%82%81%EF%BD%9C%E6%9C%AC/",
+     "date": "2026-06-02"
+    }
+   ]
+  },
+  {
+   "id": "shindaita_old",
+   "name": "環七新代田店",
+   "status": "closed",
+   "parent": "akabane1",
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "2000-01",
+   "confidence": "low",
+   "note": "開店時の店主は旧赤羽店出身とされる。2014年に店主が代わり環七新新代田店に改称",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "ラーメンデータベース 店舗情報（備考欄）",
+     "url": "https://ramendb.supleks.jp/s/75362.html",
+     "date": "2026-10-01"
+    }
+   ]
+  },
+  {
+   "id": "kabukicho_old",
+   "name": "歌舞伎町店（旧）",
+   "status": "closed",
+   "parent": null,
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "1997-08",
+   "confidence": "unknown",
+   "note": "店主の修業先を示す出典は見つからない。2016年に移転し新宿歌舞伎町店に改称",
+   "sources": [
+    {
+     "label": "Wikipedia「ラーメン二郎」",
+     "url": "https://ja.wikipedia.org/wiki/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E",
+     "date": "2026-06-27"
+    },
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    }
+   ]
+  },
+  {
+   "id": "mejirodai_hosei",
+   "name": "めじろ台法政大学前店",
+   "status": "closed",
+   "parent": null,
+   "also_trained_at": [],
+   "successor_of": null,
+   "opened": "2002-05",
+   "confidence": "unknown",
+   "note": "開店時の店主の修業先を示す出典は見つからない。2017年に移転しめじろ台店に改称",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "ラーメンWalker「武蔵野・多摩地区のラーメン二郎6店舗」",
+     "url": "https://ramen.walkerplus.com/article/4052463/",
+     "date": "2021-04-26"
+    }
+   ]
+  },
+  {
+   "id": "sagamiono_ekimae",
+   "name": "相模大野駅前店",
+   "status": "closed",
+   "parent": "koganei",
+   "also_trained_at": [
+    "yaen"
+   ],
+   "successor_of": null,
+   "opened": "2003-12",
+   "confidence": "high",
+   "note": "現・相模大野店と同じ店主（新小金井街道店・八王子野猿街道店などで修業）。2009年に移転し改称",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-sagamiono",
+     "date": "2026-05-17"
+    },
+    {
+     "label": "食べログ 口コミ（マーコラーメン）「ラーメン二郎 相模大野店」",
+     "url": "https://tabelog.com/kanagawa/A1407/A140701/14000839/dtlrvwlst/B111405788/",
+     "date": "2015-03"
+    }
+   ]
+  },
+  {
+   "id": "sendai_old",
+   "name": "仙台店（旧）",
+   "status": "closed",
+   "parent": "koganei",
+   "also_trained_at": [
+    "yaen"
+   ],
+   "successor_of": null,
+   "opened": "2011-10",
+   "confidence": "high",
+   "note": "現・仙台店2と同じ店主（新小金井街道店・八王子野猿街道店2で修業）。2025年に移転し改称",
+   "sources": [
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    },
+    {
+     "label": "ラーメンシーン",
+     "url": "https://ramen-scene.com/jiro-sendai",
+     "date": "2025-07-04"
+    },
+    {
+     "label": "ラーメンデータベース 店舗情報（備考欄）",
+     "url": "https://ramendb.supleks.jp/s/53010.html",
+     "date": "2026-10-01"
+    }
+   ]
+  }
+ ],
+ "checked": "2026-10-01"
+}

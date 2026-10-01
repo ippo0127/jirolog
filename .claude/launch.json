@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "jirolog",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8026", "-d", "dist"],
+      "port": 8026
+    }
+  ]
+}
