@@ -299,7 +299,10 @@ class Page:
 def layout(site, pg, *, title, body, page="", description="", scripts=(), head_extra=""):
     p, a = pg.p, pg.a
     name = L(site["name"], site.get("name_en", site["name"]))
-    full_title = name if page == "index" else f"{title}｜{name}" if LANG == "ja" else f"{title} | {name}"
+    if page == "index":
+        full_title = L(f"{name}｜直系ラーメン二郎 全店の営業時間・いま営業中の店", f"{name} | Ramen Jiro hours and what's open now")
+    else:
+        full_title = f"{title}｜{name}" if LANG == "ja" else f"{title} | {name}"
     desc = description or L(site["description"], site.get("description_en", site["description"]))
     nav = "".join(f'<a href="{p}{href}"{" aria-current=page" if key == page else ""}>{e(label(lab))}</a>'
                   for key, href, lab in NAV)
@@ -309,7 +312,8 @@ def layout(site, pg, *, title, body, page="", description="", scripts=(), head_e
     head_links = ""
     if site.get("base_url"):
         base = site["base_url"].rstrip("/") + "/"
-        head_links = (f'<link rel="canonical" href="{e(base + pretty(pg.out))}">'
+        head_links = (f'<meta property="og:url" content="{e(base + pretty(pg.out))}">'
+                      f'<link rel="canonical" href="{e(base + pretty(pg.out))}">'
                       f'<link rel="alternate" hreflang="ja" href="{e(base + pretty(pg.path))}">'
                       f'<link rel="alternate" hreflang="en" href="{e(base + pretty("en/" + pg.path))}">')
     other_lang = (f'<a class="lang-switch" href="{e(pg.other)}" hreflang="en" lang="en">EN</a>' if LANG == "ja"
@@ -324,6 +328,7 @@ def layout(site, pg, *, title, body, page="", description="", scripts=(), head_e
 <meta property="og:title" content="{e(full_title)}">
 <meta property="og:description" content="{e(desc)}">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="{e(name)}">
 <meta property="og:locale" content="{L('ja_JP', 'en_US')}">
 <meta name="theme-color" content="#ffd400">
 {head_links}
@@ -807,10 +812,51 @@ def page_store(site, store, ctx):
     head_extra, scripts = "", ["assets/store.js"]
     if geo.get("lat"):
         head_extra, scripts = LEAFLET_CSS, [LEAFLET_JS] + scripts
-    title = L(f"ラーメン二郎 {name}", f"Ramen Jiro {name}")
+    if st == "closed":
+        title = L(f"ラーメン二郎 {name}（閉店・移転）", f"Ramen Jiro {name} (closed)")
+    else:
+        title = L(f"ラーメン二郎 {name} 営業時間・定休日・メニュー", f"Ramen Jiro {name}: hours, closing days and menu")
+    head_extra += store_jsonld(site, store, pg, geo)
     desc = L(f"ラーメン二郎 {name}（{city_of(store)}）の営業時間・定休日・ルール・メニュー。",
              f"Ramen Jiro {name} ({city_of(store)}): opening hours, closing days, house rules and menu.")
     return pg, layout(site, pg, title=title, body=body, page="stores", description=desc, scripts=scripts, head_extra=head_extra)
+
+
+SCHEMA_DAYS = {"mon": "Monday", "tue": "Tuesday", "wed": "Wednesday", "thu": "Thursday", "fri": "Friday", "sat": "Saturday", "sun": "Sunday"}
+
+
+def jsonld(obj):
+    return '<script type="application/ld+json">' + json.dumps(obj, ensure_ascii=False).replace("</", "<\\/") + "</script>"
+
+
+def store_jsonld(site, store, pg, geo):
+    """検索エンジン向けの店舗情報（schema.org の Restaurant）。営業中・休業中の店だけ。"""
+    if store.get("status") not in ("open", "temporarily_closed") or not site.get("base_url"):
+        return ""
+    url = site["base_url"].rstrip("/") + "/" + pretty(pg.out)
+    hours = []
+    for k, day in SCHEMA_DAYS.items():
+        for a, b in (store.get("hours") or {}).get(k) or []:
+            hb = int(b[:2])
+            hours.append({"@type": "OpeningHoursSpecification", "dayOfWeek": f"https://schema.org/{day}",
+                          "opens": a, "closes": f"{hb - 24:02d}{b[2:]}" if hb >= 24 else b})
+    prices = [m["price"] for m in live_menu(store) if isinstance(m.get("price"), int) and menu_kind(m["name"], m["price"]) == "main"]
+    sns = store.get("sns") or {}
+    obj = {"@context": "https://schema.org", "@type": "Restaurant", "name": full_name(store), "url": url,
+           "servesCuisine": L("ラーメン", "Ramen"),
+           "address": {"@type": "PostalAddress", "streetAddress": store.get("address"), "addressRegion": store.get("prefecture"), "addressCountry": "JP"}}
+    if LANG == "en":
+        obj["alternateName"] = store["name"]
+    if geo.get("lat"):
+        obj["geo"] = {"@type": "GeoCoordinates", "latitude": geo["lat"], "longitude": geo["lng"]}
+    if hours and store.get("status") == "open":
+        obj["openingHoursSpecification"] = hours
+    if prices:
+        obj["priceRange"] = f"¥{min(prices):,}–{max(prices):,}"
+    same = [u for u in (sns.get("x"), sns.get("instagram"), sns.get("web")) if u]
+    if same:
+        obj["sameAs"] = same
+    return jsonld(obj)
 
 
 def page_index(site, stores, ctx):
@@ -897,7 +943,12 @@ def page_index(site, stores, ctx):
     </div>
   </div>
 </section>"""
-    return pg, layout(site, pg, title=L("ホーム", "Home"), body=body, page="index")
+    site_ld = ""
+    if site.get("base_url"):
+        site_ld = jsonld({"@context": "https://schema.org", "@type": "WebSite", "name": L(site["name"], site.get("name_en", site["name"])),
+                          "alternateName": [site["name"], site.get("name_en", "")], "url": site["base_url"].rstrip("/") + "/" + ("" if LANG == "ja" else "en/"),
+                          "inLanguage": LANG})
+    return pg, layout(site, pg, title=L("ホーム", "Home"), body=body, page="index", head_extra=site_ld)
 
 
 def page_stores(site, stores, ctx):
@@ -930,7 +981,7 @@ def page_stores(site, stores, ctx):
 {''.join(groups)}
 <p class="muted small">{L('営業時間は目安です。麺切れ・臨時休業はよくあるので、公式アカウントを確認してから行きましょう。', 'Hours are approximate. Shops often close early when noodles run out, or close for the day without notice — check the official account first.')}</p>
 {closed_block(closed, ctx, p, limit=8) if closed else ''}"""
-    return pg, layout(site, pg, title=L("直系店舗一覧", "Shops"), body=body, page="stores",
+    return pg, layout(site, pg, title=L("ラーメン二郎 直系全店舗一覧（営業時間・定休日）", "All Ramen Jiro shops: hours and closing days"), body=body, page="stores",
                       description=L("直系ラーメン二郎の全店舗一覧。いま営業中・日曜営業・朝営業などで絞り込めます。",
                                     "Every official Ramen Jiro shop, filterable by open now, Sunday hours, morning or late opening."),
                       scripts=["assets/stores.js"])
@@ -1329,6 +1380,7 @@ def main():
         "window.JIRO=" + json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + ";\n", encoding="utf-8")
 
     written = []
+    lastmod = {}
     for lang in ("ja", "en"):
         LANG = lang
         # 店舗ページなどで使う索引にもフィード分を足す（言語に依存しない）
@@ -1347,11 +1399,13 @@ def main():
             out.parent.mkdir(parents=True, exist_ok=True)
             out.write_text(text, encoding="utf-8")
             written.append(pg.out)
+            lastmod[pg.out] = next((s.get("checked") for s in stores if pg.path == f"stores/{s['id']}.html" and s.get("checked")), None)
     LANG = "ja"
 
     if site.get("base_url"):
         b = site["base_url"].rstrip("/")
-        urls = "".join(f"<url><loc>{e(b + '/' + pretty(path))}</loc></url>" for path in written)
+        today = TODAY.isoformat()
+        urls = "".join(f"<url><loc>{e(b + '/' + pretty(path))}</loc><lastmod>{lastmod.get(path) or today}</lastmod></url>" for path in written)
         (DIST / "sitemap.xml").write_text(
             f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>\n', encoding="utf-8")
         (DIST / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {b}/sitemap.xml\n", encoding="utf-8")
