@@ -62,6 +62,19 @@ python3 scripts/fetch_holidays.py; python3 scripts/fetch_feeds.py; python3 scrip
 - 確かめられないもの、情報源どうしで食い違うものは直さずに保留にして、サイト運営者に知らせる。
 - 直したら `sources` に確認した情報源と日付、`checked` に確認日を入れる。「書き方の方針」も守る。
 
+## 広告（Google AdSense）
+
+広告は**日本語ページだけ**に載せる。英語ページには入れない。`data/site.json` の次の2つが空のあいだは、広告のコードも `ads.txt` も出ない。
+
+| 項目 | 入れるもの | 効果 |
+|---|---|---|
+| `adsense_client` | AdSense のサイト運営者 ID（`ca-pub-` で始まる） | 日本語の全ページに AdSense のコードを入れ、`dist/ads.txt` を作る（審査と自動広告に必要） |
+| `adsense_slot` | 広告ユニットの ID（AdSense の「広告ユニットごと」で作る） | 日本語の店舗ページの本文の下に「広告」枠を1つ置く |
+
+- AdSense の審査は、自分のドメイン（例: `jirolog.jp`）でないと申し込めない。独自ドメインに移したら、`site.json` の `base_url` と、報告の中継（`report-worker/`）の `ALLOWED_ORIGINS` も新しいドメインに変える。
+- 広告やクッキー、外部への送信のしかたを変えたら `content/privacy.md`（プライバシーポリシー、日本語版のみ）も直す。
+- 自分の広告をクリックしない（アカウント停止の対象）。
+
 ## ファイル構成
 
 ```
@@ -75,8 +88,8 @@ data/
   feeds.json       フィードから取り込んだ新着（scripts/fetch_feeds.py が作る）
   geo.json         住所から求めた緯度経度（scripts/geocode.py が作る）
   holidays.json    祝日（scripts/fetch_holidays.py が作る）
-  site.json        サイト名・説明・公開 URL
-content/           ガイド・用語集・このサイトについて（簡易 Markdown）。英語版は content/en/
+  site.json        サイト名・説明・公開 URL・AdSense の ID
+content/           ガイド・用語集・このサイトについて・プライバシーポリシー（簡易 Markdown）。英語版は content/en/
 static/            CSS と JavaScript（dist/assets/ にコピーされる）
 scripts/
   build.py         サイト生成（日本語 → dist/、英語 → dist/en/）

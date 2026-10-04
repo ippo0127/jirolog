@@ -296,8 +296,10 @@ class Page:
         self.other = self.a + ("en/" + path if LANG == "ja" else path)
 
 
-def layout(site, pg, *, title, body, page="", description="", scripts=(), head_extra=""):
+def layout(site, pg, *, title, body, page="", description="", scripts=(), head_extra="", ad=False, ja_only=False):
+    """ad: 本文の下に広告枠を置く（日本語ページだけ）。ja_only: 英語版のないページ。"""
     p, a = pg.p, pg.a
+    other = pg.a + "en/index.html" if ja_only else pg.other
     name = L(site["name"], site.get("name_en", site["name"]))
     if page == "index":
         full_title = L(f"{name}｜直系ラーメン二郎 全店の営業時間・いま営業中の店", f"{name} | Ramen Jiro hours and what's open now")
@@ -314,10 +316,20 @@ def layout(site, pg, *, title, body, page="", description="", scripts=(), head_e
         base = site["base_url"].rstrip("/") + "/"
         head_links = (f'<meta property="og:url" content="{e(base + pretty(pg.out))}">'
                       f'<link rel="canonical" href="{e(base + pretty(pg.out))}">'
-                      f'<link rel="alternate" hreflang="ja" href="{e(base + pretty(pg.path))}">'
-                      f'<link rel="alternate" hreflang="en" href="{e(base + pretty("en/" + pg.path))}">')
-    other_lang = (f'<a class="lang-switch" href="{e(pg.other)}" hreflang="en" lang="en">EN</a>' if LANG == "ja"
-                  else f'<a class="lang-switch" href="{e(pg.other)}" hreflang="ja" lang="ja">日本語</a>')
+                      + ("" if ja_only else
+                         f'<link rel="alternate" hreflang="ja" href="{e(base + pretty(pg.path))}">'
+                         f'<link rel="alternate" hreflang="en" href="{e(base + pretty("en/" + pg.path))}">'))
+    other_lang = (f'<a class="lang-switch" href="{e(other)}" hreflang="en" lang="en">EN</a>' if LANG == "ja"
+                  else f'<a class="lang-switch" href="{e(other)}" hreflang="ja" lang="ja">日本語</a>')
+    # 広告は日本語ページだけ（英語ページには載せない）
+    client = site.get("adsense_client") if LANG == "ja" else ""
+    ad_script = (f'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={e(client)}" crossorigin="anonymous"></script>'
+                 if client else "")
+    ad_unit = (f'<aside class="ad-slot" aria-label="広告"><p class="ad-label">広告</p>'
+               f'<ins class="adsbygoogle" style="display:block" data-ad-client="{e(client)}" data-ad-slot="{e(site["adsense_slot"])}" '
+               f'data-ad-format="auto" data-full-width-responsive="true"></ins>'
+               f'<script>(adsbygoogle = window.adsbygoogle || []).push({{}});</script></aside>'
+               if client and ad and site.get("adsense_slot") else "")
     return f"""<!doctype html>
 <html lang="{LANG}">
 <head>
@@ -331,6 +343,7 @@ def layout(site, pg, *, title, body, page="", description="", scripts=(), head_e
 <meta property="og:site_name" content="{e(name)}">
 <meta property="og:locale" content="{L('ja_JP', 'en_US')}">
 <meta name="theme-color" content="#ffd400">
+{f'<meta name="google-site-verification" content="{e(site["google_site_verification"])}">' if site.get("google_site_verification") else ""}
 {head_links}
 <link rel="icon" href="{a}assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -338,6 +351,7 @@ def layout(site, pg, *, title, body, page="", description="", scripts=(), head_e
 <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{a}assets/style.css">
 {head_extra}
+{ad_script}
 <script src="{a}assets/data.js" defer></script>
 <script src="{a}assets/app.js" defer></script>
 {script_tags}
@@ -353,13 +367,14 @@ def layout(site, pg, *, title, body, page="", description="", scripts=(), head_e
 </header>
 <main id="main" class="wrap">
 {body}
+{ad_unit}
 </main>
 <footer class="site-foot">
   <div class="wrap">
     <p>{L(f'<strong>{e(name)}</strong> は直系ラーメン二郎の非公式ファンサイトです。ラーメン二郎各店とは関係ありません。',
            f'<strong>{e(name)}</strong> is an unofficial fan site about the Ramen Jiro shops. It is not affiliated with Ramen Jiro.')}</p>
     <p>{L('営業時間・価格は変わります。お出かけ前に各店の公式アカウントを確認してください。', 'Hours and prices change often. Check each shop’s official account before you go.')} {L('データ更新', 'Data updated')}: {e(site['_updated'])}</p>
-    <p><a href="{p}report.html?page={e(urllib.parse.quote(pg.out))}">{L('誤りを報告', 'Report a mistake')}</a> · <a href="{p}about.html">{L('このサイトについて・情報源', 'About & sources')}</a> · <a href="{p}stores/closed.html">{L('閉店・移転した店', 'Closed shops')}</a> · <a href="{p}news.html">{L('ニュース', 'News')}</a> · <a href="{e(pg.other)}">{L('English', '日本語')}</a></p>
+    <p><a href="{p}report.html?page={e(urllib.parse.quote(pg.out))}">{L('誤りを報告', 'Report a mistake')}</a> · <a href="{p}about.html">{L('このサイトについて・情報源', 'About & sources')}</a> · <a href="{p}stores/closed.html">{L('閉店・移転した店', 'Closed shops')}</a> · <a href="{p}news.html">{L('ニュース', 'News')}</a>{L(f' · <a href="{p}privacy.html">プライバシーポリシー</a>', '')} · <a href="{e(other)}">{L('English', '日本語')}</a></p>
   </div>
 </footer>
 </body>
@@ -819,7 +834,7 @@ def page_store(site, store, ctx):
     head_extra += store_jsonld(site, store, pg, geo)
     desc = L(f"ラーメン二郎 {name}（{city_of(store)}）の営業時間・定休日・ルール・メニュー。",
              f"Ramen Jiro {name} ({city_of(store)}): opening hours, closing days, house rules and menu.")
-    return pg, layout(site, pg, title=title, body=body, page="stores", description=desc, scripts=scripts, head_extra=head_extra)
+    return pg, layout(site, pg, title=title, body=body, page="stores", description=desc, scripts=scripts, head_extra=head_extra, ad=True)
 
 
 SCHEMA_DAYS = {"mon": "Monday", "tue": "Tuesday", "wed": "Wednesday", "thu": "Thursday", "fri": "Friday", "sat": "Saturday", "sun": "Sunday"}
@@ -1139,9 +1154,10 @@ def content_file(name):
     return (CONTENT / name).read_text(encoding="utf-8")
 
 
-def page_md(site, stores, ctx, key, title, desc, md_name):
+def page_md(site, stores, ctx, key, title, desc, md_name, ja_only=False):
     pg = Page(f"{key}.html")
-    return pg, layout(site, pg, title=title, body=f'<article class="prose">{markdown(content_file(md_name))}</article>', page=key, description=desc)
+    return pg, layout(site, pg, title=title, body=f'<article class="prose">{markdown(content_file(md_name))}</article>', page=key, description=desc,
+                      ja_only=ja_only)
 
 
 REPORT_KINDS = [("typo", "誤植・表記の誤り", "Typo or wording"), ("hours", "営業時間・定休日", "Hours or closing days"),
@@ -1392,6 +1408,8 @@ def main():
                  L("初めて直系ラーメン二郎に行く人向けの、食券からコール、食べ終わりまでの流れ。", "A step-by-step guide to your first Ramen Jiro: tickets, the topping call, and etiquette."), "guide.md"),
                 (page_md, "glossary", L("二郎用語集", "Jiro glossary"),
                  L("ニンニク・ヤサイ・アブラ・カラメ、ロット、宣告など二郎でよく使う言葉。", "What ninniku, yasai, abura, karame, lot and other Jiro words mean."), "glossary.md")]
+        if lang == "ja":   # プライバシーポリシーは日本語版だけ
+            jobs.append((page_md, "privacy", "プライバシーポリシー", "二郎ログの広告・Cookie・外部サービスへの送信・お問い合わせについて。", "privacy.md", True))
         pages = [fn(site, stores, base, *args) for fn, *args in jobs]
         pages += [page_store(site, s, base) for s in stores]
         for pg, text in pages:
@@ -1409,6 +1427,9 @@ def main():
         (DIST / "sitemap.xml").write_text(
             f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>\n', encoding="utf-8")
         (DIST / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {b}/sitemap.xml\n", encoding="utf-8")
+    if site.get("adsense_client"):
+        pub = site["adsense_client"].removeprefix("ca-")
+        (DIST / "ads.txt").write_text(f"google.com, {pub}, DIRECT, f08c47fec0942fa0\n", encoding="utf-8")
 
     print(f"built {len(written)} pages ({len(stores)} stores × ja/en), {len(problems)} warnings -> {DIST}")
 
