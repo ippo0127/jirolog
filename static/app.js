@@ -177,30 +177,27 @@
 
   window.JL = { J, EN, t, esc, now, status, rangesOn, rangesText, toMin, fmt, iso, log, byId, activeStores, cardHTML, render, root, WD, DAYS, sname, snick, sarea, saccess };
 
-  // 閲覧数: 1回の閲覧（タブを閉じるまで）につき1ページ1回だけ数える。送るのはページの場所（パス）だけ
-  async function views() {
+  // 来てくれた人の数: 1回の来訪（タブを閉じるまで）につき1回だけ数える。送るのは「来た」ことだけ
+  async function visits() {
     const url = document.body.dataset.views;
     const line = document.querySelector("[data-views-line]");
     if (!url || !line) return;
-    const key = "jl.views:" + location.pathname;
-    let got = null;
-    try { got = JSON.parse(sessionStorage.getItem(key)); } catch (_) { /* 使えないブラウザもある */ }
-    if (!got) {
+    let n = null;
+    try { n = JSON.parse(sessionStorage.getItem("jl.visits")); } catch (_) { /* 使えないブラウザもある */ }
+    if (n == null) {
       try {
-        const r = await fetch(url, { method: "POST", body: JSON.stringify({ path: location.pathname }), headers: { "Content-Type": "text/plain" } });
+        const r = await fetch(url, { method: "POST", body: JSON.stringify({ path: "/" }), headers: { "Content-Type": "text/plain" } });
         if (!r.ok) return;
-        got = await r.json();
-        try { sessionStorage.setItem(key, JSON.stringify(got)); } catch (_) { /* 保存できなくても表示はする */ }
+        n = (await r.json()).total;
+        try { sessionStorage.setItem("jl.visits", JSON.stringify(n)); } catch (_) { /* 保存できなくても表示はする */ }
       } catch (_) { return; }
     }
-    const fmt = (n) => Number(n).toLocaleString(EN ? "en-US" : "ja-JP");
-    line.querySelector("[data-views-page]").textContent = fmt(got.page);
-    line.querySelector("[data-views-total]").textContent = fmt(got.total);
+    line.querySelector("[data-visits]").textContent = Number(n).toLocaleString(EN ? "en-US" : "ja-JP");
     line.hidden = false;
   }
 
   function start() {
-    views();
+    visits();
     render();
     // 分が変わるたびに更新
     const wait = 60000 - (Date.now() % 60000) + 50;

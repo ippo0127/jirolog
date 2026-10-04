@@ -19,14 +19,14 @@
 
 - **Google AdSense**（Google LLC）：広告の表示と効果の測定。日本語ページのみ。[プライバシーポリシー](https://policies.google.com/privacy)
 - **Google Fonts**（Google LLC）：文字の表示に使うフォントの読み込み。[プライバシーポリシー](https://policies.google.com/privacy)
-- **Cloudflare**（Cloudflare, Inc.）：このサイトの配信、誤りの報告の受け付け、閲覧数の集計。[プライバシーポリシー](https://www.cloudflare.com/privacypolicy/)
+- **Cloudflare**（Cloudflare, Inc.）：このサイトの配信、誤りの報告の受け付け、来てくれた人の数の集計。[プライバシーポリシー](https://www.cloudflare.com/privacypolicy/)
 - **unpkg** と **国土地理院**：地図ページで、地図の部品と地図画像の読み込み。
 - **YouTube**（Google LLC）：動画のサムネイル画像の表示。動画本体は「ここに表示」を押したときだけ読み込みます。
 - **X**（X Corp.）・**Instagram**（Meta Platforms, Inc.）：投稿の埋め込み。「ここに表示」を押したときだけ読み込みます。
 
 ## アクセス解析について
 
-アクセス解析ツールは使っていません。各ページの下に出す「閲覧数」を数えるため、ページを開いたときに、そのページの場所（URL のうちドメインより後ろの部分）だけを Cloudflare Workers に送り、ページごとの回数として保存しています。IP アドレス、Cookie、閲覧者を見分ける情報は保存していません。同じタブで同じページを開き直したときは数えません。
+アクセス解析ツールは使っていません。各ページの下に出す「これまでに来てくれた人」の数を数えるため、このサイトを開いたときに1回だけ、「来た」ということを Cloudflare Workers に送って回数として保存しています。どのページを見たか、IP アドレス、Cookie、閲覧者を見分ける情報は保存していません。同じタブの中でページを移ったときは数えません。
 
 ## マイ二郎ログ（訪問の記録）について
 
