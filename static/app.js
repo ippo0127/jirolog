@@ -177,7 +177,7 @@
 
   window.JL = { J, EN, t, esc, now, status, rangesOn, rangesText, toMin, fmt, iso, log, byId, activeStores, cardHTML, render, root, WD, DAYS, sname, snick, sarea, saccess };
 
-  // 来てくれた人の数: 1回の来訪（タブを閉じるまで）につき1回だけ数える。送るのは「来た」ことだけ
+  // 「あなたは◯人目の閲覧者です」: 1回の来訪（タブを閉じるまで）につき1回だけ数える。送るのは「来た」ことだけ
   async function visits() {
     const url = document.body.dataset.views;
     const line = document.querySelector("[data-views-line]");
