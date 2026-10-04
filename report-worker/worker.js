@@ -1,10 +1,12 @@
-// 二郎ログ 誤りの報告の中継（Cloudflare Workers）
-// サイトの報告フォームから受け取った内容を、GitHub の Issue（ラベル: report）にする。
+// 二郎ログの中継（Cloudflare Workers）
+//   POST /      誤りの報告を、非公開リポジトリの GitHub Issue（ラベル: report）にする
+//   POST /view  閲覧数を1つ増やし、そのページとサイト全体の閲覧数を返す（D1 を使う。個人の情報は保存しない）
 //
 // 設定（Cloudflare のダッシュボード → Workers → この Worker → Settings → Variables）
 //   GITHUB_REPO      報告用の非公開リポジトリ。例: yourname/jirolog-reports
 //   GITHUB_TOKEN     その1リポジトリの Issues: Read and write だけを許可した fine-grained token（Secret として登録）
 //   ALLOWED_ORIGINS  例: https://jirolog.pages.dev  （カンマ区切りで複数可）
+//   DB               D1 データベースのバインディング（閲覧数用。Settings → Bindings → D1 database）
 
 const KINDS = {
   typo: "誤植・表記の誤り", hours: "営業時間・定休日", menu: "メニュー・価格", status: "閉店・移転・休業・再開",
@@ -26,6 +28,7 @@ export default {
     if (req.method === "OPTIONS") return new Response(null, { headers: cors });
     if (req.method !== "POST") return json({ error: "method" }, 405);
     if (!allowed.includes(origin)) return json({ error: "origin" }, 403);
+    if (new URL(req.url).pathname === "/view") return countView(req, env, json);
 
     let form;
     try { form = await req.formData(); } catch (_) { return json({ error: "format" }, 400); }
@@ -68,3 +71,16 @@ export default {
     return json({ ok: true });
   },
 };
+
+// 閲覧数: path ごとの数と、サイト全体（"*"）の数を1つずつ増やす
+async function countView(req, env, json) {
+  if (!env.DB) return json({ error: "no-db" }, 503);
+  let path = "";
+  try { path = String((await req.json()).path || ""); } catch (_) { return json({ error: "format" }, 400); }
+  path = path.replace(/\/index(\.html)?$/, "/").replace(/\.html$/, "");
+  if (!/^\/[A-Za-z0-9_\-\/]{0,120}$/.test(path)) return json({ error: "path" }, 400);
+  await env.DB.prepare("CREATE TABLE IF NOT EXISTS views (path TEXT PRIMARY KEY, n INTEGER NOT NULL DEFAULT 0)").run();
+  const up = "INSERT INTO views (path, n) VALUES (?1, 1) ON CONFLICT(path) DO UPDATE SET n = n + 1 RETURNING n";
+  const [page, total] = await env.DB.batch([env.DB.prepare(up).bind(path), env.DB.prepare(up).bind("*")]);
+  return json({ page: page.results[0].n, total: total.results[0].n });
+}

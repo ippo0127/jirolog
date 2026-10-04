@@ -360,3 +360,4 @@ dl.terms > div:target { background: var(--yellow-soft); }
 /* 広告枠（日本語の店舗ページの下。AdSense の ID を data/site.json に入れたときだけ出る） */
 .ad-slot { margin: 28px 0 8px; padding-top: 12px; border-top: 1px dashed var(--line); min-height: 100px; }
 .ad-label { margin: 0 0 6px; font-size: .75rem; color: var(--muted); }
+.views b { font-variant-numeric: tabular-nums; color: var(--ink); }

@@ -356,7 +356,7 @@ def layout(site, pg, *, title, body, page="", description="", scripts=(), head_e
 <script src="{a}assets/app.js" defer></script>
 {script_tags}
 </head>
-<body data-root="{p}" data-assets="{a}">
+<body data-root="{p}" data-assets="{a}"{f' data-views="{e(site["views_endpoint"])}"' if site.get("views_endpoint") else ""}>
 <a class="skip" href="#main">{L('本文へ', 'Skip to content')}</a>
 <header class="site-head">
   <div class="wrap head-row">
@@ -374,6 +374,7 @@ def layout(site, pg, *, title, body, page="", description="", scripts=(), head_e
     <p>{L(f'<strong>{e(name)}</strong> は直系ラーメン二郎の非公式ファンサイトです。ラーメン二郎各店とは関係ありません。',
            f'<strong>{e(name)}</strong> is an unofficial fan site about the Ramen Jiro shops. It is not affiliated with Ramen Jiro.')}</p>
     <p>{L('営業時間・価格は変わります。お出かけ前に各店の公式アカウントを確認してください。', 'Hours and prices change often. Check each shop’s official account before you go.')} {L('データ更新', 'Data updated')}: {e(site['_updated'])}</p>
+    <p class="views" data-views-line hidden>{L('閲覧数', 'Views')}：{L('このページ', 'this page')} <b data-views-page>–</b> · {L('サイト全体', 'whole site')} <b data-views-total>–</b></p>
     <p><a href="{p}report.html?page={e(urllib.parse.quote(pg.out))}">{L('誤りを報告', 'Report a mistake')}</a> · <a href="{p}about.html">{L('このサイトについて・情報源', 'About & sources')}</a> · <a href="{p}stores/closed.html">{L('閉店・移転した店', 'Closed shops')}</a> · <a href="{p}news.html">{L('ニュース', 'News')}</a>{L(f' · <a href="{p}privacy.html">プライバシーポリシー</a>', '')} · <a href="{e(other)}">{L('English', '日本語')}</a></p>
   </div>
 </footer>
