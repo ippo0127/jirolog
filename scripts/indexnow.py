@@ -27,7 +27,9 @@ def main():
         sys.exit("data/site.json に indexnow_key と base_url が必要")
     host = urllib.parse.urlparse(base).netloc
 
-    with urllib.request.urlopen(f"{base}/sitemap.xml", timeout=30) as r:
+    # Python の既定の User-Agent は Cloudflare にはじかれるので名乗る
+    req = urllib.request.Request(f"{base}/sitemap.xml", headers={"User-Agent": "jirolog-indexnow/1.0 (+https://jirolog.pages.dev/)"})
+    with urllib.request.urlopen(req, timeout=30) as r:
         root = ET.fromstring(r.read())
     since = dt.date.today() - dt.timedelta(days=8)
     urls = []
@@ -42,7 +44,7 @@ def main():
 
     body = json.dumps({"host": host, "key": key, "keyLocation": f"{base}/{key}.txt", "urlList": urls[:10000]}).encode()
     req = urllib.request.Request("https://api.indexnow.org/indexnow", data=body,
-                                 headers={"Content-Type": "application/json; charset=utf-8"})
+                                 headers={"Content-Type": "application/json; charset=utf-8", "User-Agent": "jirolog-indexnow/1.0"})
     try:
         with urllib.request.urlopen(req, timeout=30) as r:
             print(f"{len(urls)} pages submitted: HTTP {r.status}")
