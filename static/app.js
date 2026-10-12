@@ -196,7 +196,25 @@
     line.hidden = false;
   }
 
+  // シェア: スマホなどは端末の共有メニュー、ほかは X・LINE・URL コピー
+  function shareBar() {
+    const bar = document.querySelector("[data-share]");
+    if (!bar) return;
+    const url = bar.dataset.url, title = bar.dataset.title;
+    const native = bar.querySelector("[data-share-native]");
+    if (navigator.share && native) {
+      native.hidden = false;
+      native.addEventListener("click", () => navigator.share({ title, url }).catch(() => {}));
+    }
+    const copy = bar.querySelector("[data-copy-url]");
+    if (copy) copy.addEventListener("click", async () => {
+      try { await navigator.clipboard.writeText(url); copy.textContent = t("コピーしました", "Copied"); }
+      catch (_) { prompt(t("この URL をコピーしてください", "Copy this link"), url); }
+    });
+  }
+
   function start() {
+    shareBar();
     visits();
     render();
     // 分が変わるたびに更新

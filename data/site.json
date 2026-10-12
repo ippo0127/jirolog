@@ -22,5 +22,6 @@
   "google_site_verification": "ImETqaKGrFHl2-9Pto85kseHVhG0l_KZMSt_9Z2SzaE",
   "adsense_client": "",
   "adsense_slot": "",
-  "views_endpoint": "https://jirolog-report.jirolog.workers.dev/view"
+  "views_endpoint": "https://jirolog-report.jirolog.workers.dev/view",
+  "indexnow_key": "794fa20aad48c8926d4f99865e2c19c2"
 }

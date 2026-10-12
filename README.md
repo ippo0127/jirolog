@@ -75,6 +75,14 @@ python3 scripts/fetch_holidays.py; python3 scripts/fetch_feeds.py; python3 scrip
 - 広告やクッキー、外部への送信のしかたを変えたら `content/privacy.md`（プライバシーポリシー、日本語版のみ）も直す。
 - 自分の広告をクリックしない（アカウント停止の対象）。
 
+## 検索とシェア
+
+- **Google**：Search Console に登録済み（確認用タグは `data/site.json` の `google_site_verification`）。`sitemap.xml` を送信してある。
+- **Bing など**：`scripts/indexnow.py` が IndexNow で更新を知らせる（毎週月曜に自動。大きく変えたあとは `--all` で手動実行）。
+- **ページ**：各店のページは通称（〇〇二郎）入りのタイトルと、データから作る紹介文・構造化データ（店舗・パンくず）を持つ。エリア別（`areas/`）と条件別（`lists/`：日曜営業・朝・夜）の一覧ページもある。
+- **シェア**：全ページの下にシェアボタン（端末の共有・X・LINE・URL コピー）。X などに貼ると `static/og/` の画像つきカードになる。店を追加したら `python3 scripts/make_og.py` で画像を作ってコミットする。
+- **ホーム画面に追加**：`static/manifest.webmanifest` とアイコンで、スマホのホーム画面からアプリのように開ける。
+
 ## ファイル構成
 
 ```
@@ -95,6 +103,8 @@ scripts/
   build.py         サイト生成（日本語 → dist/、英語 → dist/en/）
   validate.py      stores.json の形式チェック（build のときにも走る）
   serve.py         手元確認用のサーバー（/stores/mita のような URL と 404 に対応）
+  make_og.py       シェア用の画像（static/og/）とホーム画面用アイコンを手元の Chrome で作る。店が増えたら実行してコミット
+  indexnow.py      更新したページを IndexNow（Bing など）に知らせる（.github/workflows/indexnow.yml が毎週月曜に実行）
   fetch_feeds.py   新着記事・動画の取り込み
   geocode.py       住所 → 緯度経度（国土地理院のジオコーダ）
   fetch_holidays.py 内閣府の祝日 CSV を取り込む

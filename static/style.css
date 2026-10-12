@@ -361,3 +361,18 @@ dl.terms > div:target { background: var(--yellow-soft); }
 .ad-slot { margin: 28px 0 8px; padding-top: 12px; border-top: 1px dashed var(--line); min-height: 100px; }
 .ad-label { margin: 0 0 6px; font-size: .75rem; color: var(--muted); }
 .views b { font-variant-numeric: tabular-nums; color: var(--ink); }
+
+/* area pages / all shops */
+.table-scroll { overflow-x: auto; }
+table.area-table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: .9rem; }
+table.area-table th, table.area-table td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.area-table thead th { font-size: .8rem; color: var(--muted); }
+table.area-table tbody th a { font-weight: 900; }
+.all-row { margin: 6px 0; line-height: 1.9; }
+.all-area { display: inline-block; min-width: 7.5em; font-weight: 900; margin-right: 8px; }
+.area-group h2 a { text-decoration: none; }
+.area-group h2 a:hover { color: var(--red-ink); text-decoration: underline; }
+
+/* share */
+.share-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 28px 0 0; padding: 14px 16px; border: 2px dashed var(--line); border-radius: var(--radius); }
+.share-label { font-weight: 900; font-size: .9rem; margin-right: 4px; }

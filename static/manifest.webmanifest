@@ -1,0 +1,29 @@
+{
+  "name": "二郎ログ｜直系ラーメン二郎の営業時間・いま営業中の店",
+  "short_name": "二郎ログ",
+  "description": "直系ラーメン二郎 全店の営業時間・定休日・いま営業中の店・地図・マイ二郎ログ",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffd400",
+  "theme_color": "#ffd400",
+  "lang": "ja",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
