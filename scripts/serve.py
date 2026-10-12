@@ -3,6 +3,7 @@
 
     python3 scripts/serve.py          # http://localhost:8000
     python3 scripts/serve.py 8026
+    python3 scripts/serve.py 8026 /path/to/dist   # 別の場所にコピーした dist を出す
 
 /stores/mita → stores/mita.html、/stores/ → stores/index.html、見つからなければ 404.html を返す。
 """
@@ -44,7 +45,10 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
 
 def main():
+    global DIST
     port = int(sys.argv[1]) if len(sys.argv) > 1 else 8000
+    if len(sys.argv) > 2:
+        DIST = pathlib.Path(sys.argv[2]).resolve()
     handler = functools.partial(Handler, directory=str(DIST))
     with http.server.ThreadingHTTPServer(("127.0.0.1", port), handler) as httpd:
         print(f"http://localhost:{port}  ({DIST})")

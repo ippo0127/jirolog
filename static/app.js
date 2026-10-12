@@ -181,7 +181,8 @@
   async function visits() {
     const url = document.body.dataset.views;
     const line = document.querySelector("[data-views-line]");
-    if (!url || !line) return;
+    // 手元の確認（localhost）では数えない
+    if (!url || !line || /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) return;
     let n = null;
     try { n = JSON.parse(sessionStorage.getItem("jl.visits")); } catch (_) { /* 使えないブラウザもある */ }
     if (n == null) {
