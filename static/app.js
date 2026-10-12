@@ -117,7 +117,7 @@
   const byId = Object.fromEntries(J.stores.map((s) => [s.id, s]));
 
   function cardHTML(s, st) {
-    return `<li class="store-card" data-id="${esc(s.id)}"><a href="${root}stores/${esc(s.id)}.html">
+    return `<li class="store-card" data-id="${esc(s.id)}"><a href="${root}stores/${esc(s.id)}">
       <span class="sc-top"><span class="sc-area">${esc(sarea(s))}</span><span class="live-badge ${st.state}">${esc(st.short)}</span></span>
       <span class="sc-name">${esc(sname(s))}</span><span class="sc-nick">${esc(EN ? "" : snick(s))}</span>
       <span class="sc-today">${esc(st.label)}</span></a>

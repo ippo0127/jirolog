@@ -4,7 +4,10 @@
     {
       "name": "jirolog",
       "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "8026", "-d", "dist"],
+      "runtimeArgs": [
+        "scripts/serve.py",
+        "8026"
+      ],
       "port": 8026
     }
   ]

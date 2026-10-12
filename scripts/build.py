@@ -318,7 +318,8 @@ def layout(site, pg, *, title, body, page="", description="", scripts=(), head_e
                       f'<link rel="canonical" href="{e(base + pretty(pg.out))}">'
                       + ("" if ja_only else
                          f'<link rel="alternate" hreflang="ja" href="{e(base + pretty(pg.path))}">'
-                         f'<link rel="alternate" hreflang="en" href="{e(base + pretty("en/" + pg.path))}">'))
+                         f'<link rel="alternate" hreflang="en" href="{e(base + pretty("en/" + pg.path))}">'
+                         f'<link rel="alternate" hreflang="x-default" href="{e(base + pretty(pg.path))}">'))
     other_lang = (f'<a class="lang-switch" href="{e(other)}" hreflang="en" lang="en">EN</a>' if LANG == "ja"
                   else f'<a class="lang-switch" href="{e(other)}" hreflang="ja" lang="ja">日本語</a>')
     # 広告は日本語ページだけ（英語ページには載せない）
@@ -542,6 +543,48 @@ def closed_block(closed, ctx, p, limit=None):
 </section>"""
 
 
+def pretty_href(url):
+    """サイト内リンクを Cloudflare Pages の URL の形にする（index.html と .html を外す）。転送を挟まないため。"""
+    if re.match(r"^(?:[a-zA-Z][a-zA-Z0-9+.-]*:|//|#)", url):
+        return url
+    path, tail = re.match(r"^([^?#]*)(.*)$", url).groups()
+    if path.endswith("index.html"):
+        path = path[: -len("index.html")] or "./"
+    elif path.endswith(".html"):
+        path = path[:-5]
+    return path + tail
+
+
+def prettify_links(html_text):
+    return re.sub(r'(<a\b[^>]*?\shref=")([^"]*)(")', lambda m: m.group(1) + pretty_href(m.group(2)) + m.group(3), html_text)
+
+
+class AbsPage:
+    """404 ページ用。どの深さの URL で出ても崩れないよう、サイトの根からの絶対パスを使う。"""
+
+    def __init__(self):
+        self.path = "404.html"
+        self.p = "/" if LANG == "ja" else "/en/"
+        self.a = "/"
+        self.out = "404.html" if LANG == "ja" else "en/404.html"
+        self.other = "/en/" if LANG == "ja" else "/"
+
+
+def page_404(site, stores, ctx):
+    pg = AbsPage()
+    p = pg.p
+    body = f"""
+<h1 class="page-title">{L('ページが見つかりません', 'Page not found')}</h1>
+<p>{L('お探しのページは見つかりませんでした。URL が変わったか、ページがなくなった可能性があります。', 'We could not find that page. It may have moved or no longer exists.')}</p>
+<div class="actions">
+  <a class="btn btn-primary" href="{p}index.html">{L('トップへ', 'Home')}</a>
+  <a class="btn" href="{p}stores/index.html">{L('店舗一覧', 'All shops')}</a>
+  <a class="btn" href="{p}map.html">{L('地図で探す', 'Map')}</a>
+</div>"""
+    html_text = layout(dict(site, base_url=""), pg, title=L("ページが見つかりません", "Page not found"), body=body, page="")
+    return html_text.replace('<meta name="viewport"', '<meta name="robots" content="noindex">\n<meta name="viewport"', 1)
+
+
 def lineage_index(lin, stores):
     nodes = {n["id"]: n for n in lin.get("nodes", [])}
     order = {s["id"]: i for i, s in enumerate(stores)}
@@ -653,10 +696,131 @@ def tree_html(n, ctx, p, depth=0):
 
 # ---------------------------------------------------------------- ページ
 
+def near_block(sid, ctx, p):
+    near = ctx["near"].get(sid) or []
+    if not near:
+        return ""
+    items = "".join(f'<li><a class="chip chip-link" href="{p}stores/{e(n)}.html">{e(short_name(ctx["by_id"][n]))} '
+                    f'<b>{L("約", "")}{km:.1f}km</b></a></li>' if km < 10 else
+                    f'<li><a class="chip chip-link" href="{p}stores/{e(n)}.html">{e(short_name(ctx["by_id"][n]))} '
+                    f'<b>{L("約", "")}{km:.0f}km</b></a></li>' for n, km in near)
+    return f'<section class="block"><h2>{L("近くの直系ラーメン二郎", "Nearby Ramen Jiro shops")}</h2><ul class="chips">{items}</ul></section>'
+
+
+def nearest(stores, geo, k=3):
+    """各店から近い営業中の直系 k 店（直線距離）。"""
+    import math
+    def km(a, b):
+        r = math.pi / 180
+        x = math.sin((b["lat"] - a["lat"]) * r / 2) ** 2 + math.cos(a["lat"] * r) * math.cos(b["lat"] * r) * math.sin((b["lng"] - a["lng"]) * r / 2) ** 2
+        return 2 * 6371 * math.asin(math.sqrt(x))
+    cands = [s["id"] for s in stores if s.get("status") in ("open", "temporarily_closed") and geo.get(s["id"], {}).get("lat")]
+    out = {}
+    for s in stores:
+        g = geo.get(s["id"]) or {}
+        if not g.get("lat"):
+            continue
+        ds = sorted((km(g, geo[c]), c) for c in cands if c != s["id"])
+        out[s["id"]] = [(c, d) for d, c in ds[:k]]
+    return out
+
+
+def search_alias(store):
+    """ファンが検索で使う呼び名。地名の通称は「〇〇二郎」（三田 → 三田二郎）、スモジのような呼び名はそのまま。"""
+    nick = store.get("nickname") or ""
+    if not nick:
+        return ""
+    if nick.endswith("二郎") or re.fullmatch(r"[ァ-ヶー]+", nick):
+        return nick
+    return nick + "二郎"
+
+
+def hours_summary(hours):
+    """曜日ごとの営業時間を「月〜金 11:00〜14:30、土 11:00〜15:00」の形にまとめる（休みの曜日は除く）。"""
+    lab = DAY_EN if LANG == "en" else DAY_JA
+    groups = []
+    for d in ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]:
+        r = (hours or {}).get(d)
+        if not r:
+            groups.append(None)
+        elif groups and groups[-1] and groups[-1][2] == r:
+            groups[-1][1] = d
+        else:
+            groups.append([d, d, r])
+    parts = [f"{lab[a] if a == b else lab[a] + L('〜', '–') + lab[b]} {fmt_ranges(r)}" for a, b, r in (g for g in groups if g)]
+    return L("、", "; ").join(parts)
+
+
+def main_price(store):
+    mains = [m for m in live_menu(store) if isinstance(m.get("price"), int) and menu_kind(m["name"], m["price"]) == "main"]
+    small = [m for m in mains if m["name"].startswith("小") or "小ラーメン" in m["name"]]
+    return (small or mains or [None])[0]
+
+
+MONTHS_EN = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+
+
+def date_text(d):
+    """"1968" → 1968年 / 1968、"2003-12" → 2003年12月 / December 2003、"2025-03-02" → 2025年3月2日 / March 2, 2025"""
+    parts = [int(x) for x in str(d).split("-") if x.isdigit()]
+    if len(parts) == 3:
+        return L(f"{parts[0]}年{parts[1]}月{parts[2]}日", f"{MONTHS_EN[parts[1] - 1]} {parts[2]}, {parts[0]}")
+    if len(parts) == 2:
+        return L(f"{parts[0]}年{parts[1]}月", f"{MONTHS_EN[parts[1] - 1]} {parts[0]}")
+    return L(f"{parts[0]}年", f"{parts[0]}") if parts else str(d)
+
+
+def store_intro(store, ctx):
+    """店の紹介文（データから自動で作る）。検索結果の説明文にも使う。"""
+    st = store.get("status", "open")
+    name, city, opened = full_name(store), city_of(store), store.get("opened")
+    alias = search_alias(store) if LANG == "ja" else ""
+    who = f"{name}（{alias}）" if alias else name
+    if st == "upcoming":
+        return L(f"{who}は、{city}に開店予定の直系ラーメン二郎の店です。開店日や営業時間は分かりしだい載せます。",
+                 f"{name} is an upcoming official Ramen Jiro shop in {city}. Opening date and hours will be added once announced.")
+    if st == "closed":
+        kind = store.get("closed_type") or "close"
+        when = store.get("closed")
+        succ = ctx["by_id"].get(store.get("successor_id"))
+        ja = f"{who}は、{city}にあった直系ラーメン二郎の店です。" + (f"{date_text(opened)}に開店し、" if opened else "")
+        ja += f"{date_text(when)}に{ {'move': '移転', 'rename': '店名を変更'}.get(kind, '閉店') }しました。" if when else ""
+        ja += f"移転先は{short_name(succ)}です。" if succ and LANG == "ja" else ""
+        en = f"{name} was an official Ramen Jiro shop in {city}." + (f" Opened {date_text(opened)}." if opened else "")
+        en += f" {({'move': 'Moved', 'rename': 'Renamed'}).get(kind, 'Closed')} {date_text(when)}." if when else ""
+        en += f" It continues as {short_name(succ)}." if succ and LANG == "en" else ""
+        return L(ja, en)
+    summary = hours_summary(store.get("hours"))
+    access = ((sv(store, "access") or [None])[0] or "").rstrip("。. ")
+    price = main_price(store)
+    since = L("創業", "Founded in") if store["id"] == "mita" else L("開店", "Opened in")
+    paused = st == "temporarily_closed"
+    if LANG == "ja":
+        t = f"{who}は、{city}にある直系ラーメン二郎の店です。" + (f"{date_text(opened)}{since}。" if opened else "")
+        t += "現在は一時休業中です。" if paused else ""
+        t += f"営業時間の目安は{summary}、" if summary and not paused else ""
+        t += (f"定休日は{closed_days(store)}。" if not paused else "") + (f"アクセスは{access}。" if access else "")
+        if price:
+            t += f"{price['name']}は{price['price']:,}円" + (f"（{store['menu_checked']}時点）" if store.get("menu_checked") else "") + "。"
+        return t
+    t = f"{name} is an official Ramen Jiro shop in {city}." + (f" {since} {date_text(opened)}." if opened else "")
+    t += " Currently closed temporarily." if paused else ""
+    t += f" Hours (approx.): {summary}." if summary and not paused else ""
+    t += (f" Closed: {closed_days(store)}." if not paused else "") + (f" Access: {access}." if access else "")
+    if price:
+        t += f" {menu_name(store, price)}: ¥{price['price']:,}" + (f" (as of {store['menu_checked']})" if store.get("menu_checked") else "") + "."
+    return t
+
+
+def clip(text, n):
+    return text if len(text) <= n else text[: n - 1].rstrip("、。,. ") + "…"
+
+
 def page_store(site, store, ctx):
     pg = Page(f"stores/{store['id']}.html")
     p = pg.p
     sid = store["id"]
+    intro = store_intro(store, ctx)
     st = store.get("status", "open")
     name = short_name(store)
     nick = sv(store, "nickname")
@@ -765,6 +929,7 @@ def page_store(site, store, ctx):
     <h1 class="signboard"><span class="sb-ramen">{L('ラーメン', 'Ramen')}</span><span class="sb-jiro">{L('二郎', ' Jiro')}</span> <span class="sb-shop">{e(name)}</span></h1>
     {'' if LANG == 'ja' else f'<p class="small muted" lang="ja">{e(store["name"])}</p>'}
     <p class="store-meta">{meta}</p>
+    <p class="store-intro">{e(intro)}</p>
     {status_note}
     {'' if st == 'closed' else f'<p class="live-line" data-live-line="{e(sid)}">{L("営業状況を計算中…", "Checking hours…")}</p>'}
     <div class="actions">
@@ -803,6 +968,8 @@ def page_store(site, store, ctx):
     {''.join(dm_parts)}
   </section>
 
+  {near_block(sid, ctx, p)}
+
   {lineage_section(sid, ctx, p)}
 
   <section class="block">
@@ -828,13 +995,16 @@ def page_store(site, store, ctx):
     head_extra, scripts = "", ["assets/store.js"]
     if geo.get("lat"):
         head_extra, scripts = LEAFLET_CSS, [LEAFLET_JS] + scripts
+    alias = search_alias(store)
     if st == "closed":
         title = L(f"ラーメン二郎 {name}（閉店・移転）", f"Ramen Jiro {name} (closed)")
+    elif st == "upcoming":
+        title = L(f"ラーメン二郎 {name}（開店予定）", f"Ramen Jiro {name} (coming soon)")
     else:
-        title = L(f"ラーメン二郎 {name} 営業時間・定休日・メニュー", f"Ramen Jiro {name}: hours, closing days and menu")
-    head_extra += store_jsonld(site, store, pg, geo)
-    desc = L(f"ラーメン二郎 {name}（{city_of(store)}）の営業時間・定休日・ルール・メニュー。",
-             f"Ramen Jiro {name} ({city_of(store)}): opening hours, closing days, house rules and menu.")
+        title = L(f"ラーメン二郎 {name}（{alias}）営業時間・定休日・メニュー" if alias else f"ラーメン二郎 {name} 営業時間・定休日・メニュー",
+                  f"Ramen Jiro {name}: hours, closing days and menu")
+    head_extra += store_jsonld(site, store, pg, geo) + breadcrumb_jsonld(site, store)
+    desc = clip(intro, L(120, 160))
     return pg, layout(site, pg, title=title, body=body, page="stores", description=desc, scripts=scripts, head_extra=head_extra, ad=True)
 
 
@@ -873,6 +1043,18 @@ def store_jsonld(site, store, pg, geo):
     if same:
         obj["sameAs"] = same
     return jsonld(obj)
+
+
+def breadcrumb_jsonld(site, store):
+    if not site.get("base_url"):
+        return ""
+    base = site["base_url"].rstrip("/") + "/" + ("en/" if LANG == "en" else "")
+    items = [(L("ホーム", "Home"), base), (L("店舗", "Shops"), base + "stores/")]
+    if store.get("status") == "closed":
+        items.append((L("閉店・移転した店", "Closed shops"), base + "stores/closed"))
+    items.append((full_name(store), base + f"stores/{store['id']}"))
+    return jsonld({"@context": "https://schema.org", "@type": "BreadcrumbList",
+                   "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": n, "item": u} for i, (n, u) in enumerate(items)]})
 
 
 def page_index(site, stores, ctx):
@@ -981,6 +1163,8 @@ def page_stores(site, stores, ctx):
                       f'<ul class="store-grid">{"".join(store_card(s, p) for s in items)}</ul></section>')
     body = f"""
 <h1 class="page-title">{L('直系店舗一覧', 'Ramen Jiro shops')}</h1>
+<p>{L(f'直系ラーメン二郎の全 {len([s for s in active if s.get("status") != "upcoming"])} 店（休業中を含む）の営業時間・定休日・アクセスの一覧です。いま営業中・日曜営業・朝営業などで絞り込めます。店名を押すと、メニューや店ごとのルール、近くの直系も見られます。',
+         f'All {len([s for s in active if s.get("status") != "upcoming"])} official Ramen Jiro shops with hours, closing days and access. Filter by open now, Sunday hours, morning or late opening, then open a shop for its menu and house rules.')}</p>
 <form class="filters" data-filters onsubmit="return false">
   <label class="f-search"><span class="sr">{L('店名で探す', 'Search')}</span><input type="search" name="q" placeholder="{L('店名・通称・駅で探す', 'Search by shop or station')}" autocomplete="off"></label>
   <label><span class="sr">{L('エリア', 'Area')}</span><select name="area"><option value="">{L('すべてのエリア', 'All areas')}</option>{opts}</select></label>
@@ -1383,6 +1567,7 @@ def main():
         "lineage": lineage_index(load("lineage.json", {}) or {}, stores),
         "feed_fetched": feeds.get("fetched"),
         "today": dt.datetime.now(dt.timezone(dt.timedelta(hours=9))).date(),
+        "near": nearest(stores, geo),
     }
     site = load("site.json")
     ctx["feed_exclude"] = site.get("feed_exclude") or []
@@ -1416,9 +1601,11 @@ def main():
         for pg, text in pages:
             out = DIST / pg.out
             out.parent.mkdir(parents=True, exist_ok=True)
-            out.write_text(text, encoding="utf-8")
+            out.write_text(prettify_links(text), encoding="utf-8")
             written.append(pg.out)
             lastmod[pg.out] = next((s.get("checked") for s in stores if pg.path == f"stores/{s['id']}.html" and s.get("checked")), None)
+        out404 = DIST / ("404.html" if lang == "ja" else "en/404.html")
+        out404.write_text(prettify_links(page_404(site, stores, base)), encoding="utf-8")
     LANG = "ja"
 
     if site.get("base_url"):

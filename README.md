@@ -9,7 +9,7 @@ Python 3.9 以上の標準ライブラリだけで動く静的サイトです。
 ```sh
 python3 scripts/fetch_feeds.py            # ラーメンシーン・YouTube の新着を取り込む（任意）
 python3 scripts/build.py                  # data/ と content/ から dist/ を作る
-python3 -m http.server 8000 -d dist       # http://localhost:8000 で確認
+python3 scripts/serve.py                  # http://localhost:8000 で確認（公開時と同じ URL の形で動く）
 ```
 
 公開先は Cloudflare Pages（https://jirolog.pages.dev/）。GitHub の `main` に push するたびに Cloudflare が次のビルドコマンドで作り直して公開する。毎朝 6:00（日本時間）にも `.github/workflows/daily-rebuild.yml` が Deploy hook を叩いて作り直す（新着の取り込みと期間限定メニューの自動非表示のため）。
@@ -94,6 +94,7 @@ static/            CSS と JavaScript（dist/assets/ にコピーされる）
 scripts/
   build.py         サイト生成（日本語 → dist/、英語 → dist/en/）
   validate.py      stores.json の形式チェック（build のときにも走る）
+  serve.py         手元確認用のサーバー（/stores/mita のような URL と 404 に対応）
   fetch_feeds.py   新着記事・動画の取り込み
   geocode.py       住所 → 緯度経度（国土地理院のジオコーダ）
   fetch_holidays.py 内閣府の祝日 CSV を取り込む

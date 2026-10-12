@@ -29,7 +29,7 @@
   }
 
   function popup(s, st) {
-    return `<strong><a href="${root}stores/${esc(s.id)}.html">${esc(sname(s))}</a></strong><br>${esc(st.label)}<br><span style="color:#6d685c">${esc(saccess(s)[0] || "")}</span>`;
+    return `<strong><a href="${root}stores/${esc(s.id)}">${esc(sname(s))}</a></strong><br>${esc(st.label)}<br><span style="color:#6d685c">${esc(saccess(s)[0] || "")}</span>`;
   }
 
   function draw() {

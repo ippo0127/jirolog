@@ -120,7 +120,7 @@
     document.querySelector("[data-log-count]").textContent = entries.length ? t(`${entries.length} 件`, `${entries.length} entries`) : "";
     document.querySelector("[data-log-list]").innerHTML = entries.map((e) => {
       const s = byId[e.store];
-      const name = s ? `<a href="${root}stores/${esc(s.id)}.html">${esc(sname(s))}</a>${s.status === "closed" ? `<span class="small muted">${t("（閉店）", " (closed)")}</span>` : ""}` : esc(e.store);
+      const name = s ? `<a href="${root}stores/${esc(s.id)}">${esc(sname(s))}</a>${s.status === "closed" ? `<span class="small muted">${t("（閉店）", " (closed)")}</span>` : ""}` : esc(e.store);
       const detail = [e.menu && (typeof e.price === "number" ? t(`${e.menu}（${yen(e.price)}）`, `${e.menu} (${yen(e.price)})`) : e.menu), e.call && `${t("コール", "Call")}: ${e.call}`,
         e.rating && "★".repeat(e.rating), e.memo].filter(Boolean).map(esc).join(" · ");
       return `<li class="log-item"><span class="date">${dateLabel(e.date)}</span><span class="li-store">${name}</span>` +
@@ -128,7 +128,7 @@
     }).join("") || `<li class="muted">${t("まだ記録がありません。上のフォームから記録しましょう。", "Nothing logged yet. Use the form above to add your first bowl.")}</li>`;
 
     document.querySelector("[data-unvisited]").innerHTML = act.filter((s) => !counts[s.id]).map((s) =>
-      `<li><a class="chip chip-link" href="${root}stores/${esc(s.id)}.html">${esc(sname(s))}</a></li>`
+      `<li><a class="chip chip-link" href="${root}stores/${esc(s.id)}">${esc(sname(s))}</a></li>`
     ).join("") || `<li class="muted">${t("全店制覇！おめでとうございます。", "You have visited every shop. Congratulations!")}</li>`;
   }
 
