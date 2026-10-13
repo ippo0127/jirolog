@@ -732,49 +732,17 @@ def tree_html(n, ctx, p, depth=0):
 
 # ---------------------------------------------------------------- ページ
 
-def store_faq(store, ctx):
-    """店ごとの「よくある質問」。データから作る（営業中・休業中の店だけ）。"""
-    if store.get("status") not in ("open", "temporarily_closed"):
-        return ""
-    sid, name = store["id"], short_name(store)
-    alias = search_alias(store) if LANG == "ja" else ""
-    who = f"{alias}（ラーメン二郎 {name}）" if alias else L(f"ラーメン二郎 {name}", f"Ramen Jiro {name}")
-    paused = store.get("status") == "temporarily_closed"
-    qa = []
-    summary = hours_summary(store.get("hours"))
-    if paused:
-        qa.append((L(f"{who}は営業していますか？", f"Is {who} open?"),
-                   L("現在は一時休業中です。再開の日程は公式アカウントで確認してください。", "It is temporarily closed. Check the official account for the reopening date.")))
-    else:
-        qa.append((L(f"{who}の営業時間は？", f"What are the opening hours of {who}?"),
-                   (L(f"目安は{summary}です。", f"Roughly {summary}.") if summary else L("営業時間は要確認です。", "Please check the hours.")) +
-                   L("麺がなくなると早く閉まることがあるので、出かける前に公式アカウントで確認してください。このページの上には、日本時間でいま営業中かどうかを出しています。",
-                     " Shops close early when the noodles run out, so check the official account before you go. The top of this page shows whether it is open right now (Japan time).")))
-        hol = (store.get("hours") or {}).get("holiday", "missing")
-        qa.append((L(f"{who}の定休日は？", f"When is {who} closed?"),
-                   L(f"{closed_days(store)}です。", f"{closed_days(store)}.") +
-                   (L("祝日の営業は日によって違います。", " Public-holiday hours vary.") if hol is None else "")))
-    access = sv(store, "access") or []
-    if access or store.get("address"):
-        qa.append((L(f"{who}の最寄り駅・行き方は？", f"How do I get to {who}?"),
-                   L("、".join(a.rstrip("。") for a in access[:3]) + "。" if access else "", "; ".join(a.rstrip(". ") for a in access[:3]) + "." if access else "") +
-                   L(f"住所は{store.get('address')}です。", f" Address: {tr_store(store).get('address') or store.get('address')}.") if store.get("address") else ""))
-    mains = [m for m in live_menu(store) if isinstance(m.get("price"), int) and menu_kind(m["name"], m["price"]) == "main"][:4]
-    if mains:
-        items = L("、", ", ").join(f"{menu_name(store, m)} {yen(m['price'])}" for m in mains)
-        when = store.get("menu_checked")
-        qa.append((L(f"{who}の値段は？", f"How much is a bowl at {who}?"),
-                   L(f"{items}です" + (f"（{when}時点）" if when else "") + "。トッピングの量を伝える「コール」は無料です。",
-                     f"{items}" + (f" (as of {when})" if when else "") + ". The topping call is free.")))
-    nodes = ctx["lineage"][0]
-    node = nodes.get(sid) or {}
-    parent = nodes.get(node.get("parent"))
-    if parent:
-        qa.append((L(f"{who}はどこの流れをくむ店？", f"Where did the owner of {who} train?"),
-                   L(f"{node_name(parent, ctx)}で修業した店主の店です。系譜のページで、三田本店からのつながりをたどれます。",
-                     f"At {node_name(parent, ctx)}. The lineage page traces the line back to the original Mita shop.")))
-    items_html = "".join(f"<div><dt>{e(q)}</dt><dd>{e(a)}</dd></div>" for q, a in qa)
-    return f'<section class="block"><h2>{L("よくある質問", "FAQ")}</h2><dl class="faq">{items_html}</dl></section>'
+def store_tips(sid, ctx):
+    """直系二郎大好きマンが話している、その店ならではのコツ（3店以下に関するものだけ。連食ルートの話は除く）。"""
+    tips = (ctx["daisukiman"].get("tips") or [])
+    en = ((TR.get("daisukiman") or {}).get("tips") or []) if LANG == "en" else []
+    out = []
+    for i, t in enumerate(tips):
+        ids = t.get("store_ids") or []
+        if sid in ids and len(ids) <= 3:
+            text = en[i]["text"] if LANG == "en" and i < len(en) and en[i].get("text") else t["text"]
+            out.append((text, t.get("source")))
+    return out
 
 
 def near_block(sid, ctx, p):
@@ -966,6 +934,10 @@ def page_store(site, store, ctx):
     dm_x = ((dm.get("profile") or {}).get("links") or {}).get("x") or "https://x.com/delicious2626"
     dm_x = dm_x.rstrip("/").split("/")[-1]
     dm_parts = []
+    tips = store_tips(sid, ctx)
+    if tips:
+        dm_parts.append(f'<h3>{L("この店のコツ", "Tips for this shop")}</h3><ul class="tips">' + "".join(
+            f'<li>{e(text)}{src_link(src)}</li>' for text, src in tips) + "</ul>")
     latest = max([x.get("date") or "" for x in vids + posts] + [""])
     if latest:
         dm_parts.append(f'<p class="small">{L("この店についての直近の発信", "Most recent coverage of this shop")}: <strong>{e(latest)}</strong>{new_badge(latest, ctx)}</p>')
@@ -1065,8 +1037,6 @@ def page_store(site, store, ctx):
   </section>
 
   {news_html}
-
-  {store_faq(store, ctx)}
 
   <section class="block sources">
     <h2>{L('情報源', 'Sources')}</h2>

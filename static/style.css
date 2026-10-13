@@ -379,9 +379,5 @@ table.area-table tbody th a { font-weight: 900; }
 
 /* home brand line / FAQ */
 .hero-brand { display: block; font-size: .62em; letter-spacing: .04em; margin-bottom: 2px; }
-dl.faq { margin: 0; }
-dl.faq > div { padding: 10px 0; border-bottom: 1px solid var(--line); }
-dl.faq > div:last-child { border-bottom: 0; }
-dl.faq dt { font-weight: 900; }
-dl.faq dt::before { content: "Q. "; color: var(--red-ink); }
-dl.faq dd { margin: 4px 0 0; }
+ul.tips { padding-left: 1.2em; margin: .4em 0 1em; }
+ul.tips li { margin: .4em 0; }
