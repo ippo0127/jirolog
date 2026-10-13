@@ -148,4 +148,30 @@ scripts/
 
 ## マイ二郎ログ
 
-記録は閲覧者のブラウザの localStorage にだけ保存されます（サーバー不要。日本語版と英語版で共通）。JSON で書き出し・読み込みができます。
+記録は閲覧者のブラウザの localStorage にだけ保存されます（日本語版と英語版で共通）。JSON で書き出し・読み込みができます。
+
+### 公開プロフィール・ランキング
+
+マイ二郎ログの「公開プロフィール」で、ニックネームと ID を決めると記録を公開できる（メールアドレスは使わない）。
+
+- 公開ページ: `u/?h=ID`。ランキング: `ranking.html`（上位50人。訪問した店の数 → 通算杯数の順）。どちらも検索エンジンには載せない（noindex）。
+- 公開するのは店・回数・年月（本人が選べば日付）・メニュー・コール。メモと満足度は出さない。メニューとコールは決まった言葉でできているときだけ表示する（`static/profile.js`）。
+- 登録すると「合言葉」（28文字）が一度だけ表示される。別の端末ではこれで引き継ぐ。再発行はできない。
+- 同期: 端末の記録と「消した記録の id」を送り、サーバー（`report-worker/worker.js`）でほかの端末の分と合わせる。足した記録は残り、消した記録は戻らない。
+- 集計に使うのはサイトにある店（ビルドが書き出す `store-ids.json`）で、日付が 1968年〜明日の記録だけ。
+- データは Cloudflare D1（`jirolog-views` の `users` 表）。表は Worker が自動で作る。
+
+**運営の操作**（Cloudflare → Storage & Databases → D1 → `jirolog-views` → Console）
+
+```sql
+-- 不適切な名前のページを隠す（公開ページとランキングから消える。本人の同期は続く）
+UPDATE users SET hidden = 1 WHERE handle = 'xxx';
+-- 元に戻す
+UPDATE users SET hidden = 0 WHERE handle = 'xxx';
+-- 消す
+DELETE FROM users WHERE handle = 'xxx';
+-- 最近の登録を見る
+SELECT handle, name, shops, bowls, created FROM users ORDER BY created DESC LIMIT 20;
+```
+
+名前に使えない言葉は `report-worker/worker.js` の `NG_WORDS`、ID に使えない言葉は `RESERVED` にある。

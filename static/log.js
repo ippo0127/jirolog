@@ -61,6 +61,9 @@
   F.date.value = window.JL.iso(new Date(Date.now() + 9 * 3600e3));
 
   const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+  // 公開プロフィール（account.js）とつないでいるときは、変えたらサーバーにも送る
+  const linked = () => !!(window.JLAccount && window.JLAccount.active());
+  const changed = () => { if (window.JLAccount) window.JLAccount.changed(); };
   const dateLabel = (d) => {
     const w = WD[new Date(d + "T00:00:00Z").getUTCDay()];
     return EN ? `${w} ${d}` : `${d.replace(/-/g, "/")}(${w})`;
@@ -89,6 +92,7 @@
     syncMenu();
     draw();
     window.JL.render();
+    changed();
   });
 
   function draw() {
@@ -137,7 +141,8 @@
     if (!btn || !confirm(t("この記録を消しますか？", "Delete this entry?"))) return;
     const data = log.load();
     data.entries = data.entries.filter((e) => e.id !== btn.dataset.del);
-    log.save(data); draw(); window.JL.render();
+    if (linked()) data.deleted = [...(data.deleted || []), btn.dataset.del]; // ほかの端末からも消す
+    log.save(data); draw(); window.JL.render(); changed();
   });
 
   document.querySelector("[data-export]").addEventListener("click", () => {
@@ -156,12 +161,22 @@
       const incoming = JSON.parse(await file.text());
       if (!incoming || !Array.isArray(incoming.entries)) throw new Error("format");
       const data = log.load();
+      // 同じ記録は id か「店・日付・記録した時刻」で見分ける。一度消した記録を読み込み直すときは新しい id にする
+      const sig = (e) => `${e.store}|${e.date}|${e.created || ""}`;
       const ids = new Set(data.entries.map((e) => e.id));
-      const fresh = incoming.entries.filter((e) => e && e.id && e.store && e.date && !ids.has(e.id));
+      const sigs = new Set(data.entries.filter((e) => e.created).map(sig));
+      const dead = new Set(data.deleted || []);
+      const fresh = [];
+      for (const e of incoming.entries) {
+        if (!e || !e.id || !e.store || !e.date || ids.has(e.id) || (e.created && sigs.has(sig(e)))) continue;
+        const x = dead.has(e.id) ? { ...e, id: uid() } : e;
+        ids.add(x.id); if (x.created) sigs.add(sig(x));
+        fresh.push(x);
+      }
       data.entries.push(...fresh);
       log.save(data);
       msg.textContent = t(`${fresh.length} 件を読み込みました`, `Imported ${fresh.length} entries`);
-      draw(); window.JL.render();
+      draw(); window.JL.render(); changed();
     } catch (_) {
       msg.textContent = t("読み込めませんでした（二郎ログで書き出した JSON を選んでください）", "Could not import (choose a JSON file exported from Jiro Log)");
     }
@@ -169,10 +184,17 @@
   });
 
   document.querySelector("[data-clear]").addEventListener("click", () => {
-    if (!confirm(t("すべての記録を消します。元に戻せません。先に書き出しておくことをおすすめします。消しますか？",
-      "This deletes your whole log and cannot be undone. Export it first if you want a copy. Delete everything?"))) return;
-    log.save({ entries: [] }); draw(); window.JL.render();
+    const on = linked();
+    if (!confirm(on
+      ? t("すべての記録を消します。公開ページと、つないでいるほかの端末からも消えます。元に戻せません。先に書き出しておくことをおすすめします。消しますか？",
+        "This deletes your whole log, including your public page and your other connected devices. It cannot be undone. Export it first if you want a copy. Delete everything?")
+      : t("すべての記録を消します。元に戻せません。先に書き出しておくことをおすすめします。消しますか？",
+        "This deletes your whole log and cannot be undone. Export it first if you want a copy. Delete everything?"))) return;
+    const data = log.load();
+    log.save(on ? { entries: [], deleted: [...(data.deleted || []), ...data.entries.map((e) => e.id)].slice(-5000) } : { entries: [] });
+    draw(); window.JL.render(); changed();
   });
 
+  window.JLLog = { draw };
   draw();
 })();

@@ -327,7 +327,7 @@ def share_bar(site, pg, full_title):
 </aside>"""
 
 
-def layout(site, pg, *, title, body, page="", description="", scripts=(), head_extra="", ad=False, ja_only=False, og_image=None, share=True):
+def layout(site, pg, *, title, body, page="", description="", scripts=(), head_extra="", ad=False, ja_only=False, og_image=None, share=True, noindex=False):
     """ad: 本文の下に広告枠を置く（日本語ページだけ）。ja_only: 英語版のないページ。"""
     p, a = pg.p, pg.a
     other = pg.a + "en/index.html" if ja_only else pg.other
@@ -367,6 +367,7 @@ def layout(site, pg, *, title, body, page="", description="", scripts=(), head_e
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+{'<meta name="robots" content="noindex">' if noindex else ''}
 <title>{e(full_title)}</title>
 <meta name="description" content="{e(desc)}">
 <meta property="og:title" content="{e(full_title)}">
@@ -392,7 +393,7 @@ def layout(site, pg, *, title, body, page="", description="", scripts=(), head_e
 <script src="{a}assets/app.js" defer></script>
 {script_tags}
 </head>
-<body data-root="{p}" data-assets="{a}"{f' data-views="{e(site["views_endpoint"])}"' if site.get("views_endpoint") else ""}>
+<body data-root="{p}" data-assets="{a}"{f' data-views="{e(site["views_endpoint"])}"' if site.get("views_endpoint") else ""}{f' data-api="{e(site["api_base"])}"' if site.get("api_base") else ""}>
 <a class="skip" href="#main">{L('本文へ', 'Skip to content')}</a>
 <header class="site-head">
   <div class="wrap head-row">
@@ -1361,7 +1362,7 @@ def page_index(site, stores, ctx):
     <h2>{L('マイ二郎ログ', 'My Jiro log')}</h2>
     <p>{L('行った店と食べた一杯を記録して、全店制覇までの進み具合を見られます。記録はこのブラウザだけに保存されます。', 'Record the shops you visit and track your progress toward visiting them all. Your log stays in this browser.')}</p>
     <div class="progress" data-progress><div class="bar"><span style="width:0%"></span></div><p class="small" data-progress-text></p></div>
-    <a class="btn" href="{p}log.html">{L('マイログを開く', 'Open my log')}</a>
+    <div class="actions"><a class="btn" href="{p}log.html">{L('マイログを開く', 'Open my log')}</a><a class="btn" href="{p}ranking.html">{L('ランキング', 'Ranking')}</a></div>
   </section>
 </div>
 
@@ -1514,14 +1515,111 @@ def page_map(site, stores, ctx):
                       scripts=[LEAFLET_JS, "assets/map.js"])
 
 
+def profile_section(p, a):
+    """マイログの「公開プロフィール」（ニックネーム＋合言葉。メールアドレスは使わない）。"""
+    return f"""<section class="block" id="profile" data-profile hidden>
+  <div class="block-head"><h2>{L('公開プロフィール', 'Public profile')}</h2><a class="small" href="{p}ranking.html">{L('ランキング', 'Ranking')} →</a></div>
+  <div data-profile-off>
+    <p>{L('ニックネームを決めると、記録を自分の公開ページで見せられます。ランキングにも載り、合言葉で別の端末に引き継げます。メールアドレスは要りません。',
+          'Pick a nickname to show your log on your own public page, appear in the ranking, and move your log to other devices with a passphrase. No email needed.')}</p>
+    <form class="log-form" data-register>
+      <label>{L('ニックネーム（20文字まで）', 'Nickname (up to 20 characters)')}<input name="name" maxlength="20" required placeholder="{L('例: 野猿の民', 'e.g. Jiro Fan')}"></label>
+      <label>{L('ID（URL に使う。英小文字・数字・_ で3〜20文字）', 'ID for your page URL (3–20 of a–z, 0–9, _)')}<input name="handle" maxlength="20" required pattern="[A-Za-z0-9_]{{3,20}}" title="{L('英字・数字・_ で3〜20文字', '3–20 letters, digits or _')}" placeholder="{L('例: yaen_tami', 'e.g. jirofan')}" autocapitalize="off" autocomplete="off" spellcheck="false"></label>
+      <label class="full check"><input type="checkbox" name="show_dates"> {L('日付まで公開する（オフのときは年月だけ）', 'Show exact dates (otherwise only the month is shown)')}</label>
+      <label class="hp" aria-hidden="true">website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      <p class="full small muted">{L('公開されるのは、ニックネーム・ID・行った店・年月（または日付）・メニュー・コールです。メモと満足度は公開されません。', 'Public: nickname, ID, shops, month (or date), menu and call. Your notes and ratings stay private.')} <a href="{a}privacy.html">{L('プライバシーポリシー', 'Privacy policy (in Japanese)')}</a></p>
+      <div class="full actions"><button class="btn btn-primary" type="submit">{L('公開する', 'Publish')}</button><span class="small muted" data-register-msg></span></div>
+    </form>
+    <details class="restore">
+      <summary>{L('別の端末で公開した記録を引き継ぐ', 'Move a published log to this device')}</summary>
+      <form class="log-form" data-restore>
+        <label class="full">{L('合言葉', 'Passphrase')}<input name="token" required placeholder="XXXX-XXXX-XXXX-XXXX-XXXX-XXXX-XXXX" autocapitalize="characters" autocomplete="off"></label>
+        <div class="full actions"><button class="btn" type="submit">{L('引き継ぐ', 'Move here')}</button><span class="small muted" data-restore-msg></span></div>
+      </form>
+    </details>
+  </div>
+  <div data-profile-on hidden>
+    <div class="token-box" data-token-new hidden>
+      <p><strong>{L('合言葉', 'Your passphrase')}</strong>: <code data-token-new-value></code></p>
+      <p class="small">{L('別のスマホやパソコンで記録を引き継ぐときに使います。メールアドレスを預かっていないので、なくすと再発行できません。スクリーンショットやメモで必ず控えてください。',
+                          'You need this to move your log to another device. We do not keep your email, so it cannot be reissued if lost. Save it now (screenshot or note).')}</p>
+      <div class="actions"><button class="btn btn-small" type="button" data-token-copy>{L('コピー', 'Copy')}</button><button class="btn btn-small btn-primary" type="button" data-token-done>{L('控えた', 'Saved it')}</button></div>
+    </div>
+    <p>{L('公開中', 'Published')}: <a data-profile-link href="#"></a> <span class="small muted" data-sync-status></span></p>
+    <div class="actions">
+      <a class="btn btn-small" data-profile-open href="#">{L('公開ページを見る', 'View my page')}</a>
+      <button class="btn btn-small" type="button" data-profile-copy>{L('リンクをコピー', 'Copy link')}</button>
+      <a class="btn btn-small" data-profile-x href="#" target="_blank" rel="noopener">{L('X でシェア', 'Share on X')}</a>
+    </div>
+    <label class="check"><input type="checkbox" data-show-dates> {L('日付まで公開する（オフのときは年月だけ）', 'Show exact dates (otherwise only the month)')}</label>
+    <details class="profile-settings">
+      <summary>{L('合言葉・ニックネーム・公開をやめる', 'Passphrase, nickname, unpublish')}</summary>
+      <p class="small">{L('合言葉', 'Passphrase')}: <code data-token hidden></code> <button class="btn btn-small" type="button" data-token-show>{L('表示', 'Show')}</button> <button class="btn btn-small" type="button" data-token-copy2>{L('コピー', 'Copy')}</button></p>
+      <form class="actions" data-rename><input name="name" maxlength="20" aria-label="{L('ニックネーム', 'Nickname')}"><button class="btn btn-small" type="submit">{L('ニックネームを変える', 'Change nickname')}</button><span class="small muted" data-rename-msg></span></form>
+      <div class="actions"><button class="btn btn-small" type="button" data-unlink>{L('この端末とのつながりを外す', 'Disconnect this device')}</button>
+        <button class="btn btn-small btn-danger" type="button" data-unpublish>{L('公開をやめる（サーバーから削除）', 'Unpublish (delete from server)')}</button></div>
+      <p class="small muted">{L('「つながりを外す」は共用のパソコンなどで使います。公開ページはそのまま残り、合言葉でまたつなげます。どちらを選んでも、このブラウザの記録は残ります。',
+                                'Use “Disconnect” on a shared computer: your public page stays and you can reconnect with your passphrase. Either way, the log in this browser stays.')}</p>
+    </details>
+  </div>
+</section>"""
+
+
+def page_profile(site, stores, ctx):
+    pg = Page("u/index.html")
+    p = pg.p
+    body = f"""
+<div data-user-page>
+  <p class="muted" data-user-status>{L('読み込み中…', 'Loading…')}</p>
+  <div data-user-body hidden>
+    <h1 class="page-title"><span data-user-name></span> <span class="muted small" data-user-handle></span></h1>
+    <p class="small muted" data-user-since></p>
+    <section class="block">
+      <h2>{L('制覇状況', 'Progress')}</h2>
+      <div class="stats" data-user-stats></div>
+      <div class="progress"><div class="bar"><span data-user-bar style="width:0%"></span></div></div>
+      <details class="pref-progress"><summary>{L('エリア別', 'By area')}</summary><div data-user-areas></div></details>
+    </section>
+    <section class="block">
+      <h2>{L('行った店', 'Shops visited')}</h2>
+      <ul class="chips" data-user-stores></ul>
+    </section>
+    <section class="block">
+      <h2>{L('最近の記録', 'Recent bowls')}</h2>
+      <ol class="log-list" data-user-recent></ol>
+    </section>
+    <p class="small"><a href="{p}log.html#profile">{L('自分の記録も公開する', 'Publish your own log')}</a> · <a href="{p}ranking.html">{L('ランキング', 'Ranking')}</a> · <a data-user-report href="{p}report.html">{L('このページを報告', 'Report this page')}</a></p>
+  </div>
+</div>"""
+    return pg, layout(site, pg, title=L("公開プロフィール", "Public profile"), body=body, page="log", scripts=["assets/profile.js"], noindex=True)
+
+
+def page_ranking(site, stores, ctx):
+    pg = Page("ranking.html")
+    p = pg.p
+    body = f"""
+<h1 class="page-title">{L('二郎ログ ランキング', 'Jiro Log ranking')}</h1>
+<p>{L('マイ二郎ログを公開している人の、訪問した直系の店の数と通算杯数のランキングです（上位50人）。店の数には閉店した店も含みます。', 'Ranking of people who publish their Jiro log, by number of shops visited and total bowls (top 50). Closed shops count too.')}</p>
+<section class="block">
+  <div class="table-scroll"><table class="area-table rank-table">
+    <thead><tr><th>{L('順位', 'Rank')}</th><th>{L('ニックネーム', 'Nickname')}</th><th>{L('訪問した店', 'Shops')}</th><th>{L('通算', 'Bowls')}</th></tr></thead>
+    <tbody data-ranking><tr><td colspan="4" class="muted">{L('読み込み中…', 'Loading…')}</td></tr></tbody>
+  </table></div>
+  <p class="small muted" data-ranking-total></p>
+</section>
+<p><a class="btn btn-primary" href="{p}log.html#profile">{L('自分の記録を公開してランキングに参加する', 'Publish your log and join')}</a></p>"""
+    return pg, layout(site, pg, title=L("ランキング", "Ranking"), body=body, page="log", scripts=["assets/profile.js"], noindex=True)
+
+
 def page_log(site, stores, ctx):
     pg = Page("log.html")
     presets = L(["小ラーメン", "小豚ラーメン", "大ラーメン", "大豚ラーメン", "小ラーメン 麺少なめ", "汁なし", "つけ麺"],
                 ["Small ramen", "Small ramen + extra pork", "Large ramen", "Large ramen + extra pork", "Small ramen, less noodles", "Shiru-nashi", "Tsukemen"])
+    p = pg.p
     body = f"""
 <h1 class="page-title">{L('マイ二郎ログ', 'My Jiro log')}</h1>
-<p>{L('食べた一杯を記録します。記録はこのブラウザ（localStorage）にだけ保存され、サーバーには送られません。機種変更やブラウザのデータ削除に備えて、ときどき書き出してください。',
-       'Keep a record of every bowl. Your log is saved only in this browser (localStorage) and never sent to a server — export it now and then so you do not lose it.')}</p>
+<p>{L('食べた一杯を記録します。記録はこのブラウザに保存されます。下の「公開プロフィール」を使うと、記録を公開ページで見せたり、ランキングに参加したり、別の端末に引き継いだりできます。',
+       'Keep a record of every bowl. Your log is saved in this browser. With a public profile (below) you can show it on your own page, join the ranking and move it to another device.')}</p>
 
 <section class="block">
   <h2>{L('制覇状況', 'Progress')}</h2>
@@ -1557,6 +1655,8 @@ def page_log(site, stores, ctx):
   <ul class="chips" data-unvisited></ul>
 </section>
 
+{profile_section(p, pg.a)}
+
 <section class="block">
   <h2>{L('バックアップ', 'Backup')}</h2>
   <div class="actions">
@@ -1566,7 +1666,7 @@ def page_log(site, stores, ctx):
   </div>
   <p class="muted small">{L('日本語版と英語版で同じ記録を使います。', 'The Japanese and English pages share the same log.')}</p>
 </section>"""
-    return pg, layout(site, pg, title=L("マイ二郎ログ", "My Jiro log"), body=body, page="log", scripts=["assets/log.js"],
+    return pg, layout(site, pg, title=L("マイ二郎ログ", "My Jiro log"), body=body, page="log", scripts=["assets/log.js", "assets/account.js"],
                       description=L("食べた直系ラーメン二郎を記録して全店制覇を目指すログ。", "Log your Ramen Jiro visits and work toward visiting every shop."))
 
 
@@ -1598,7 +1698,8 @@ def page_md(site, stores, ctx, key, title, desc, md_name, ja_only=False):
 REPORT_KINDS = [("typo", "誤植・表記の誤り", "Typo or wording"), ("hours", "営業時間・定休日", "Hours or closing days"),
                 ("menu", "メニュー・価格", "Menu or prices"), ("status", "閉店・移転・休業・再開", "Closed, moved, paused or reopened"),
                 ("access", "住所・アクセス・地図", "Address, access or map"), ("lineage", "系譜", "Lineage"),
-                ("english", "英語の表記", "English wording"), ("other", "その他", "Other")]
+                ("english", "英語の表記", "English wording"),
+                ("profile", "公開プロフィール（不適切な名前など）", "Public profile (e.g. offensive name)"), ("other", "その他", "Other")]
 
 
 def page_report(site, stores, ctx):
@@ -1841,6 +1942,7 @@ def main():
         base["articles"], base["videos"] = list(ctx["articles"]), list(ctx["videos"])
         merge_feeds(base, feeds)
         jobs = [(page_index,), (page_stores,), (page_closed,), (page_lineage,), (page_map,), (page_log,), (page_news,), (page_about,), (page_report,),
+                (page_profile,), (page_ranking,),
                 (page_md, "guide", L("はじめての二郎", "How to order at Ramen Jiro"),
                  L("初めて直系ラーメン二郎に行く人向けの、食券からコール、食べ終わりまでの流れ。", "A step-by-step guide to your first Ramen Jiro: tickets, the topping call, and etiquette."), "guide.md"),
                 (page_md, "glossary", L("二郎用語集", "Jiro glossary"),
@@ -1861,6 +1963,9 @@ def main():
         out404.write_text(prettify_links(page_404(site, stores, base)), encoding="utf-8")
     LANG = "ja"
 
+    # 公開プロフィールの集計で使う店 id の一覧（report-worker が読む。閉店した店も含む）
+    (DIST / "store-ids.json").write_text(json.dumps({"ids": [s["id"] for s in stores]}, separators=(",", ":")), encoding="utf-8")
+
     if site.get("indexnow_key"):
         # IndexNow（Bing など）に更新を知らせるときの確認用ファイル
         (DIST / f"{site['indexnow_key']}.txt").write_text(site["indexnow_key"], encoding="utf-8")
@@ -1868,7 +1973,8 @@ def main():
     if site.get("base_url"):
         b = site["base_url"].rstrip("/")
         today = TODAY.isoformat()
-        urls = "".join(f"<url><loc>{e(b + '/' + pretty(path))}</loc><lastmod>{lastmod.get(path) or today}</lastmod></url>" for path in written)
+        noindex = {"u/index.html", "ranking.html", "en/u/index.html", "en/ranking.html"}
+        urls = "".join(f"<url><loc>{e(b + '/' + pretty(path))}</loc><lastmod>{lastmod.get(path) or today}</lastmod></url>" for path in written if path not in noindex)
         (DIST / "sitemap.xml").write_text(
             f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>\n', encoding="utf-8")
         (DIST / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {b}/sitemap.xml\n", encoding="utf-8")

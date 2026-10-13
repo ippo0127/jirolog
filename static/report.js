@@ -12,6 +12,7 @@
   const params = new URLSearchParams(location.search);
   if (params.get("store") && byId[params.get("store")]) F.store.value = params.get("store");
   if (params.get("page")) F.page.value = params.get("page");
+  if (params.get("kind") && [...F.kind.options].some((x) => x.value === params.get("kind"))) F.kind.value = params.get("kind");
 
   const kindLabel = () => F.kind.options[F.kind.selectedIndex].text;
 
