@@ -15,7 +15,8 @@ Ramen Jiro is a family of ramen shops that grew out of one shop in Mita, Tokyo. 
 ## 2. Join the queue
 
 - Each shop has its own place to queue (along the wall, not blocking the road or the shop next door). Look for signs.
-- If you are with friends, queue together. Friends should not join you later in the line.
+- If you are with friends, queue together. Do not hold places for people who arrive later, and do not join friends who are already in line.
+- No smoking and no loud talking while you queue; almost every shop bans smoking in front of the shop.
 - At some shops you buy your ticket while you queue. Do what the person ahead of you does.
 
 ## 3. Buy a ticket

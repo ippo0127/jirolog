@@ -906,8 +906,11 @@ def page_store(site, store, ctx):
         menu_html = f'<table class="menu"><tbody>{rows}</tbody></table>{checked}'
 
     rules = live_list(store, "rules")
-    rules_html = ("<ul class=rules>" + "".join(f"<li>{e(r)}</li>" for r in rules) + "</ul>" if rules else
-                  f'<p class=muted>{L("特記事項なし（一般的な流れは", "Nothing special noted (see ")}<a href="{p}guide.html">{L("はじめての二郎", "How to order")}</a>{L("）", ")")}</p>')
+    common = f'<a href="{p}guide.html">{L("はじめての二郎", "How to order")}</a>'
+    rules_html = ("<ul class=rules>" + "".join(f"<li>{e(r)}</li>" for r in rules) + "</ul>"
+                  + f'<p class="muted small">{L("代表待ちの禁止など、どの店でも共通のマナーは", "Manners common to every shop (no saving places in line, etc.) are in ")}{common}{L("へ。", ".")}</p>'
+                  if rules else
+                  f'<p class=muted>{L("特記事項なし。どの店でも共通の流れとマナーは", "Nothing specific to this shop. For the usual routine and manners, see ")}{common}{L("へ。", ".")}</p>')
     feats_html = "".join(f'<span class="chip">{e(f)}</span>' for f in live_list(store, "features"))
 
     sns = store.get("sns") or {}
@@ -1011,7 +1014,7 @@ def page_store(site, store, ctx):
       {menu_html}
     </section>
     <section class="block">
-      <h2>{L('この店のルール', 'House rules')}</h2>
+      <h2>{L('この店ならではのルール', 'House rules')}</h2>
       {rules_html}
       {f'<div class="chips">{feats_html}</div>' if feats_html else ''}
     </section>
