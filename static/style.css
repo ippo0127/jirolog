@@ -376,3 +376,12 @@ table.area-table tbody th a { font-weight: 900; }
 /* share */
 .share-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 28px 0 0; padding: 14px 16px; border: 2px dashed var(--line); border-radius: var(--radius); }
 .share-label { font-weight: 900; font-size: .9rem; margin-right: 4px; }
+
+/* home brand line / FAQ */
+.hero-brand { display: block; font-size: .62em; letter-spacing: .04em; margin-bottom: 2px; }
+dl.faq { margin: 0; }
+dl.faq > div { padding: 10px 0; border-bottom: 1px solid var(--line); }
+dl.faq > div:last-child { border-bottom: 0; }
+dl.faq dt { font-weight: 900; }
+dl.faq dt::before { content: "Q. "; color: var(--red-ink); }
+dl.faq dd { margin: 4px 0 0; }

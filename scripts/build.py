@@ -732,6 +732,51 @@ def tree_html(n, ctx, p, depth=0):
 
 # ---------------------------------------------------------------- ページ
 
+def store_faq(store, ctx):
+    """店ごとの「よくある質問」。データから作る（営業中・休業中の店だけ）。"""
+    if store.get("status") not in ("open", "temporarily_closed"):
+        return ""
+    sid, name = store["id"], short_name(store)
+    alias = search_alias(store) if LANG == "ja" else ""
+    who = f"{alias}（ラーメン二郎 {name}）" if alias else L(f"ラーメン二郎 {name}", f"Ramen Jiro {name}")
+    paused = store.get("status") == "temporarily_closed"
+    qa = []
+    summary = hours_summary(store.get("hours"))
+    if paused:
+        qa.append((L(f"{who}は営業していますか？", f"Is {who} open?"),
+                   L("現在は一時休業中です。再開の日程は公式アカウントで確認してください。", "It is temporarily closed. Check the official account for the reopening date.")))
+    else:
+        qa.append((L(f"{who}の営業時間は？", f"What are the opening hours of {who}?"),
+                   (L(f"目安は{summary}です。", f"Roughly {summary}.") if summary else L("営業時間は要確認です。", "Please check the hours.")) +
+                   L("麺がなくなると早く閉まることがあるので、出かける前に公式アカウントで確認してください。このページの上には、日本時間でいま営業中かどうかを出しています。",
+                     " Shops close early when the noodles run out, so check the official account before you go. The top of this page shows whether it is open right now (Japan time).")))
+        hol = (store.get("hours") or {}).get("holiday", "missing")
+        qa.append((L(f"{who}の定休日は？", f"When is {who} closed?"),
+                   L(f"{closed_days(store)}です。", f"{closed_days(store)}.") +
+                   (L("祝日の営業は日によって違います。", " Public-holiday hours vary.") if hol is None else "")))
+    access = sv(store, "access") or []
+    if access or store.get("address"):
+        qa.append((L(f"{who}の最寄り駅・行き方は？", f"How do I get to {who}?"),
+                   L("、".join(a.rstrip("。") for a in access[:3]) + "。" if access else "", "; ".join(a.rstrip(". ") for a in access[:3]) + "." if access else "") +
+                   L(f"住所は{store.get('address')}です。", f" Address: {tr_store(store).get('address') or store.get('address')}.") if store.get("address") else ""))
+    mains = [m for m in live_menu(store) if isinstance(m.get("price"), int) and menu_kind(m["name"], m["price"]) == "main"][:4]
+    if mains:
+        items = L("、", ", ").join(f"{menu_name(store, m)} {yen(m['price'])}" for m in mains)
+        when = store.get("menu_checked")
+        qa.append((L(f"{who}の値段は？", f"How much is a bowl at {who}?"),
+                   L(f"{items}です" + (f"（{when}時点）" if when else "") + "。トッピングの量を伝える「コール」は無料です。",
+                     f"{items}" + (f" (as of {when})" if when else "") + ". The topping call is free.")))
+    nodes = ctx["lineage"][0]
+    node = nodes.get(sid) or {}
+    parent = nodes.get(node.get("parent"))
+    if parent:
+        qa.append((L(f"{who}はどこの流れをくむ店？", f"Where did the owner of {who} train?"),
+                   L(f"{node_name(parent, ctx)}で修業した店主の店です。系譜のページで、三田本店からのつながりをたどれます。",
+                     f"At {node_name(parent, ctx)}. The lineage page traces the line back to the original Mita shop.")))
+    items_html = "".join(f"<div><dt>{e(q)}</dt><dd>{e(a)}</dd></div>" for q, a in qa)
+    return f'<section class="block"><h2>{L("よくある質問", "FAQ")}</h2><dl class="faq">{items_html}</dl></section>'
+
+
 def near_block(sid, ctx, p):
     near = ctx["near"].get(sid) or []
     if not near:
@@ -861,7 +906,8 @@ def page_store(site, store, ctx):
     name = short_name(store)
     nick = sv(store, "nickname")
     opened_label = L("創業", "Founded") if sid == "mita" else L("開店", "Opened")
-    meta = [L(f"通称「{e(nick)}」", f"a.k.a. “{e(nick)}”") if nick and (LANG == "ja" or nick != name) else "",
+    alias_ja = search_alias(store)
+    meta = [(f"通称「{e(alias_ja)}」" if alias_ja else "") if LANG == "ja" else (f"a.k.a. “{e(nick)}”" if nick and nick != name else ""),
             e(city_of(store)), f"{opened_label} {e(store['opened'])}" if store.get("opened") else ""]
     meta = " · ".join(m for m in meta if m)
 
@@ -1019,6 +1065,8 @@ def page_store(site, store, ctx):
   </section>
 
   {news_html}
+
+  {store_faq(store, ctx)}
 
   <section class="block sources">
     <h2>{L('情報源', 'Sources')}</h2>
@@ -1298,8 +1346,8 @@ def page_index(site, stores, ctx):
     rs = ctx["ramenscene"].get("site", {})
     dml = (ctx["daisukiman"].get("profile") or {}).get("links") or {}
     rs_about = rs.get("about") if LANG == "ja" else TR.get("ramenscene_about")
-    hero_h1 = L('いま開いてる<em>二郎</em>は<span class="hero-count" data-open-count>—</span>店',
-                '<span class="hero-count" data-open-count>—</span> <em>Jiro</em> shops are open now')
+    hero_h1 = L('<span class="hero-brand">二郎ログ</span>いま開いてる<em>二郎</em>は<span class="hero-count" data-open-count>—</span>店',
+                '<span class="hero-brand">Jiro Log</span><span class="hero-count" data-open-count>—</span> <em>Jiro</em> shops are open now')
     body = f"""
 <section class="hero">
   <div class="hero-text">
@@ -1367,7 +1415,10 @@ def page_index(site, stores, ctx):
     site_ld = ""
     if site.get("base_url") and LANG == "ja":
         # 検索結果のサイト名に使われる（サイトの根のトップページにだけ置く）
-        site_ld = jsonld({"@context": "https://schema.org", "@type": "WebSite", "name": site["name"],
+        root_url = site["base_url"].rstrip("/") + "/"
+        site_ld = jsonld({"@context": "https://schema.org", "@type": "Organization", "name": site["name"], "alternateName": site.get("name_en", ""),
+                          "url": root_url, "logo": root_url + "assets/icon-512.png"})
+        site_ld += jsonld({"@context": "https://schema.org", "@type": "WebSite", "name": site["name"],
                           "alternateName": [site.get("name_en", ""), "jirolog"], "url": site["base_url"].rstrip("/") + "/",
                           "inLanguage": "ja"})
     return pg, layout(site, pg, title=L("ホーム", "Home"), body=body, page="index", head_extra=site_ld)
