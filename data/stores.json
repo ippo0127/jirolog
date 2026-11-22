@@ -6526,17 +6526,21 @@
    "holiday": null
   },
   "hours_notes": [
-   "2026-09-30に看板の設置が確認された段階。開店日・営業時間・メニューは未発表"
+   "開店日・営業時間・メニューは未発表（2026年11月22日時点。公式 X の投稿は10月3日の1件のみ）",
+   "開店は「11月中旬以降」と報じられた（2026年10月15日、SBC信越放送の報道として紹介）",
+   "2026年9月30日に看板の設置が確認された"
   ],
   "status": "upcoming",
   "opened": null,
-  "sns": {},
+  "sns": {
+   "x": "https://x.com/ramen_jiro_mtmt"
+  },
   "menu": [],
   "menu_checked": null,
   "rules": [],
   "features": [
    "長野県初の直系になる見込み",
-   "環七新新代田店出身の店主との情報（年表サイト）"
+   "店主は目黒店の助手出身（直系二郎大好きマンの動画より）"
   ],
   "sources": [
    {
@@ -6558,13 +6562,37 @@
     "label": "Take4 二郎食記録 ラーメン二郎年表",
     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
     "date": null
+   },
+   {
+    "label": "直系二郎大好きマン（YouTube）松本店の最新情報まとめ",
+    "url": "https://www.youtube.com/watch?v=7X-zOYDhw-U",
+    "date": "2026-10-25"
+   },
+   {
+    "label": "信濃毎日新聞デジタル",
+    "url": "https://www.shinmai.co.jp/news/article/gf01davp2gonn8tk86f6pd1g",
+    "date": "2026-10-02"
+   },
+   {
+    "label": "トレンドメモ（SBC信越放送の報道の紹介）",
+    "url": "https://trend-memo-japan.com/blog/ramen-jiro-matsumoto-signboard-2026/",
+    "date": null
+   },
+   {
+    "label": "kote-koteko（X）",
+    "url": "https://x.com/koteko_kote/status/2110700235928584455",
+    "date": "2026-10-15"
+   },
+   {
+    "label": "公式 X（プロフィールの住所・投稿数を確認）",
+    "url": "https://x.com/ramen_jiro_mtmt",
+    "date": "2026-11-22"
    }
   ],
   "conflicts": [
-   "住所はラーメンDBのユーザー登録情報。ぐんぐるブログでは詳細住所は未発表とされ、旧「信州炉端酒場 万事屋」跡とされる",
-   "依頼文のURL（gummaumaimono.info）は名前解決できず、www付きの www.gummaumaimono.info で取得"
+   "店主の出身店: 年表サイト（Take4）は環七新新代田店、直系二郎大好きマンの動画（2026年10月25日）は目黒店の助手から独立と紹介。大好きマン側を採用（修行先は複数あったとされる）"
   ],
-  "checked": "2026-10-01"
+  "checked": "2026-11-22"
  },
  {
   "id": "nagoya",

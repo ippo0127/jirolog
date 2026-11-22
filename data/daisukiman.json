@@ -137,6 +137,16 @@
  },
  "videos": [
   {
+   "url": "https://www.youtube.com/watch?v=7X-zOYDhw-U",
+   "title": "【長野初の二郎】ラーメン二郎 松本店の最新情報まとめ！| 次期店主さんの目黒店ラスト麺あげを実食",
+   "date": "2026-10-25",
+   "store_ids": [
+    "matsumoto",
+    "meguro"
+   ],
+   "kind": "video"
+  },
+  {
    "url": "https://www.youtube.com/shorts/pNJVVwgqBZw",
    "title": "ラーメン二郎 あの幻の限定が復活！！ | 立川店 ぱた郎 #shorts #ラーメン二郎",
    "date": "2026-09-30",
