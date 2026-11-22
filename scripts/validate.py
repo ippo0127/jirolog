@@ -96,6 +96,8 @@ def check_special(data, store_ids):
                     check_ranges(f"{where}.{day}", v, problems)
                 else:
                     problems.append(f"{where}.{day} は 時間の配列・[]（休み）・null（要確認）・\"normal\"（ふだんどおり）のどれか")
+            if "partial" in ent and not isinstance(ent["partial"], bool):
+                problems.append(f"{where}: partial は true か false")
             if not ((ent.get("source") or {}).get("url") or "").startswith("http"):
                 problems.append(f"{where}: source に URL がない")
     return problems

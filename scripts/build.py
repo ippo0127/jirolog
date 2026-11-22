@@ -1331,11 +1331,13 @@ def regular_ranges(store, date, holidays):
 
 def season_day(season, store, date, holidays):
     """その日の営業を (種類, 時間) で返す。
-    種類: unknown 未発表 / check 要確認 / special 特別な営業・休み / normal ふだんどおり"""
+    種類: unknown 未発表 / check 要確認 / special 特別な営業・休み / normal ふだんどおり
+    partial（一部の日だけ分かっている店。例: 「明日営業している店」の一覧から）は、書いていない日を未発表として扱う。"""
     ent = (season.get("stores") or {}).get(store["id"])
-    if not ent:
+    days = (ent or {}).get("days") or {}
+    if not ent or (ent.get("partial") and date not in days):
         return "unknown", None
-    v = (ent.get("days") or {}).get(date, "normal")
+    v = days.get(date, "normal")
     if v == "normal":
         r = regular_ranges(store, date, holidays)
         return ("check", None) if r is None else ("normal", r)
@@ -1354,10 +1356,16 @@ def season_sp(store):
     if not season or store.get("status") != "open":
         return None
     ent = (season.get("stores") or {}).get(store["id"])
-    if ent:
+    if ent and not ent.get("partial"):
         return {d: v for d, v in (ent.get("days") or {}).items() if v != "normal"} or None
-    # まだ発表していない店は、休む店の多い日を「要確認」にする（ふだんの営業時間で「営業中」と出さない）
-    return {d: None for d in season_dates(season, "core_from", "core_to")}
+    # まだ発表していない店（一部の日だけ分かっている店の、書いていない日も）は、休む店の多い日を「要確認」にする
+    sp = {d: None for d in season_dates(season, "core_from", "core_to")}
+    for d, v in ((ent or {}).get("days") or {}).items():
+        if v == "normal":
+            sp.pop(d, None)
+        else:
+            sp[d] = v
+    return sp
 
 
 def day_label(date):
@@ -1410,10 +1418,11 @@ def season_box(store, ctx, p):
         body = f'<p>{L("まだ発表されていません。例年、12月中旬〜下旬に公式 X で発表されます。分かりしだい載せます。", "Not announced yet. Shops usually post their schedule on X in mid-to-late December; we add it once it is out.")}</p>'
     else:
         hol = ctx["holidays"]
-        days = sorted(d for d, v in (ent.get("days") or {}).items() if v != "normal")
+        partial = ent.get("partial")
+        days = sorted(d for d, v in (ent.get("days") or {}).items() if partial or v != "normal")
         items = "".join(f'<li><strong>{e(day_label(d))}</strong> {e(fmt_ranges(season_day(season, store, d, hol)[1]))}</li>' for d in days)
         note = season_note(ent)
-        rest = L("ほかの日はふだんどおり", "Other days: usual hours") + (f" · {e(note)}" if note else "")
+        rest = (L("ほかの日はまだ分かりません", "Other days: not announced yet") if partial else L("ほかの日はふだんどおり", "Other days: usual hours")) + (f" · {e(note)}" if note else "")
         body = (f'<ul class="season-days">{items}</ul><p class="small">{rest}</p>'
                 f'<p class="small muted">{L("出典", "Source")}: {season_source(ent)}</p>')
     head = L(f"年末年始の営業（{season_years(season)}）", f"New Year hours ({season_years(season)})")
@@ -1429,13 +1438,14 @@ def page_newyear(site, stores, ctx):
     dates = season_dates(season)
     ents = season.get("stores") or {}
     announced = [s for s in shops if s["id"] in ents]
-    unknown = len(shops) - len(announced)
+    full = sum(1 for s in announced if not ents[s["id"]].get("partial"))
+    part = len(announced) - full
     yrs = season_years(season)
     title = L(f"ラーメン二郎 年末年始の営業 {yrs}（直系全店カレンダー）", f"Ramen Jiro New Year opening hours {yrs} (all shops)")
     d0, d1 = dt.date.fromisoformat(season["from"]), dt.date.fromisoformat(season["to"])
     span = L(f"{d0.month}月{d0.day}日〜{d1.month}月{d1.day}日", f"{d0.day} {MONTH_EN[d0.month - 1]} – {d1.day} {MONTH_EN[d1.month - 1]}")
-    status = L(f"発表済み <strong>{len(announced)}</strong> / {len(shops)} 店 · 最終更新 {e(season['checked'])}",
-               f"Announced: <strong>{len(announced)}</strong> of {len(shops)} shops · updated {e(season['checked'])}")
+    status = L(f"発表済み <strong>{full}</strong> 店" + (f" · 一部の日だけ判明 {part} 店" if part else "") + f"（全 {len(shops)} 店） · 最終更新 {e(season['checked'])}",
+               f"Announced: <strong>{full}</strong>" + (f", partly known: {part}" if part else "") + f" (of {len(shops)} shops) · updated {e(season['checked'])}")
     notice = ""
     if TODAY.isoformat() > season["to"]:
         notice = f'<p class="status-note">{L("このシーズンは終わりました。次の年末年始の予定は、発表されしだい載せます。", "This season is over. The next schedule will be added once it is announced.")}</p>'
@@ -1446,10 +1456,12 @@ def page_newyear(site, stores, ctx):
     usual = f' <span class="muted small">{L("（ふだんどおり）", "(usual hours)")}</span>'
     jump, day_parts = [], []
     for d in dates:
-        opened, closed, check = [], 0, 0
-        for s in announced:
+        opened, closed, check, unknown = [], 0, 0, 0
+        for s in shops:
             kind, r = season_day(season, s, d, hol)
-            if kind == "check":
+            if kind == "unknown":
+                unknown += 1
+            elif kind == "check":
                 check += 1
             elif not r:
                 closed += 1
