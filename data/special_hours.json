@@ -1,0 +1,33 @@
+{
+ "seasons": [
+  {
+   "id": "newyear-2026",
+   "name": "2026→2027 年末年始",
+   "name_en": "New Year holidays 2026–27",
+   "label": "年末年始",
+   "label_en": "New Year holidays",
+   "from": "2026-12-26",
+   "to": "2027-01-06",
+   "core_from": "2026-12-29",
+   "core_to": "2027-01-04",
+   "show_from": "2026-11-20",
+   "show_to": "2027-01-12",
+   "checked": "2026-11-22",
+   "trend": "例年、多くの店は12月28〜30日ごろまで営業し、1月4〜6日ごろから再開します。大晦日と三が日に開いている店は数店です。昨シーズンの大晦日（2025年12月31日）に営業した直系は8店（小滝橋通り・立川・仙台・新潟・越谷・前橋千代田町・一橋学園・柏）、その前のシーズンの1月2日（2025年）に営業した直系は6店でした（いずれも直系二郎大好きマン調べ）。今シーズンも同じとは限りません。",
+   "trend_en": "Most shops usually stay open until around 28–30 December and reopen around 4–6 January; only a handful open on New Year's Eve and the first three days of January. Last season, 8 shops opened on 31 Dec 2025 (Otakibashi-dori, Tachikawa, Sendai, Niigata, Koshigaya, Maebashi Chiyodamachi, Hitotsubashi-gakuen and Kashiwa), and the season before only 6 opened on 2 Jan 2025 (counts by Jiro Daisuki Man). This season may differ.",
+   "sources": [
+    {
+     "label": "直系二郎大好きマン（X）2025年12月31日に営業する店",
+     "url": "https://x.com/delicious2626/status/2005944895031193968",
+     "date": "2025-12-30"
+    },
+    {
+     "label": "直系二郎大好きマン（X）2025年1月2日に営業する店",
+     "url": "https://x.com/delicious2626/status/1874657427930718683",
+     "date": "2025-01-02"
+    }
+   ],
+   "stores": {}
+  }
+ ]
+}

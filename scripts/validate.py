@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""data/stores.json の形式チェック。build.py からも呼ばれる。
+"""data/stores.json と data/special_hours.json の形式チェック。build.py からも呼ばれる。
 
     python3 scripts/validate.py
 """
@@ -11,12 +11,27 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 DAYS = ["mon", "tue", "wed", "thu", "fri", "sat", "sun", "holiday"]
 STATUSES = {"open", "temporarily_closed", "closed", "upcoming"}
 TIME = re.compile(r"^([01]\d|2\d|3[0-5]):[0-5]\d$")
+DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+SEASON_KEYS = ["id", "name", "from", "to", "core_from", "core_to", "show_from", "show_to"]
 REQUIRED = ["id", "name", "prefecture", "address", "status", "hours"]
 
 
 def minutes(t):
     h, m = t.split(":")
     return int(h) * 60 + int(m)
+
+
+def check_ranges(where, ranges, problems):
+    """[["11:00", "15:00"], ...] の形と、時間の順番を確かめる。"""
+    prev_end = -1
+    for r in ranges:
+        if not (isinstance(r, list) and len(r) == 2 and all(isinstance(t, str) and TIME.match(t) for t in r)):
+            problems.append(f"{where} の形式が不正 {r}")
+            continue
+        a, b = minutes(r[0]), minutes(r[1])
+        if b <= a or a < prev_end:
+            problems.append(f"{where} の時間が逆順・重複 {r}")
+        prev_end = b
 
 
 def check_stores(stores):
@@ -40,17 +55,8 @@ def check_stores(stores):
                 problems.append(f"{sid}: hours に不明なキー {d}")
         for d in DAYS:
             ranges = hours.get(d)
-            if ranges is None:
-                continue
-            prev_end = -1
-            for r in ranges:
-                if not (isinstance(r, list) and len(r) == 2 and all(isinstance(t, str) and TIME.match(t) for t in r)):
-                    problems.append(f"{sid}: hours.{d} の形式が不正 {r}")
-                    continue
-                a, b = minutes(r[0]), minutes(r[1])
-                if b <= a or a < prev_end:
-                    problems.append(f"{sid}: hours.{d} の時間が逆順・重複 {r}")
-                prev_end = b
+            if ranges is not None:
+                check_ranges(f"{sid}: hours.{d}", ranges, problems)
         for key in ("x", "instagram", "web"):
             url = (s.get("sns") or {}).get(key)
             if url and not url.startswith("https://"):
@@ -65,9 +71,42 @@ def check_stores(stores):
     return problems
 
 
+def check_special(data, store_ids):
+    """data/special_hours.json（年末年始などの特別営業）の形式チェック。"""
+    problems = []
+    for i, season in enumerate((data or {}).get("seasons") or []):
+        sid = season.get("id") or f"season#{i}"
+        for k in SEASON_KEYS:
+            if not season.get(k):
+                problems.append(f"{sid}: {k} がない")
+            elif k != "id" and k != "name" and not DATE.match(season[k]):
+                problems.append(f"{sid}: {k} は YYYY-MM-DD で書く")
+        if season.get("from", "") > season.get("to", "") or season.get("core_from", "") > season.get("core_to", ""):
+            problems.append(f"{sid}: 期間の始まりと終わりが逆")
+        for store_id, ent in (season.get("stores") or {}).items():
+            where = f"{sid}.{store_id}"
+            if store_id not in store_ids:
+                problems.append(f"{where}: 知らない店")
+            for day, v in (ent.get("days") or {}).items():
+                if not DATE.match(day):
+                    problems.append(f"{where}: 日付 {day} は YYYY-MM-DD で書く")
+                if v is None or v == "normal":
+                    continue
+                if isinstance(v, list):
+                    check_ranges(f"{where}.{day}", v, problems)
+                else:
+                    problems.append(f"{where}.{day} は 時間の配列・[]（休み）・null（要確認）・\"normal\"（ふだんどおり）のどれか")
+            if not ((ent.get("source") or {}).get("url") or "").startswith("http"):
+                problems.append(f"{where}: source に URL がない")
+    return problems
+
+
 def main():
     stores = json.loads((ROOT / "data" / "stores.json").read_text(encoding="utf-8"))
     problems = check_stores(stores)
+    special = ROOT / "data" / "special_hours.json"
+    if special.exists():
+        problems += check_special(json.loads(special.read_text(encoding="utf-8")), {s["id"] for s in stores})
     for p in problems:
         print(p)
     print(f"{len(stores)} stores, {len(problems)} problems")

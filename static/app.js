@@ -31,6 +31,8 @@
 
   // その日の営業時間。[] = 休み、null = 要確認
   function rangesOn(store, dateStr, dow) {
+    // 年末年始などの特別営業（data/special_hours.json）はふだんの営業より優先。null は要確認
+    if (store.sp && dateStr in store.sp) return store.sp[dateStr];
     const h = store.hours || {};
     if (J.holidays[dateStr]) return "holiday" in h ? h.holiday : null;
     const r = h[DAYS[dow]];
@@ -73,10 +75,18 @@
     }
     const hol = J.holidays[n.date];
     const nx = () => { const x = nextOpen(store, n); return x ? t(` · 次は${x}`, ` · next: ${x}`) : ""; };
+    // 年末年始などの特別営業の日（data/special_hours.json）
+    const sp = store.sp && n.date in store.sp ? J.season || { label: "特別営業", label_en: "special hours" } : null;
     if (today === null) {
-      return { state: "unk", short: t("要確認", "Check"), label: hol ? t(`今日は祝日（${hol}）· 営業は要確認`, "Public holiday today · check the official account") : t("今日の営業は要確認", "Check today’s hours"), today };
+      const label = sp ? t(`${sp.label}の営業は要確認`, `${sp.label_en}: check the official account`)
+        : hol ? t(`今日は祝日（${hol}）· 営業は要確認`, "Public holiday today · check the official account") : t("今日の営業は要確認", "Check today’s hours");
+      return { state: "unk", short: t("要確認", "Check"), label, today };
     }
-    if (!today.length) return { state: "off", short: t("定休", "Closed today"), label: (hol ? t(`祝日（${hol}）は休み`, "Closed on public holidays") : t("今日は定休日", "Closed today")) + nx(), today };
+    if (!today.length) {
+      const label = sp ? t(`${sp.label}の休み`, `Closed for the ${sp.label_en}`)
+        : hol ? t(`祝日（${hol}）は休み`, "Closed on public holidays") : t("今日は定休日", "Closed today");
+      return { state: "off", short: sp ? t("休み", "Closed today") : t("定休", "Closed today"), label: label + nx(), today };
+    }
     for (const [a, b] of today) {
       const A = toMin(a), B = toMin(b);
       if (n.min >= A && n.min < B) {

@@ -997,6 +997,8 @@ def page_store(site, store, ctx):
     </div>
   </header>
 
+  {season_box(store, ctx, p)}
+
   <div class="grid-2">
     <section class="block">
       <h2>{L('当時の営業時間', 'Former hours') if st == 'closed' else L('営業時間', 'Hours')} <span class="muted small">{L('目安', 'approx.')}</span></h2>
@@ -1250,7 +1252,10 @@ LISTS = {
 
 
 def list_links(p, skip=None):
-    return "".join(f'<a class="chip chip-link" href="{p}lists/{k}.html">{e(label(v[1]))}</a>' for k, v in LISTS.items() if k != skip)
+    links = "".join(f'<a class="chip chip-link" href="{p}lists/{k}.html">{e(label(v[1]))}</a>' for k, v in LISTS.items() if k != skip)
+    if skip != "new-year" and shown_season():   # 年末年始の営業カレンダー（表示期間中だけ）
+        links = f'<a class="chip chip-link chip-season" href="{p}lists/new-year.html">{L("年末年始の営業", "New Year hours")}</a>' + links
+    return links
 
 
 def page_list(site, stores, ctx, key):
@@ -1288,6 +1293,231 @@ def page_list(site, stores, ctx, key):
     return pg, layout(site, pg, title=title, body=body, page="stores", description=clip(L(intro_ja, intro_en), L(120, 160)), ad=True)
 
 
+# ---------------------------------------------------------------- 年末年始などの特別営業（data/special_hours.json）
+
+SEASONS = []   # main() が読み込む
+WEEKDAY_KEYS = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]   # date.weekday() の順
+MONTH_EN = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+DAY_NAMES = {"12-31": ("大晦日", "New Year's Eve"), "01-01": ("元日", "New Year's Day")}
+
+
+def season_dates(season, start="from", end="to"):
+    d0, d1 = dt.date.fromisoformat(season[start]), dt.date.fromisoformat(season[end])
+    return [(d0 + dt.timedelta(days=i)).isoformat() for i in range((d1 - d0).days + 1)]
+
+
+def shown_season():
+    """トップや店舗ページで案内する季節（表示期間中のもの）。"""
+    today = TODAY.isoformat()
+    return next((x for x in SEASONS if x["show_from"] <= today <= x["show_to"]), None)
+
+
+def latest_season():
+    return max(SEASONS, key=lambda x: x["from"]) if SEASONS else None
+
+
+def season_years(season):
+    a, b = season["from"][:4], season["to"][:4]
+    return a if a == b else L(f"{a}→{b}", f"{a}–{b[2:]}")
+
+
+def regular_ranges(store, date, holidays):
+    """その日のふだんの営業（祝日は祝日の扱いが先）。"""
+    h = store.get("hours") or {}
+    if date in holidays:
+        return h.get("holiday")
+    return h.get(WEEKDAY_KEYS[dt.date.fromisoformat(date).weekday()])
+
+
+def season_day(season, store, date, holidays):
+    """その日の営業を (種類, 時間) で返す。
+    種類: unknown 未発表 / check 要確認 / special 特別な営業・休み / normal ふだんどおり"""
+    ent = (season.get("stores") or {}).get(store["id"])
+    if not ent:
+        return "unknown", None
+    v = (ent.get("days") or {}).get(date, "normal")
+    if v == "normal":
+        r = regular_ranges(store, date, holidays)
+        return ("check", None) if r is None else ("normal", r)
+    return ("check", None) if v is None else ("special", v)
+
+
+def data_season():
+    """「いま営業中」の判定に使う季節（終わっていないもののうち、いちばん近いもの）。"""
+    today = TODAY.isoformat()
+    return next((x for x in sorted(SEASONS, key=lambda x: x["from"]) if today <= x["to"]), None)
+
+
+def season_sp(store):
+    """data.js 用: 「いま営業中」の判定で、ふだんの営業より優先する日（null は要確認）。"""
+    season = data_season()
+    if not season or store.get("status") != "open":
+        return None
+    ent = (season.get("stores") or {}).get(store["id"])
+    if ent:
+        return {d: v for d, v in (ent.get("days") or {}).items() if v != "normal"} or None
+    # まだ発表していない店は、休む店の多い日を「要確認」にする（ふだんの営業時間で「営業中」と出さない）
+    return {d: None for d in season_dates(season, "core_from", "core_to")}
+
+
+def day_label(date):
+    d = dt.date.fromisoformat(date)
+    wd = WEEKDAY_KEYS[d.weekday()]
+    name = DAY_NAMES.get(date[5:])
+    text = L(f"{d.month}/{d.day}（{DAY_JA[wd]}）", f"{DAY_EN[wd]} {d.day} {MONTH_EN[d.month - 1]}")
+    return text + (f" {label(name)}" if name else "")
+
+
+def day_head(date):
+    d = dt.date.fromisoformat(date)
+    wd = WEEKDAY_KEYS[d.weekday()]
+    return f"{d.month}/{d.day}<br>{DAY_JA[wd] if LANG == 'ja' else DAY_EN[wd]}"
+
+
+def short_time(t):
+    h, m = (int(x) for x in t.split(":"))
+    if h >= 24:
+        return fmt_time(t)
+    return f"{h}" if m == 0 else f"{h}:{m:02d}"
+
+
+def cal_cell(kind, r):
+    if kind in ("unknown", "check"):
+        tip = L("未発表", "Not announced") if kind == "unknown" else L("要確認", "Check")
+        return f'<td class="c-unk" title="{tip}">?</td>'
+    if not r:
+        return f'<td class="c-off">{L("休", "off")}</td>'
+    hours = "<br>".join(f"{short_time(a)}–{short_time(b)}" for a, b in r)
+    return f'<td class="{"c-sp" if kind == "special" else "c-norm"}">{hours}</td>'
+
+
+def season_note(ent):
+    return (ent.get("note_en") if LANG == "en" else ent.get("note")) or ""
+
+
+def season_source(ent):
+    src = ent.get("source") or {}
+    return f'{ext(src["url"], e(src.get("label") or host_label(src["url"])))}{ja_mark()}{date_span(src.get("date"))}' if src.get("url") else ""
+
+
+def season_box(store, ctx, p):
+    """店舗ページの「年末年始の営業」（表示期間中だけ）。"""
+    season = shown_season()
+    if not season or store.get("status") != "open":
+        return ""
+    ent = (season.get("stores") or {}).get(store["id"])
+    if not ent:
+        body = f'<p>{L("まだ発表されていません。例年、12月中旬〜下旬に公式 X で発表されます。分かりしだい載せます。", "Not announced yet. Shops usually post their schedule on X in mid-to-late December; we add it once it is out.")}</p>'
+    else:
+        hol = ctx["holidays"]
+        days = sorted(d for d, v in (ent.get("days") or {}).items() if v != "normal")
+        items = "".join(f'<li><strong>{e(day_label(d))}</strong> {e(fmt_ranges(season_day(season, store, d, hol)[1]))}</li>' for d in days)
+        note = season_note(ent)
+        rest = L("ほかの日はふだんどおり", "Other days: usual hours") + (f" · {e(note)}" if note else "")
+        body = (f'<ul class="season-days">{items}</ul><p class="small">{rest}</p>'
+                f'<p class="small muted">{L("出典", "Source")}: {season_source(ent)}</p>')
+    head = L(f"年末年始の営業（{season_years(season)}）", f"New Year hours ({season_years(season)})")
+    return (f'<section class="block season-box"><div class="block-head"><h2>{e(head)}</h2>'
+            f'<a class="small" href="{p}lists/new-year.html">{L("全店のカレンダー", "All shops")} →</a></div>{body}</section>')
+
+
+def page_newyear(site, stores, ctx):
+    season = latest_season()
+    pg = Page("lists/new-year.html")
+    p, hol = pg.p, ctx["holidays"]
+    shops = sorted((s for s in stores if s.get("status") == "open"), key=lambda s: (area_rank(area_of(s)), stores.index(s)))
+    dates = season_dates(season)
+    ents = season.get("stores") or {}
+    announced = [s for s in shops if s["id"] in ents]
+    unknown = len(shops) - len(announced)
+    yrs = season_years(season)
+    title = L(f"ラーメン二郎 年末年始の営業 {yrs}（直系全店カレンダー）", f"Ramen Jiro New Year opening hours {yrs} (all shops)")
+    d0, d1 = dt.date.fromisoformat(season["from"]), dt.date.fromisoformat(season["to"])
+    span = L(f"{d0.month}月{d0.day}日〜{d1.month}月{d1.day}日", f"{d0.day} {MONTH_EN[d0.month - 1]} – {d1.day} {MONTH_EN[d1.month - 1]}")
+    status = L(f"発表済み <strong>{len(announced)}</strong> / {len(shops)} 店 · 最終更新 {e(season['checked'])}",
+               f"Announced: <strong>{len(announced)}</strong> of {len(shops)} shops · updated {e(season['checked'])}")
+    notice = ""
+    if TODAY.isoformat() > season["to"]:
+        notice = f'<p class="status-note">{L("このシーズンは終わりました。次の年末年始の予定は、発表されしだい載せます。", "This season is over. The next schedule will be added once it is announced.")}</p>'
+    elif not announced:
+        notice = f'<p class="status-note">{L("まだ発表した店はありません。例年、12月中旬〜下旬に各店の公式 X で発表されます。発表されしだい載せます。", "No shop has announced its schedule yet. Shops usually post it on X in mid-to-late December; we add it as soon as it is out.")}</p>'
+
+    # 日付ごと: その日に開いている店（発表済みの店だけ。未発表の店は数だけ）
+    usual = f' <span class="muted small">{L("（ふだんどおり）", "(usual hours)")}</span>'
+    jump, day_parts = [], []
+    for d in dates:
+        opened, closed, check = [], 0, 0
+        for s in announced:
+            kind, r = season_day(season, s, d, hol)
+            if kind == "check":
+                check += 1
+            elif not r:
+                closed += 1
+            else:
+                opened.append((s, kind, r))
+        counts = L(f"営業 {len(opened)} 店 · 休み {closed} 店" + (f" · 要確認 {check} 店" if check else "") + (f" · 未発表 {unknown} 店" if unknown else ""),
+                   f"open {len(opened)} · closed {closed}" + (f" · check {check}" if check else "") + (f" · not announced {unknown}" if unknown else ""))
+        items = "".join(f'<li><a href="{p}stores/{e(s["id"])}.html">{e(short_name(s))}</a> {e(fmt_ranges(r))}{"" if kind == "special" else usual}</li>'
+                        for s, kind, r in opened)
+        empty = L("営業を発表した店はまだありません。", "No shop has announced opening on this day yet.") if unknown else L("営業する店はありません。", "No shop opens on this day.")
+        jump.append(f'<a class="chip chip-link" href="#d-{d}">{e(day_label(d))}</a>')
+        day_parts.append(f'<h3 id="d-{d}">{e(day_label(d))} <span class="muted small">{counts}</span></h3>'
+                         + (f'<ul class="day-list">{items}</ul>' if items else f'<p class="muted small">{empty}</p>'))
+
+    # 店ごとのカレンダー（エリアごと）
+    head = "".join(f'<th scope="col"{" class=wkend" if dt.date.fromisoformat(d).weekday() >= 5 or d in hol else ""}>{day_head(d)}</th>' for d in dates)
+    rows, cur = [], None
+    for s in shops:
+        if area_of(s) != cur:
+            cur = area_of(s)
+            rows.append(f'<tr class="cal-area"><th scope="rowgroup" colspan="{len(dates) + 1}">{e(area_label(cur))}</th></tr>')
+        cells = "".join(cal_cell(*season_day(season, s, d, hol)) for d in dates)
+        rows.append(f'<tr><th scope="row"><a href="{p}stores/{e(s["id"])}.html">{e(short_name(s))}</a></th>{cells}</tr>')
+    legend = L('<span class="c-sp">11–15</span> 年末年始の特別な営業 · <span class="c-norm">11–15</span> ふだんどおり · <span class="c-off">休</span> 休み · <span class="c-unk">?</span> 未発表・要確認',
+               '<span class="c-sp">11–15</span> special hours · <span class="c-norm">11–15</span> usual hours · <span class="c-off">off</span> closed · <span class="c-unk">?</span> not announced / check')
+
+    notes = "".join(f'<li><a href="{p}stores/{e(s["id"])}.html">{e(short_name(s))}</a>'
+                    f'{": " + e(season_note(ents[s["id"]])) if season_note(ents[s["id"]]) else ""} · {season_source(ents[s["id"]])}</li>'
+                    for s in announced)
+    notes_html = (f'<section class="block"><h2>{L("各店の発表", "Each shop’s announcement")}</h2><ul class="links small">{notes}</ul></section>' if notes else "")
+    trend = season.get("trend_en") if LANG == "en" else season.get("trend")
+    srcs = "".join(f'<li>{ext(x["url"], e(x.get("label") or host_label(x["url"])))}{ja_mark()}{date_span(x.get("date"))}</li>' for x in season.get("sources") or [])
+    trend_html = (f'<section class="block"><h2>{L("例年の傾向", "What usually happens")}</h2><p>{e(trend)}</p><ul class="links small">{srcs}</ul></section>' if trend else "")
+
+    # 発表した店が1つもないうちは、日付ごとの一覧とカレンダーを出さない（空の表になるため）
+    calendar = f"""
+<section class="block">
+  <h2>{L('日付で探す', 'By date')}</h2>
+  <div class="chips day-jump">{''.join(jump)}</div>
+  {''.join(day_parts)}
+</section>
+<section class="block">
+  <h2>{L('店ごとのカレンダー', 'Calendar by shop')}</h2>
+  <p class="small muted">{legend}</p>
+  <div class="table-scroll"><table class="cal-table">
+    <thead><tr><th scope="col">{L('店', 'Shop')}</th>{head}</tr></thead>
+    <tbody>{''.join(rows)}</tbody>
+  </table></div>
+</section>"""
+    body = f"""
+<nav class="crumb" aria-label="{L('パンくず', 'Breadcrumb')}"><a href="{p}index.html">{L('ホーム', 'Home')}</a> › <a href="{p}stores/index.html">{L('店舗', 'Shops')}</a> › {L('年末年始の営業', 'New Year hours')}</nav>
+<h1 class="page-title">{e(title)}</h1>
+<p>{L(f'直系ラーメン二郎の年末年始（{span}）の営業予定です。各店の公式 X と直系二郎大好きマンの発信をもとに、発表されしだい更新します。営業時間は目安で、材料切れで早く終わることもあります。',
+      f'Opening plans of every official Ramen Jiro shop over the New Year holidays ({span}), from each shop’s posts on X and Jiro Daisuki Man’s updates. Hours are approximate; shops may close early when they run out.')}</p>
+<p class="small">{status}</p>
+{notice}
+{calendar if announced else ''}
+{notes_html}
+{trend_html}
+<section class="block">
+  <h2>{L('ほかの条件・エリアで探す', 'More ways to browse')}</h2>
+  <div class="chips">{list_links(p, 'new-year')}{''.join(f'<a class="chip chip-link" href="{p}areas/{sl}.html">{e(area_label(ar))}</a>' for ar, sl in ctx["area_pages"].items())}<a class="chip chip-link" href="{p}stores/index.html">{L('全店舗', 'All shops')}</a></div>
+</section>"""
+    desc = L(f"直系ラーメン二郎全店の年末年始（{span}）の営業予定。大晦日・元日・三が日に開いている店を日付ごとにまとめています。",
+             f"New Year opening plans of every official Ramen Jiro shop ({span}): which shops open on New Year's Eve and the first days of January.")
+    return pg, layout(site, pg, title=title, body=body, page="stores", description=desc, ad=True)
+
+
 def page_index(site, stores, ctx):
     pg = Page("index.html")
     p = pg.p
@@ -1320,6 +1550,7 @@ def page_index(site, stores, ctx):
     rs = ctx["ramenscene"].get("site", {})
     dml = (ctx["daisukiman"].get("profile") or {}).get("links") or {}
     rs_about = rs.get("about") if LANG == "ja" else TR.get("ramenscene_about")
+    season_btn = (f'<a class="btn btn-season" href="{p}lists/new-year.html">{L("年末年始の営業", "New Year hours")}</a>' if shown_season() else "")
     hero_h1 = L('<span class="hero-brand">二郎ログ</span>いま開いてる<em>二郎</em>は<span class="hero-count" data-open-count>—</span>店',
                 '<span class="hero-brand">Jiro Log</span><span class="hero-count" data-open-count>—</span> <em>Jiro</em> shops are open now')
     body = f"""
@@ -1333,6 +1564,7 @@ def page_index(site, stores, ctx):
       <a class="btn btn-primary" href="{p}stores/index.html#open=1">{L('営業中の店を見る', 'Shops open now')}</a>
       <a class="btn" href="{p}map.html">{L('地図で探す', 'Map')}</a>
       <a class="btn" href="{p}guide.html">{L('はじめての二郎', 'How to order')}</a>
+      {season_btn}
     </div>
     {up_html}
   </div>
@@ -1887,15 +2119,20 @@ def js_store(s, geo):
         out["access" + sfx] = (sv(s, "access") or [])[:1]
         out["closed_text" + sfx] = closed_days(s)
     LANG = "ja"
+    sp = season_sp(s)
+    if sp:
+        out["sp"] = sp
     return out
 
 
 def main():
     global LANG, TR
     stores = load("stores.json", [])
-    problems = validate.check_stores(stores)
+    special = load("special_hours.json", {}) or {}
+    problems = validate.check_stores(stores) + validate.check_special(special, {s["id"] for s in stores})
     for msg in problems:
         print("  warn:", msg)
+    SEASONS[:] = special.get("seasons") or []
     TR = load("en.json", {}) or {}
     missing_en = [s["id"] for s in stores if s["id"] not in (TR.get("stores") or {})]
     if missing_en:
@@ -1917,6 +2154,7 @@ def main():
         "by_id": {s["id"]: s for s in stores},
         "lineage": lineage_index(load("lineage.json", {}) or {}, stores),
         "feed_fetched": feeds.get("fetched"),
+        "holidays": holidays,
         "today": dt.datetime.now(dt.timezone(dt.timedelta(hours=9))).date(),
         "near": nearest(stores, geo),
         "area_pages": area_pages(stores),
@@ -1930,6 +2168,8 @@ def main():
     DIST.mkdir(parents=True)
     shutil.copytree(STATIC, DIST / "assets")
     payload = {"stores": [js_store(s, geo) for s in stores], "holidays": holidays, "updated": site["_updated"]}
+    if data_season():
+        payload["season"] = {"label": data_season().get("label") or "特別営業", "label_en": data_season().get("label_en") or "special hours"}
     (DIST / "assets" / "data.js").write_text(
         "window.JIRO=" + json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + ";\n", encoding="utf-8")
 
@@ -1947,6 +2187,8 @@ def main():
                  L("初めて直系ラーメン二郎に行く人向けの、食券からコール、食べ終わりまでの流れ。", "A step-by-step guide to your first Ramen Jiro: tickets, the topping call, and etiquette."), "guide.md"),
                 (page_md, "glossary", L("二郎用語集", "Jiro glossary"),
                  L("ニンニク・ヤサイ・アブラ・カラメ、ロット、宣告など二郎でよく使う言葉。", "What ninniku, yasai, abura, karame, lot and other Jiro words mean."), "glossary.md")]
+        if SEASONS:
+            jobs.append((page_newyear,))
         if lang == "ja":   # プライバシーポリシーは日本語版だけ
             jobs.append((page_md, "privacy", "プライバシーポリシー", "二郎ログの広告・Cookie・外部サービスへの送信・お問い合わせについて。", "privacy.md", True))
         pages = [fn(site, stores, base, *args) for fn, *args in jobs]
@@ -1959,6 +2201,8 @@ def main():
             out.write_text(prettify_links(text), encoding="utf-8")
             written.append(pg.out)
             lastmod[pg.out] = next((s.get("checked") for s in stores if pg.path == f"stores/{s['id']}.html" and s.get("checked")), None)
+            if pg.path == "lists/new-year.html":
+                lastmod[pg.out] = latest_season()["checked"]
         out404 = DIST / ("404.html" if lang == "ja" else "en/404.html")
         out404.write_text(prettify_links(page_404(site, stores, base)), encoding="utf-8")
     LANG = "ja"
