@@ -137,6 +137,17 @@
  },
  "videos": [
   {
+   "url": "https://www.youtube.com/shorts/MRI7QvD6yds",
+   "title": "いい二郎の日にラーメン二郎 松本店 開店 | 三田本店→品川店連食を決行 | #松本二郎 #ラーメン #ラーメン二郎",
+   "date": "2026-11-26",
+   "store_ids": [
+    "matsumoto",
+    "mita",
+    "shinagawa"
+   ],
+   "kind": "short"
+  },
+  {
    "url": "https://www.youtube.com/watch?v=7X-zOYDhw-U",
    "title": "【長野初の二郎】ラーメン二郎 松本店の最新情報まとめ！| 次期店主さんの目黒店ラスト麺あげを実食",
    "date": "2026-10-25",

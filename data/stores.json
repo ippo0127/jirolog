@@ -6513,25 +6513,24 @@
   "access": [
    "JR「松本駅」徒歩約5分（セブン-イレブン女鳥羽橋店の近く）"
   ],
-  "hours_text": "未発表（開店前）",
+  "hours_text": "営業時間は未発表",
   "closed_text": "未発表",
   "hours": {
-   "mon": [],
-   "tue": [],
-   "wed": [],
-   "thu": [],
-   "fri": [],
-   "sat": [],
-   "sun": [],
+   "mon": null,
+   "tue": null,
+   "wed": null,
+   "thu": null,
+   "fri": null,
+   "sat": null,
+   "sun": null,
    "holiday": null
   },
   "hours_notes": [
-   "開店日・営業時間・メニューは未発表（2026年11月22日時点。公式 X の投稿は10月3日の1件のみ）",
-   "開店は「11月中旬以降」と報じられた（2026年10月15日、SBC信越放送の報道として紹介）",
-   "2026年9月30日に看板の設置が確認された"
+   "2026年11月26日に告知なしで開店した（直系二郎大好きマン）",
+   "営業時間・定休日・メニューはまだ発表されていない（2026年11月26日時点。公式 X の投稿は10月3日の1件のみ）"
   ],
-  "status": "upcoming",
-  "opened": null,
+  "status": "open",
+  "opened": "2026-11-26",
   "sns": {
    "x": "https://x.com/ramen_jiro_mtmt"
   },
@@ -6539,7 +6538,7 @@
   "menu_checked": null,
   "rules": [],
   "features": [
-   "長野県初の直系になる見込み",
+   "長野県初の直系",
    "店主は目黒店の助手出身（直系二郎大好きマンの動画より）"
   ],
   "sources": [
@@ -6587,12 +6586,22 @@
     "label": "公式 X（プロフィールの住所・投稿数を確認）",
     "url": "https://x.com/ramen_jiro_mtmt",
     "date": "2026-11-22"
+   },
+   {
+    "label": "直系二郎大好きマン（YouTube）松本店 開店",
+    "url": "https://www.youtube.com/shorts/MRI7QvD6yds",
+    "date": "2026-11-26"
+   },
+   {
+    "label": "SBC信越放送（Yahoo!ニュース）開店は11月中旬以降との報道",
+    "url": "https://news.yahoo.co.jp/articles/a588ca5a331f15e816db3cc300f3d6014a7321b2",
+    "date": "2026-10-15"
    }
   ],
   "conflicts": [
    "店主の出身店: 年表サイト（Take4）は環七新新代田店、直系二郎大好きマンの動画（2026年10月25日）は目黒店の助手から独立と紹介。大好きマン側を採用（修行先は複数あったとされる）"
   ],
-  "checked": "2026-11-22"
+  "checked": "2026-11-26"
  },
  {
   "id": "nagoya",

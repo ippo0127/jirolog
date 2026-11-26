@@ -1416,12 +1416,11 @@
    ],
    "closed_text": "Not announced yet",
    "hours_notes": [
-    "Opening date, hours and menu not announced yet (as of 22 Nov 2026; the official X account has posted only once, on 3 Oct)",
-    "A local TV report (SBC, 15 Oct 2026) said the shop would open in mid-November or later",
-    "The shop sign went up on 30 Sep 2026"
+    "Opened on 26 Nov 2026 without prior announcement (per Jiro Daisuki Man)",
+    "Hours, closing days and menu not announced yet (as of 26 Nov 2026; the official X account has posted only once, on 3 Oct)"
    ],
    "features": [
-    "Expected to be the first Jiro shop in Nagano",
+    "The first Jiro shop in Nagano",
     "The owner was an assistant at Meguro (per Jiro Daisuki Man's video)"
    ]
   },
@@ -2253,6 +2252,10 @@
   "2026-09-30:matsumoto:upcoming": {
    "title": "\"Ramen Jiro Matsumoto\" sign spotted near Matsumoto Station",
    "summary": "A sign for a Matsumoto shop has been spotted in central Matsumoto, Nagano Prefecture. The opening date and hours have not been announced yet."
+  },
+  "2026-11-26:matsumoto:open": {
+   "title": "Ramen Jiro Matsumoto opens (first in Nagano)",
+   "summary": "The first official Jiro shop in Nagano opened near Matsumoto Station without prior announcement. Hours, closing days and menu have not been announced yet. The owner was an assistant at Meguro."
   }
  },
  "daisukiman": {
@@ -2751,6 +2754,10 @@
   "sendai_old": {
    "name": "Sendai (original)",
    "note": "Same owner as today’s Sendai 2 (trained at Shin-Koganei Kaido and Hachioji Yaen Kaido 2). Moved and renamed in 2025."
+  },
+  "matsumoto": {
+   "name": "Matsumoto",
+   "note": "The owner was an assistant at Meguro before opening this shop (per Jiro Daisuki Man's video). The Take4 fan site says the owner came from Kannana Shin-Shindaita; the owner reportedly trained at more than one shop."
   }
  }
 }

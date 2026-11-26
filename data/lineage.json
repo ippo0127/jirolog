@@ -1917,6 +1917,31 @@
      "date": "2026-10-01"
     }
    ]
+  },
+  {
+   "id": "matsumoto",
+   "name": "松本店",
+   "status": "open",
+   "parent": "meguro",
+   "also_trained_at": [
+    "shindaita"
+   ],
+   "successor_of": null,
+   "opened": "2026-11",
+   "confidence": "medium",
+   "note": "店主は目黒店の助手から独立（直系二郎大好きマンの動画）。Take4 は環七新新代田店出身と記し、修業先は複数あったとされる",
+   "sources": [
+    {
+     "label": "直系二郎大好きマン（YouTube）松本店の最新情報まとめ",
+     "url": "https://www.youtube.com/watch?v=7X-zOYDhw-U",
+     "date": "2026-10-25"
+    },
+    {
+     "label": "Take4 二郎食記録「ラーメン二郎 年表」",
+     "url": "https://take4.hiyamugi.com/shop/shop_history.htm",
+     "date": "2026-10-01"
+    }
+   ]
   }
  ],
  "checked": "2026-10-01"
