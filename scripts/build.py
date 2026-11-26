@@ -1857,6 +1857,10 @@ def page_ranking(site, stores, ctx):
 
 def page_log(site, stores, ctx):
     pg = Page("log.html")
+    # 2026-11-26 に jirolog.pages.dev から jirolog.com へ移ったので、しばらく前のアドレスの記録の引き継ぎを案内する
+    bridge = "https://jirolog.pages.dev/bridge?back=" + L("/log", "/en/log")
+    migrate_note = (f'<p class="small">{L("以前のアドレス（jirolog.pages.dev）で記録していた方は", "Logged visits at the old address (jirolog.pages.dev)?")} '
+                    f'<a href="{bridge}">{L("記録を引き継ぐ", "Move them here")}</a></p>' if TODAY.isoformat() <= "2027-06-30" else "")
     presets = L(["小ラーメン", "小豚ラーメン", "大ラーメン", "大豚ラーメン", "小ラーメン 麺少なめ", "汁なし", "つけ麺"],
                 ["Small ramen", "Small ramen + extra pork", "Large ramen", "Large ramen + extra pork", "Small ramen, less noodles", "Shiru-nashi", "Tsukemen"])
     p = pg.p
@@ -1909,6 +1913,7 @@ def page_log(site, stores, ctx):
     <button class="btn btn-danger" data-clear>{L('すべて消す', 'Delete all')}</button>
   </div>
   <p class="muted small">{L('日本語版と英語版で同じ記録を使います。', 'The Japanese and English pages share the same log.')}</p>
+  {migrate_note}
 </section>"""
     return pg, layout(site, pg, title=L("マイ二郎ログ", "My Jiro log"), body=body, page="log", scripts=["assets/log.js", "assets/account.js"],
                       description=L("食べた直系ラーメン二郎を記録して全店制覇を目指すログ。", "Log your Ramen Jiro visits and work toward visiting every shop."))
@@ -2137,6 +2142,36 @@ def js_store(s, geo):
     return out
 
 
+# 古いアドレス（jirolog.pages.dev）のブラウザに保存されたマイ二郎ログを、jirolog.com へ持っていくページ。
+# 記録を base64url にして jirolog.com/log の #migrate= に付けて移る（log.js が確認してから取り込む）
+BRIDGE_HTML = r"""<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex"><title>記録を引き継いでいます｜二郎ログ</title></head>
+<body style="font-family:system-ui,sans-serif;padding:24px;line-height:1.7">
+<p>マイ二郎ログの記録を、新しいアドレス（jirolog.com）に引き継いでいます…</p>
+<p><a href="https://jirolog.com/log">進まないときはこちら</a></p>
+<script>
+(function () {
+  var back = new URLSearchParams(location.search).get("back");
+  if (back !== "/log" && back !== "/en/log") back = "/log";
+  var target = "https://jirolog.com" + back, raw = null;
+  try { raw = localStorage.getItem("jirolog.v1"); } catch (e) { /* 読めない環境 */ }
+  if (location.hostname === "jirolog.pages.dev" && raw) {
+    try {
+      var data = JSON.parse(raw);
+      if (data && data.entries && data.entries.length) {
+        var b64 = btoa(unescape(encodeURIComponent(JSON.stringify({ entries: data.entries }))));
+        if (b64.length < 1500000) target += "#migrate=" + b64.replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+      }
+    } catch (e) { /* 壊れた記録は送らない */ }
+  }
+  location.replace(target);
+})();
+</script>
+</body></html>
+"""
+
+
 def main():
     global LANG, TR
     stores = load("stores.json", [])
@@ -2218,6 +2253,11 @@ def main():
         out404 = DIST / ("404.html" if lang == "ja" else "en/404.html")
         out404.write_text(prettify_links(page_404(site, stores, base)), encoding="utf-8")
     LANG = "ja"
+
+    # マイ二郎ログの引き継ぎページ（functions/_middleware.js が古いアドレス jirolog.pages.dev でだけ開かせる）
+    (DIST / "bridge.html").write_text(BRIDGE_HTML, encoding="utf-8")
+    # Pages Functions（転送）を通すのはページだけ。画像などは通さない
+    (DIST / "_routes.json").write_text(json.dumps({"version": 1, "include": ["/*"], "exclude": ["/assets/*"]}), encoding="utf-8")
 
     # 公開プロフィールの集計で使う店 id の一覧（report-worker が読む。閉店した店も含む）
     (DIST / "store-ids.json").write_text(json.dumps({"ids": [s["id"] for s in stores]}, separators=(",", ":")), encoding="utf-8")

@@ -154,29 +154,39 @@
     setTimeout(() => URL.revokeObjectURL(a.href), 1000);
   });
 
+  // ほかの記録（書き出した JSON・以前のアドレスの記録）のうち、まだない記録だけを選ぶ。
+  // 同じ記録は id か「店・日付・記録した時刻」で見分ける。一度消した記録を読み込み直すときは新しい id にする
+  function freshEntries(entries) {
+    const data = log.load();
+    const sig = (e) => `${e.store}|${e.date}|${e.created || ""}`;
+    const ids = new Set(data.entries.map((e) => e.id));
+    const sigs = new Set(data.entries.filter((e) => e.created).map(sig));
+    const dead = new Set(data.deleted || []);
+    const fresh = [];
+    for (const e of entries) {
+      if (!e || !e.id || !e.store || !e.date || ids.has(e.id) || (e.created && sigs.has(sig(e)))) continue;
+      const x = dead.has(e.id) ? { ...e, id: uid() } : e;
+      ids.add(x.id); if (x.created) sigs.add(sig(x));
+      fresh.push(x);
+    }
+    return fresh;
+  }
+  function addEntries(fresh) {
+    const data = log.load();
+    data.entries.push(...fresh);
+    log.save(data);
+    draw(); window.JL.render(); changed();
+  }
+
   document.querySelector("[data-import]").addEventListener("change", async (ev) => {
     const file = ev.target.files[0];
     if (!file) return;
     try {
       const incoming = JSON.parse(await file.text());
       if (!incoming || !Array.isArray(incoming.entries)) throw new Error("format");
-      const data = log.load();
-      // 同じ記録は id か「店・日付・記録した時刻」で見分ける。一度消した記録を読み込み直すときは新しい id にする
-      const sig = (e) => `${e.store}|${e.date}|${e.created || ""}`;
-      const ids = new Set(data.entries.map((e) => e.id));
-      const sigs = new Set(data.entries.filter((e) => e.created).map(sig));
-      const dead = new Set(data.deleted || []);
-      const fresh = [];
-      for (const e of incoming.entries) {
-        if (!e || !e.id || !e.store || !e.date || ids.has(e.id) || (e.created && sigs.has(sig(e)))) continue;
-        const x = dead.has(e.id) ? { ...e, id: uid() } : e;
-        ids.add(x.id); if (x.created) sigs.add(sig(x));
-        fresh.push(x);
-      }
-      data.entries.push(...fresh);
-      log.save(data);
+      const fresh = freshEntries(incoming.entries);
+      addEntries(fresh);
       msg.textContent = t(`${fresh.length} 件を読み込みました`, `Imported ${fresh.length} entries`);
-      draw(); window.JL.render(); changed();
     } catch (_) {
       msg.textContent = t("読み込めませんでした（二郎ログで書き出した JSON を選んでください）", "Could not import (choose a JSON file exported from Jiro Log)");
     }
@@ -194,6 +204,26 @@
     log.save(on ? { entries: [], deleted: [...(data.deleted || []), ...data.entries.map((e) => e.id)].slice(-5000) } : { entries: [] });
     draw(); window.JL.render(); changed();
   });
+
+  // 以前のアドレス（jirolog.pages.dev）からの引き継ぎ。引き継ぎページが #migrate=<記録> を付けて戻ってくる。
+  // 誰でもこの形のリンクを作れるので、足す前に必ず確かめる
+  const mig = location.hash.match(/^#migrate=([A-Za-z0-9_-]+)$/);
+  if (mig) {
+    history.replaceState(null, "", location.pathname + location.search);
+    try {
+      const incoming = JSON.parse(decodeURIComponent(escape(atob(mig[1].replace(/-/g, "+").replace(/_/g, "/")))));
+      const fresh = freshEntries(Array.isArray(incoming && incoming.entries) ? incoming.entries : []);
+      if (!fresh.length) {
+        msg.textContent = t("以前のアドレスの記録は、すべてこの端末にあります", "Everything from the old address is already here");
+      } else if (confirm(t(`以前のアドレス（jirolog.pages.dev）に保存されていた記録が ${fresh.length} 件あります。この端末の記録に足しますか？`,
+        `${fresh.length} entries were saved at the old address (jirolog.pages.dev). Add them to the log on this device?`))) {
+        addEntries(fresh);
+        msg.textContent = t(`以前のアドレスから ${fresh.length} 件を引き継ぎました`, `Moved ${fresh.length} entries from the old address`);
+      }
+    } catch (_) {
+      msg.textContent = t("以前のアドレスの記録を読み込めませんでした", "Could not read the log from the old address");
+    }
+  }
 
   window.JLLog = { draw };
   draw();
