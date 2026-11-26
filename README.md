@@ -35,7 +35,7 @@ python3 scripts/fetch_holidays.py; python3 scripts/fetch_feeds.py; python3 scrip
 1. 前回の更新（`data/news.json` の最新日付、各店の `checked`）以降の動きを調べる。**最優先は直系二郎大好きマンの最近の発信**（YouTube・X・Instagram。ほぼ毎日直系に行っているので、店のいまの状態がいちばん早く分かる）。ほかにラーメンシーン、各店の公式 X（検索結果で見える範囲）、ラーメンデータベース、ニュース記事。
 2. 開店・閉店・移転・休業・再開、営業時間・定休日・価格の変更、限定メニューを確かめる。直系二郎大好きマンの最近の発信と他の情報源が食い違うときは大好きマン側を採用し、食い違いを `conflicts` に書く。それ以外の情報は2つ以上の情報源で確かめ、確かめられないものは載せない。
 3. 「書き方の方針」に沿って中立に書き、`data/news.json`・`data/stores.json` と、その英訳 `data/en.json`（`news` / `stores`）を直す。閉店した店は `status: "closed"` にして残す。
-4. `python3 scripts/validate.py` → `python3 scripts/build.py` で作り直し、変更点の一覧を見せてから公開する。
+4. `python3 scripts/validate.py` → `python3 scripts/build.py` で作り直し、確認を待たずに公開する（`main` に push）。公開したあとで、変更点を短く報告する。
 
 ## 誤りの報告フォーマット
 
