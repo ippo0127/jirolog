@@ -28,7 +28,7 @@ def main():
     host = urllib.parse.urlparse(base).netloc
 
     # Python の既定の User-Agent は Cloudflare にはじかれるので名乗る
-    req = urllib.request.Request(f"{base}/sitemap.xml", headers={"User-Agent": "jirolog-indexnow/1.0 (+https://jirolog.pages.dev/)"})
+    req = urllib.request.Request(f"{base}/sitemap.xml", headers={"User-Agent": "jirolog-indexnow/1.0 (+https://jirolog.com/)"})
     with urllib.request.urlopen(req, timeout=30) as r:
         root = ET.fromstring(r.read())
     since = dt.date.today() - dt.timedelta(days=8)

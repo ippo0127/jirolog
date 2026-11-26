@@ -56,7 +56,7 @@ def site_card(lang):
   {'<span style="color:#d40011">二郎</span>ログ' if lang == 'ja' else 'Jiro <span style="color:#d40011">Log</span>'}</div>
 <div style="position:absolute;left:96px;top:320px;font-size:50px;line-height:1.35">{sub}</div>
 <div style="position:absolute;left:96px;bottom:56px;font-size:26px;font-weight:700">{esc(en)}</div>
-<div class="url" style="bottom:56px">jirolog.pages.dev</div>"""
+<div class="url" style="bottom:56px">jirolog.com</div>"""
 
 
 def store_card(name_ja, name_en, alias):
@@ -73,7 +73,7 @@ def store_card(name_ja, name_en, alias):
   <div style="font-size:36px;margin-top:14px">営業時間・定休日・メニュー</div>
 </div>
 <div style="position:absolute;left:84px;bottom:52px;font-size:28px;font-weight:700">{esc(name_en)}</div>
-<div class="url">jirolog.pages.dev</div>"""
+<div class="url">jirolog.com</div>"""
 
 
 def icon(size):

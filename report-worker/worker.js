@@ -14,7 +14,7 @@
 // 設定（Cloudflare のダッシュボード → Workers → この Worker → Settings）
 //   GITHUB_REPO      報告用の非公開リポジトリ。例: yourname/jirolog-reports
 //   GITHUB_TOKEN     その1リポジトリの Issues: Read and write だけを許可した fine-grained token（Secret として登録）
-//   ALLOWED_ORIGINS  例: https://jirolog.pages.dev  （カンマ区切りで複数可）
+//   ALLOWED_ORIGINS  例: https://jirolog.com,https://jirolog.pages.dev  （カンマ区切りで複数可。最初のものをサイトの URL として使う）
 //   DB               D1 データベースのバインディング（来訪数と公開プロフィール。表は自動で作る）
 //
 // 運営の操作（D1 の Console で実行）

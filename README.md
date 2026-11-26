@@ -12,7 +12,7 @@ python3 scripts/build.py                  # data/ と content/ から dist/ を�
 python3 scripts/serve.py                  # http://localhost:8000 で確認（公開時と同じ URL の形で動く）
 ```
 
-公開先は Cloudflare Pages（https://jirolog.pages.dev/）。GitHub の `main` に push するたびに Cloudflare が次のビルドコマンドで作り直して公開する。毎朝 6:00（日本時間）にも `.github/workflows/daily-rebuild.yml` が Deploy hook を叩いて作り直す（新着の取り込みと期間限定メニューの自動非表示のため）。
+公開先は https://jirolog.com/ （Cloudflare Pages のプロジェクト jirolog に独自ドメインとしてつないでいる。ドメインは Cloudflare Registrar で取得、毎年自動更新。古い https://jirolog.pages.dev/ は Bulk Redirects で jirolog.com へ 301 転送）。GitHub の `main` に push するたびに Cloudflare が次のビルドコマンドで作り直して公開する。毎朝 6:00（日本時間）にも `.github/workflows/daily-rebuild.yml` が Deploy hook を叩いて作り直す（新着の取り込みと期間限定メニューの自動非表示のため）。
 
 ```sh
 python3 scripts/fetch_holidays.py; python3 scripts/fetch_feeds.py; python3 scripts/build.py   # 出力先: dist
